@@ -21,7 +21,6 @@ function Statusbar (){
                     <img src='/assets/Battery.svg'></img>
                 </div>    
             </div>
-               
     </div>
     
     )
