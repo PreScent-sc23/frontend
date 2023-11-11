@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Statusbar from './components/statusbar/statusbar';
+import Searchbar from './components/search/searchbar';
+import BottomTap from './components/bottomtap/bottomtap';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/* <Statusbar/> */}
+    {/* <Searchbar/> */}
+    {/* <BottomTap/> */}
     <App />
   </React.StrictMode>
 );
