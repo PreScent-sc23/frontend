@@ -12,6 +12,7 @@ function Searchbar() {
             <div className={styles.SearchBar}>
                 <img src='/assets/search.svg' className={styles.image}/>  
                 <div className={styles.SeachInput}> 
+                
                 </div>
             </div>
         </div>
