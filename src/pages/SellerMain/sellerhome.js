@@ -14,7 +14,7 @@ function SellerHome(){
             <Statusbar/>
             <Searchbar/>
             <SellerBottomTap/>
-            판매자 홈입니다
+            판매자 메인 화면입니다
         </div>
         
             
