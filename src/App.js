@@ -10,7 +10,9 @@ import TagSearch from './pages/tagsearch/tagsearch'
 import SellerHome from './pages/sellermain/sellerhome';
 import LocationSet from './pages/locationset/locationset';
 import Login from './pages/login/login';
-import Sellersignup from './pages/sellersignup.js/sellersignup';
+import Sellersignup from './pages/sellersignup/sellersignup';
+import Customersignup from './pages/customersignup/customersignup';
+
 
 function App() {
 
@@ -31,6 +33,7 @@ function App() {
               <Route path="/tagsearch" element={<TagSearch/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/sellersignup" element={<Sellersignup/>}/>
+              <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
 
               
