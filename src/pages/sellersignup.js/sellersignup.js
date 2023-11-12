@@ -22,7 +22,7 @@ function Sellersignup(){
                 </form>
             </div>
             <div style={{width:'100%', height:'10.0em'}}></div>
-            <div style={{width:'100%'}}>
+            <div style={{width:'100%', textAlign:'center'}}>
             <input className = {styles.normalButton} type='button' value="사업자 회원 등록 하기" style={{margin: '8px'}}></input>
             </div> 
         </div>
