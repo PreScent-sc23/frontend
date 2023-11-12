@@ -9,6 +9,7 @@ import Mypage from './pages/Mypage/mypage';
 import TagSearch from './pages/TagSearch/tagsearch'
 import SellerHome from './pages/SellerMain/sellerhome';
 import LocationSet from './pages/LocationSet/locationset';
+import Login from './pages/Login/login';
 
 function App() {
 
@@ -27,8 +28,7 @@ function App() {
               <Route path="/pslens" element={<PSLens/>}/>
               <Route path="/mypage" element={<Mypage/>}/>
               <Route path="/tagsearch" element={<TagSearch/>}/>
-
-              
+              <Route path="/login" element={<Login/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
 
               
