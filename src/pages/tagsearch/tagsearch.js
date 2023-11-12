@@ -11,7 +11,9 @@ function TagSearch(){
     return(
         <div>
             <Statusbar/>
-            <Searchbar/>
+            <Searchbar>
+                zzdsdsd
+            </Searchbar>
             <CustomerBottomTap/>
         </div>
         
