@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import styles from './styles.module.scss';
+import styles from './bottomtap.module.scss';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function BottomTap(){
+function CustomerBottomTap(){
 
     const navigate = useNavigate(); 
     //const [activeTap, setActiveTap] = useState(1);
@@ -29,4 +29,6 @@ function BottomTap(){
     )
 
 }
-export default BottomTap;
+export default CustomerBottomTap;
+
+<div className={styles.Button}></div>

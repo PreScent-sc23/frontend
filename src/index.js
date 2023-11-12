@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Statusbar from './components/statusbar/statusbar';
 import Searchbar from './components/search/searchbar';
-import BottomTap from './components/bottomtap/bottomtap';
+import CustomerBottomTap from './components/bottomtap/customerbottomtap';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
