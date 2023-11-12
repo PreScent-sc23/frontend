@@ -8,6 +8,7 @@ import PSLens from './pages/PSLens/pslens';
 import Mypage from './pages/Mypage/mypage';
 import TagSearch from './pages/TagSearch/tagsearch'
 import SellerHome from './pages/SellerMain/sellerhome';
+import LocationSet from './pages/LocationSet/locationset';
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
     <RecoilRoot>
         <Router>
           <Routes> 
+
+              <Route path="/locationset" element={<LocationSet/>}/>
               <Route path="/home" element={<Home/>}/>
               <Route path="/pslens" element={<PSLens/>}/>
               <Route path="/mypage" element={<Mypage/>}/>
