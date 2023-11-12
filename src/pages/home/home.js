@@ -6,6 +6,7 @@ import Statusbar from '../../components/statusbar/statusbar';
 import Searchbar from '../../components/search/searchbar';
 import BottomTap from '../../components/bottomtap/customerbottomtap';
 import CustomerBottomTap from '../../components/bottomtap/customerbottomtap';
+
 function Home(){
     
     return(
