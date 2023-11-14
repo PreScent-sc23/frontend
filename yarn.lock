@@ -10090,6 +10090,11 @@ url-parse@^1.5.3:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
 
+use-react-hooks@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/use-react-hooks/-/use-react-hooks-1.0.7.tgz#57a3948dcddf721eaf19b80a1cc060171e00f0f1"
+  integrity sha512-QMV4FM3SRwauPYAGcGKvXFzw7u1rqTaI4hibwv9eiX5QlHP5bb2EIlO0XflBE1aAsxAdgvxlbmqVPye4+7+QIA==
+
 use-sync-external-store@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
