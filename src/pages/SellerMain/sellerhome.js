@@ -14,7 +14,24 @@ function SellerHome(){
             <Statusbar/>
             <TopNav/>
             <div className={styles.profileContainer}>
-                칸
+                <div className={styles.profilePhoto}></div> 
+                <div style={{fontSize:'18px'}}>가나다 플라워</div>
+            </div>
+            <div style={{width:'100%', display:'flex'}}>
+                <div className={styles.selectBox}>
+                    <div className={styles.textBox}>가게 관리</div>
+                </div>
+                <div className={styles.selectBox}>
+                    <div className={styles.textBox}>상품 관리</div>
+                </div>
+            </div>
+            <div style={{width:'100%', display:'flex'}}>
+                <div className={styles.selectBox}>
+                    <div className={styles.textBox}>예약 관리</div>
+                </div>
+                <div className={styles.selectBox}>
+                    <div className={styles.textBox}>통계 관리</div>
+                </div>
             </div>
             <SellerBottomTap/>
         </div>
