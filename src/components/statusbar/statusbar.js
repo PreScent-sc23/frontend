@@ -10,7 +10,7 @@ function Statusbar (){
             <div className={styles.iosStatusBarTime}>9:41</div>
             <div className={styles.iosStatusBarWrap}>
                 <div className={styles.CellularConnection}>
-                    <img src='/assets/Cellular Connection.svg'></img>
+                    <img src='/assets/Cellularconnection.svg'></img>
                 </div>
                    
                 <div className={styles.Wifi}>
