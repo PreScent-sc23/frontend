@@ -44,11 +44,11 @@ function Customersignup(){
             </div>
             <div style={{width:'100%', textAlign:'center',marginTop:'16px'}}>
                 <form>            
-                <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름'></input>
-                <input className={styles.inputBox} type='number' name = "pwd" size = '50'  placeholder='전화번호'></input>
-                <input className={styles.inputBox} type='email' name = "email" size = '50'  placeholder='Email'></input>
+                <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={customerName} onChange={(e) => setCustomerName(e.target.value)}></input>
+                <input className={styles.inputBox} type='number' name = "pwd" size = '50'  placeholder='전화번호' value={customerPhonenum} onChange={(e) => setCustomerPhonenum(e.target.value)}></input>
+                <input className={styles.inputBox} type='email' name = "email" size = '50'  placeholder='Email' value={customerIdEmail} onChange={(e) => setCustomerIdEmail(e.target.value)}></input>
                 <input className={styles.inputBox} type='number' name = "validnum" size = '50'  placeholder='인증 번호 입력'></input>
-                <input className={styles.inputBox} type='password' name = "pwd" size = '50'  placeholder='비밀번호'></input>
+                <input className={styles.inputBox} type='password' name = "pwd" size = '50'  placeholder='비밀번호' value={customerPassword} onChange={(e) => setCustomerPassword(e.target.value)}></input>
                 </form>
                 <div style={{width:'100%', height:'66px'}}></div>
             </div>
