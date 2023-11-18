@@ -1,0 +1,44 @@
+*{
+    border: none;
+    font-family: 'inter';
+}
+.TopNavWrap{
+    display: flex;
+    padding: 0.75rem 1.2rem;
+    // margin-top: 2.94rem;
+    flex-direction: row;
+    align-items: center;
+    // align-items: flex-start;
+    background-color: white;
+    // justify-content: space-between;
+    gap : 5rem;
+
+}
+
+.TopNavTitle{
+    color: #090A0A;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem;
+    margin-top : 0.2rem;
+}
+
+.selectBox{
+    width: 300px;
+    height: 200px;
+    border-radius: 24px;
+    background-color: #E7E7FF;
+    margin: 20px auto;
+}
+
+.textBox{
+    margin-top: 28%;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #6B4EFF;
+}

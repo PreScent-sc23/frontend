@@ -21,7 +21,7 @@ function SellerHome(){
                 <div className={styles.selectBox} onClick={()=>navigate('/shopregister')}>
                     <div className={styles.textBox}>가게 관리</div>
                 </div>
-                <div className={styles.selectBox} onClick={()=>navigate('/shopregister')}>
+                <div className={styles.selectBox} onClick={()=>navigate('/manageproduct')}>
                     <div className={styles.textBox}>상품 관리</div>
                 </div>
             </div>
