@@ -42,6 +42,7 @@ function App() {
               <Route path="/manageproduct" element={<ManageProduct/>}/>
               <Route path="/managefinished" element={<ManageFinished/>}/>
               <Route path="/addfinished" element={<AddFinished/>}/>
+              <Route path="/addfinished" element={<AddFinished/>}/>
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
 

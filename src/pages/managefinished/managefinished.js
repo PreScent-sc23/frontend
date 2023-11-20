@@ -31,7 +31,7 @@ export function ManageFinished(){
                 <div className={styles.ProductContainer}></div>
             </div>
             <div>
-                <div className={styles.Button} onClick={()=>navigate('/sellerhome')}>상품 추가하기</div>
+                <div className={styles.Button} onClick={()=>navigate('/addfinished')}>상품 추가하기</div>
             </div>
         </div>
     )
