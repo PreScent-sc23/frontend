@@ -15,8 +15,9 @@
     line-height: normal;
 }
 
-.Profile{
+.ProfileWrap{ //프로필 최상위 컨테이너
     display: flex;
+    flex-direction: column;
     margin : 0rem 2rem;
     // width: 19.9375rem;
     height: 11.25rem;
@@ -25,6 +26,7 @@
     background: #FFF;
     box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
 }
+
 .EditButton{
     color: #6B4EFF;
     font-family: Inter;
@@ -34,39 +36,82 @@
     line-height: normal;
 }
 
-.ProfileImage{
-    width: 3.75rem;
-    height: 3.75rem;
-    flex-shrink: 0;
-    border-radius: 0.625rem;
-    // background: url(<path-to-image>), lightgray 50% / cover no-repeat, #C4C4C4;
-    background-color: #c4c4c4;
+.Profile{
+    display: inline-flex;
+    flex-direction: row;
+    padding: 1rem;
+    // align-items: flex-start;
+    gap: 1rem;
+
 }
 
-.Name{
+
+.Image{
+    width: 5rem;
+    height: 5rem;
+    background-color: #000;
+}
+
+.BoldText{
     color: #000;
     font-family: Inter;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    // text-align: center;
 }
 
-.Info{
+.InfoWrap{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.InfoText{
     color: #000;
     font-family: Inter;
-    font-size: 0.8125rem;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     opacity: 0.5;
 }
 
-.LocationInfoWrap { 
-    width: 19.5625rem;
+.Line{
+    // margin : 1rem 1.5rem;
+    width: 13rem;
+    display: flex;
+    height: 0.05rem;
+    background: #EDEDED;
+    align-items: center;
+    text-align: center;
+}
+
+
+.Location{ 
+    // width: 19.5625rem;
     height: 3.125rem;
     flex-shrink: 0;
     background-color: white;
+    display: inline-flex;
+    flex-direction: row;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    // align-items: flex-start;
+}
+
+.LocationText{
+    display: flex;
+    width: 14.3125rem;
+    height: 2.5rem;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: flex-start;
+    gap: 0.4rem;
+    flex-shrink: 0;
+    
 }
 
 .MypageMenu{
