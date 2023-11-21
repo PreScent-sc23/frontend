@@ -16,8 +16,6 @@ import Login from './pages/login/login';
 import Sellersignup from './pages/sellersignup/sellersignup';
 import Customersignup from './pages/customersignup/customersignup';
 import StartScreen from './pages/main/main';
-import ManageProduct from './pages/manageproduct/manageproduct';
-import ManageFinished from './pages/managefinished/managefinished';
 import AddFinished from './pages/addfinished/addfinished';
 
 
@@ -40,8 +38,6 @@ function App() {
               <Route path="/login" element={<Login/>}/>
               <Route path="/sellersignup" element={<Sellersignup/>}/>
               <Route path="/shopregister" element={<Shopregister/>}/>
-              <Route path="/manageproduct" element={<ManageProduct/>}/>
-              <Route path="/managefinished" element={<ManageFinished/>}/>
               <Route path="/addfinished" element={<AddFinished/>}/>
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
