@@ -1,0 +1,95 @@
+.ProfileTitleWrap{
+    display: flex;
+    padding: 0.5rem 0.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 13.125rem;
+}
+
+.ProfileTitle{
+    color: #000;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.Profile{
+    display: flex;
+    margin : 0rem 2rem;
+    // width: 19.9375rem;
+    height: 11.25rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    background: #FFF;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
+}
+.EditButton{
+    color: #6B4EFF;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.ProfileImage{
+    width: 3.75rem;
+    height: 3.75rem;
+    flex-shrink: 0;
+    border-radius: 0.625rem;
+    // background: url(<path-to-image>), lightgray 50% / cover no-repeat, #C4C4C4;
+    background-color: #c4c4c4;
+}
+
+.Name{
+    color: #000;
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.Info{
+    color: #000;
+    font-family: Inter;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.5;
+}
+
+.LocationInfoWrap { 
+    width: 19.5625rem;
+    height: 3.125rem;
+    flex-shrink: 0;
+    background-color: white;
+}
+
+.MypageMenu{
+    display: flex;
+    margin : 1rem 2rem;
+    padding : 1.06rem;
+    // width: 19.6875rem;
+    height: 3rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    background: #FFF;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.MenuTitle{
+    color: #000;
+    font-family: Inter;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
