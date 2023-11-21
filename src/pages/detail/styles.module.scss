@@ -1,0 +1,163 @@
+.ImageWrap{
+    
+    display: flex;
+    background-color: #f6f6f6;
+    // width: 23.4375rem;
+    height: 36vh;
+    padding: 0.875rem 2.81938rem 0.875rem 2.9375rem;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 0rem 0rem 1.5625rem 1.5625rem;
+
+    }
+
+.Image{
+    color : white;
+    
+}
+
+.DetailWrap{
+    display: flex;
+    flex-direction: column;
+    // height : 16vh;
+    // align-items: flex-start;
+    gap: 0.8rem;
+    background-color: white;
+    padding: 0.8rem 2.3rem;
+    // justify-content: space-between;
+    // width: 23.4375rem;
+    // height: 10.25rem;
+    flex-shrink: 0;
+}
+
+
+
+.FpName{
+    color: #090A0A;
+    // text-align: center;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.125rem; /* 90% */
+    padding-left: 0.2rem;
+}
+
+.FpPrice{
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.125rem; /* 75% */
+    letter-spacing: 0.00625rem;
+    text-align: end;
+    color: #6B4EFF;
+    }
+
+.FpTagWrap{
+    // display : flex;
+    display: flex;
+    // padding: 0.5rem;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.FpTag{
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    border-radius: 2rem;
+    background: #F2F4F5;
+ 
+}
+
+
+
+.FpDescription{
+    color:  #090A0A;
+    // text-align: center;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem; /* 128.571% */
+    padding-left: 0.2rem;
+
+
+}
+
+.FpFlowerWrap{
+    // display : flex;
+    display: inline-flex;
+    // padding: 0.5rem;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.FpFlower{
+    display: flex;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    border-radius: 2rem;
+    background: #F2F4F5;
+ 
+}
+
+.Line{
+    margin : 1rem 1.5rem;
+    // width: 22rem;
+    display: flex;
+    height: 0.2rem;
+    background: #EDEDED;
+    align-items: center;
+    text-align: center;
+}
+
+.TextWrap{
+    display: flex;
+    padding: 0rem 2.5rem;
+    align-items: stretch;
+    // gap : 10rem;
+    justify-content: space-between;
+
+
+}
+
+.Text{
+    color: #090A0A;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    // line-height: 1.125rem; /* 90% */
+}
+
+.Icon{
+    // text-align: end;
+}
+
+
+.PurchaseButton{
+    display: flex;
+    // width: 20.1875rem;
+    padding: 1rem 1.5rem;
+    // margin : 2rem;
+    margin : 1rem 2rem;
+    justify-content: center;
+    // align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    background: #7E49FF;
+    color : white;
+    flex-direction: row;
+    align-items: flex-start;
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5rem; /* 133.333% */
+}
+
