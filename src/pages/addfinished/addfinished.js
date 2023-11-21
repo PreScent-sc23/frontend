@@ -20,12 +20,12 @@ export function AddFinished(){
     }
 
     const handleSubmission = async () => {
-        const formData = new FormData();
-        formData.append("fpImage", selectedFile);
+        const fpImage = new FormData();
+        fpImage.append("fpImage", selectedFile);
         console.log("됨?");
         try {
             const response = await axios.post('http://3.36.175.224:8080/finished-product/add', {
-                formData,
+                fpImage,
                 fpName,
                 fpTag,
                 fpPrice,
