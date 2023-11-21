@@ -22,13 +22,6 @@ export function ManageFinished(){
                     <div className={styles.ProductText}>이름</div>
                     <div className={styles.ProductTag}>#태그</div>
                 </div>
-                <div className={styles.ProductContainer}></div>
-                <div className={styles.ProductContainer}></div>
-                <div className={styles.ProductContainer}></div>
-                <div className={styles.ProductContainer}></div>
-                <div className={styles.ProductContainer}></div>
-                <div className={styles.ProductContainer}></div>
-                <div className={styles.ProductContainer}></div>
             </div>
             <div>
                 <div className={styles.Button} onClick={()=>navigate('/addfinished')}>상품 추가하기</div>

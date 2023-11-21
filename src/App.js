@@ -20,8 +20,6 @@ import ManageProduct from './pages/manageproduct/manageproduct';
 import ManageFinished from './pages/managefinished/managefinished';
 import AddFinished from './pages/addfinished/addfinished';
 
-import Gpthelp from './pages/gpthelp/gpthelp';
-
 function App() {
 
 
@@ -47,9 +45,6 @@ function App() {
               <Route path="/addfinished" element={<AddFinished/>}/>
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
-
-              <Route path="/gpthelp" element={<Gpthelp/>}/>
-
               
           </Routes>
         </Router>

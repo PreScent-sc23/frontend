@@ -4,48 +4,48 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Statusbar from '../../components/statusbar/statusbar';
 
-
+//꽃 팔러 오셨나요? 사러 오셨나요 -> 화면 띄우기 전에 선택지 넣으면 좋을듯!
 
 function Login(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    // const handleSignUp = async () => {
-    //     console.log("됨?");
-    //     try {
-    //         const response = await axios.post('http://3.36.175.224:8080/login', {
-    //             email,
-    //             password,
-    //         },{
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //     },
-    // });
-    //         console.log("됨2?");
-    //         console.log(response.data);
-    //         navigate('/home');
-    //     } catch (error) {
-    //         console.error('로그인 오류');
+
+
+    const handleLogin = async () => {
+        console.log("됨?");
+        try {
+            const response = await axios.post('http://3.36.175.224:8080/api/v1/auth/seller/login', {
+                email,
+                password,
+            },{
+                headers: {
+                    'Content-Type': 'application/json'
+        },
+    });
+            console.log("됨2?");
+            console.log(response.data);
+            navigate('/home');
+        } catch (error) {
+            console.error('로그인 오류');
+        }
+    };
+    // async function handleLogin() {
+    //     axios.defaults.withCredentials = true;
+    //     try{
+    //         const response = await axios.post('http://3.36.175.224:8080/login', {email, password},
+    //         {headers: {'Content-Type': 'application/json'},});
+    //         console.log(response)
+    //         if(response.status === 200){
+    //         let accessToken = response.headers.Authorization;
+    //         console.log('access token: ', accessToken);
+    //         localStorage.setItem("access_token", accessToken);
+    //         }
     //     }
-    // };
-    async function handleLogin() {
-        axios.defaults.withCredentials = true;
-        try{
-            const response = await axios.post('http://3.36.175.224:8080/login', { email, password},
-            {headers: {'Content-Type': 'application/json'},});
-            console.log(response)
-            if(response.status === 200){
-            let accessToken = response.headers.Authorization;
-            console.log('access token: ', accessToken);
-            localStorage.setItem("access_token", accessToken);
-            }
-        }
-        catch (error){
-            console.error('로그인 오류')
-        }
-
-
-    }
+    //     catch (error){
+    //         console.error('로그인 오류')
+    //     }
+    // }
     
 
     return (

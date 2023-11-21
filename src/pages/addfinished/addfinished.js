@@ -13,6 +13,7 @@ export function AddFinished(){
     const [fpDetail, setProductDetail] = useState('');
     const [fpFlowerList, setFlowerList] = useState('');
     const [selectedFile, setSelectedFile] = useState('');
+    const shopKey = 4;
 
     const handleFileSelect = (event) => {
         setSelectedFile(URL.createObjectURL(event.target.files[0]));
@@ -31,6 +32,7 @@ export function AddFinished(){
                 fpPrice,
                 fpDetail,
                 fpFlowerList,
+                shopKey,
             },{
                 headers: {
                     'Content-Type': 'multipart/form-data'
