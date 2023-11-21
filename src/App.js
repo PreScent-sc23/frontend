@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
+
 import Home from './pages/home/home';
 import PSLens from './pages/pslens/pslens';
 import Mypage from './pages/mypage/mypage';
@@ -18,13 +19,24 @@ import Customersignup from './pages/customersignup/customersignup';
 import StartScreen from './pages/main/main';
 import ProductDetail from './pages/detail/detail';
 import AddFinished from './pages/addfinished/addfinished';
+import PSLensResults from './pages/pslens/pslensresults';
+
 
 
 function App() {
 
 
 
+  // const [msg, setMsg] = useState([]);
+  // useEffect(() => {
+  //   fetch("/api/hello")
+  //       .then((res) => {return res.json();})
+  //       .then((data) => {setMsg(data);})
+  // }, []);
+
   return (
+   
+    
     <RecoilRoot>
         <Router>
           <Routes> 
@@ -43,6 +55,7 @@ function App() {
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
               <Route path="/detail" element={<ProductDetail/>}/>
+              <Route path="pslens/results" element = {<PSLensResults/>}/>
           </Routes>
         </Router>
     </RecoilRoot>

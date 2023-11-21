@@ -20,6 +20,11 @@ function TopNav(props){
           setPageTitle('PSLens');
           break;
 
+
+          case '/pslens/results':
+            setPageTitle('꽃 분석 결과');
+            break;
+
         // case '/locationset':
         //   setPageTitle('');
         //   break;
