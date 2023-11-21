@@ -20,6 +20,7 @@ import StartScreen from './pages/main/main';
 import ProductDetail from './pages/detail/detail';
 import AddFinished from './pages/addfinished/addfinished';
 import PSLensResults from './pages/pslens/pslensresults';
+import Cart from './pages/cart/cart';
 
 
 
@@ -56,6 +57,8 @@ function App() {
               <Route path="/sellerhome" element={<SellerHome/>}/>
               <Route path="/detail" element={<ProductDetail/>}/>
               <Route path="pslens/results" element = {<PSLensResults/>}/>
+              <Route path="/cart" element = {<Cart/>}/>
+              
           </Routes>
         </Router>
     </RecoilRoot>

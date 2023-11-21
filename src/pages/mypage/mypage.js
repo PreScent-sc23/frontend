@@ -37,7 +37,7 @@ function Mypage(){
 
 
                     <div className={styles.Location}>
-                         <img src='/assets/pin.svg' ></img>
+                         <img src='/assets/pin.svg'></img>
                          <div className={styles.LocationText}>
                               <div className={styles.InfoText}>현재 위치</div>
                               <div className={styles.BoldText}>경기도 수원시 영통구 월드컵로</div>
