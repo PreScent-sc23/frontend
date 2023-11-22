@@ -10,6 +10,7 @@ function StartScreen(){
     
     return (
         <div>
+            <Statusbar/>
             <div className={styles.LogoContainer}>메인 로고 이미지(추후 삽입 예정)</div>
             
             <div className={styles.ButtonContainer}>

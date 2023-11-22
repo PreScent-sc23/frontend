@@ -7,7 +7,7 @@ import Statusbar from '../../components/statusbar/statusbar';
 export function AddFinished(){
     
     const navigate = useNavigate(); 
-    const shopKey =6;
+    const shopKey =2;
     // // const [shopKey, setShopKey]=useState('');
     const [fpName, setProductName] = useState('');
     const [fpPrice, setProductPrice] = useState('');

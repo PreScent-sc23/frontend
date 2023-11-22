@@ -42,12 +42,12 @@ const Sellersignup = ()=>{
     return(
         <div >
             <Statusbar/>
-            {/* <TopNav/> */}
-            <div className={styles.TopNavWrap}>
+            <TopNav/>
+            {/* <div className={styles.TopNavWrap}>
                     <img src='/assets/back.svg' className={styles.image}/>
                     <div className={styles.TopNavTitle}>사업자 회원 가입</div>
                     {/* <div className={styles.TopNavButtonContainer}> */}
-            </div>
+            {/* </div> */}
 
             <div style={{width:'100%', textAlign:'center',marginTop:'16px'}}>
                 <form>            

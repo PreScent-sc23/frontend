@@ -20,27 +20,40 @@ function TopNav(props){
 
         case '/pslens':
           setPageTitle('PSLens');
-          setIcon('');
+          setIcon('/assets/setting.svg');
           break;
 
 
         case '/pslens/results':
           setPageTitle('꽃 분석 결과');
-          setIcon('');
+          setIcon('/assets/setting.svg');
           break;
 
-
-        case '/pslens/results':
-          setPageTitle('꽃 분석 결과');
-          setIcon('');
-          break;
 
         case '/cart':
           setPageTitle('장바구니');
           setIcon('/assets/cart.svg');
           break;
 
+
+        case '/cart/payment':
+          setPageTitle('상품 결제');
+          setIcon('/assets/cart.svg');
+          break;
+
         
+        case '/sellersignup':
+          setPageTitle('사업자 회원 가입');
+          setIcon('/assets/setting.svg');
+          break;
+
+
+        case '/customersignup':
+          setPageTitle('일반 고객 회원 가입');
+          setIcon('/assets/setting.svg');
+          break;
+
+
 
         // case '/locationset':
         //   setPageTitle('');
