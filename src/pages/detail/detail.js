@@ -7,6 +7,8 @@ import TopNav from '../../components/topnavigation/topnav';
 
 function ProductDetail(){
 
+    const navigate=useNavigate('');
+
     return (
         <div>
             <Statusbar/>
@@ -18,20 +20,18 @@ function ProductDetail(){
             <div className={styles.Line}/>
 
             <div className={styles.DetailWrap}>
-                <div className={styles.FpName}>완제품상품명</div>
-                <div className={styles.FpDescription}>상품 상세 설명란</div>
+                <div className={styles.FpName}>러블리 꽃다발</div>
+                <div className={styles.FpDescription}>곰인형과 화이트로즈로 구성된 화이트데이 꽃다발</div>
                 <div className={styles.FpFlowerWrap}>
-                    <div className={styles.FpFlower}>레드로즈</div>
-                    <div className={styles.FpFlower}>핑크로즈</div>
                     <div className={styles.FpFlower}>화이트로즈</div>
-                    <div className={styles.FpFlower}>꽃이름1</div>
-                    <div className={styles.FpFlower}>꽃이름2</div>
+                    <div className={styles.FpFlower}>리시안셔스</div>
+                    <div className={styles.FpFlower}>핑크로즈</div>
                 </div>
                 
                 <div className={styles.TagWrap}>
-                    <div className={styles.FpTag}>#발렌타인데이</div>
+                    <div className={styles.FpTag}>#화이트데이</div>
                 </div>
-                <div className={styles.FpPrice}>35000₩</div>
+                <div className={styles.FpPrice}>49,000원</div>
             </div>
 
 
@@ -53,12 +53,12 @@ function ProductDetail(){
             
             <div className={styles.TextWrap}>
                 <div className={styles.Text}>픽업 일정</div>
-                <div className={styles.Text}>11.30 (월) 13:00</div>
+                <div className={styles.Text}>12.07 (목) 13:00</div>
             </div>
 
 
             
-            <div className={styles.PurchaseButton}>
+            <div className={styles.PurchaseButton} onClick={()=>navigate('/cart')}>
                 <img src='/assets/shoppingcart.svg'className={styles.Image}/>
                 <div>장바구니에 담기</div>
             </div>
