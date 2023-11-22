@@ -3,11 +3,12 @@ import styles from './styles.module.scss';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Statusbar from '../../components/statusbar/statusbar';
+import TopNav from '../../components/topnavigation/topnav';
 
 export function AddFinished(){
     
     const navigate = useNavigate(); 
-  
+    const shopKey=6;
     // // const [shopKey, setShopKey]=useState('');
     const [fpName, setProductName] = useState('');
     const [fpPrice, setProductPrice] = useState('');
@@ -49,10 +50,11 @@ export function AddFinished(){
     return(
         <div>
             <Statusbar/>
-            <div className={styles.TopNavWrap}>
+            <TopNav/>
+            {/* <div className={styles.TopNavWrap}>
                 <img src='/assets/back.svg' className={styles.image} onClick={()=>navigate('/managefinished')}/>
                 <div className={styles.TopNavTitle}>상품추가 - 완제품</div>
-            </div>
+            </div> */}
             <div className={styles.Container}>
                 <div className={styles.ProductPhoto}>{selectedFile && <img src={selectedFile} alt = "Product Image"/>}</div>
                 <input type="file" id="fileInput" style={{display:'none'}} onChange={handleFileSelect}/>

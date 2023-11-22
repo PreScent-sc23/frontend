@@ -54,6 +54,16 @@ function TopNav(props){
           break;
 
 
+        case '/customersignup':
+          setPageTitle('일반 고객 회원 가입');
+          setIcon('/assets/setting.svg');
+          break;
+
+        case '/addfinished':
+          setPageTitle('완제품 상품 등록');
+          setIcon('/assets/setting.svg');
+          break;
+  
 
         // case '/locationset':
         //   setPageTitle('');
