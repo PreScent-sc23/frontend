@@ -23,7 +23,8 @@ function Mypage(){
                <div className={styles.ProfileWrap}>
                     <div className={styles.Profile}>
                     
-                         <div className={styles.Image}>프로필이미지</div>
+                         <img src='/assets/profile_ex.svg' className={styles.Image}></img>
+                         {/* <div className={styles.Image}>프로필이미지</div> */}
      
                          <div className={styles.InfoWrap}>
                               <div className={styles.BoldText} style={{fontSize:"1.2rem"}}>김도윤</div>
@@ -51,13 +52,13 @@ function Mypage(){
                <div className={styles.MenuWrap}>
                     <div className={styles.MypageMenu}>
                          <div className={styles.MenuTitle}>주문내역</div>
-                         <img src='/assets/right.svg' onClick={()=>navigate('/')} ></img>
+                         <img src='/assets/right.svg' onClick={()=>navigate('/myhistory')} ></img>
                     </div>
 
 
                     <div className={styles.MypageMenu}>
                          <div className={styles.MenuTitle}>장바구니</div>
-                         <img src='/assets/right.svg' onClick={()=>navigate('/')} ></img>
+                         <img src='/assets/right.svg' onClick={()=>navigate('/cart')} ></img>
                     </div>
 
                     <div className={styles.MypageMenu}>
