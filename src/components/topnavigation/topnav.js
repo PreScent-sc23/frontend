@@ -63,7 +63,13 @@ function TopNav(props){
           setPageTitle('완제품 상품 등록');
           setIcon('/assets/setting.svg');
           break;
-  
+
+
+        case '/sellerhome':
+          setPageTitle('우리가게 관리');
+          setIcon('/assets/setting.svg');
+          break;
+
 
         // case '/locationset':
         //   setPageTitle('');

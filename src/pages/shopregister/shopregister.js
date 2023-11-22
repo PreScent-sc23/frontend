@@ -3,6 +3,7 @@ import styles from './styles.module.scss';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Statusbar from '../../components/statusbar/statusbar';
+import TopNav from '../../components/topnavigation/topnav';
 
 function Shopregister(){
     const navigate = useNavigate();
@@ -68,10 +69,11 @@ function Shopregister(){
     return(
         <div >
             <Statusbar/>
-            <div className={styles.TopNavWrap}>
+            <TopNav/>
+            {/* <div className={styles.TopNavWrap}>
                     <img src='/assets/back.svg' className={styles.image} onClick={()=>navigate('/sellerhome')}/>
                     <div className={styles.TopNavTitle}>가게 정보</div>
-            </div>
+            </div> */}
 
             <div style={{overflow:'auto', display:'flex', flexDirection: 'column',width: '100%', height:'500px', marginTop:'70px', border:'1px red solid'}}>
                 <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={shopName} onChange={(e) => setShopName(e.target.value)}></input>
