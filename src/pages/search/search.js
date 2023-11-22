@@ -7,13 +7,14 @@ import Searchbar from '../../components/search/searchbar';
 import CustomerBottomTap from '../../components/bottomtap/customerbottomtap';
 import Filter from '../../components/filter/filter';
 
-function TagSearch(){
+function Search(){
    
     const [fpTag, setFpTag] =useState('');
     const query = encodeURIComponent(fpTag); // query는 encodedTag임 "%23졸업식"
+    const [flowerquery,setFlowerQuery]=useState(''); 
     const [fpName,setFpName] =useState([]);
     const [fpPrice, setFpPrice] = useState([]);
-    const [responseData,setResponseData] = useState([]);
+    const [responseData,setResponseData] = useState([0]);
 
     const navigate = useNavigate();
     const handleEnter = (e) => {
@@ -29,41 +30,27 @@ function TagSearch(){
             const response = await axios.get('http://3.36.175.224:8080/search',{
                     params : {query},
             },
-            {
-                headers: {'Content-Type': 'application/json' },
-            }
-    )
+            {   headers: {'Content-Type': 'application/json' },}
+            )
             if (response.status === 200) {
                 setResponseData(response.data[0]);
-                // const responseData = response.data;
-                console.log("성공2?");
-                // setData(response.data[0]);
+                console.log("set리스폰스");
+                
             }
-            // const responseData = response.data;
-            console.log("성공3?");
-            // const responseData = response.data;
-            console.log("리스폰스 출력됨?")
-            // const responseData = response.data;
-
-            // console.log(responseData[0].fpName);
-            // console.log(responseData[0].fpPrice);
-            // console.log(responseData[0].fpTag);
-            // navigate('/home');
-            // 회원가입 성공 시 리다이렉트 또는 다른 처리를 수행할 수 있습니다.
+            console.log("성공2?");
+            console.log("리스폰스 출력됨?");
+            console.log(responseData);
+            console.log(responseData.fpName);
+            console.log(responseData.fpPrice);
+            console.log(responseData.fpTag);
 
         } catch (error) {
             console.error('태그 검색 오류:', error);
         }
 
-        console.log("도대체 어디서 멈추는겅")
-        console.log(responseData.fpName);
-        console.log(responseData.fpPrice);
-        console.log(responseData.fpTag);
-        console.log("이거 정상적으로 출력됨?");
-
     };
-    
-    // useEffect(()=>{handleTagSearch()});
+
+
 
     return(
         <div>
@@ -86,7 +73,7 @@ function TagSearch(){
                     <div className={styles.ProductDetailContainer}>
                         <div className={styles.ProudctTitle}>상품명목업</div>
                         <div className={styles.ProductPrice}>가격목업</div>
-                        <div className={styles.ProductTag}>태그목업</div>
+                        <div className={styles.ProductTag}>태그</div>
                     </div>
                 </div>
 
@@ -182,4 +169,4 @@ function TagSearch(){
 
     );
 }
-export default TagSearch;
+export default Search;

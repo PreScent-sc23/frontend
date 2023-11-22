@@ -6,14 +6,15 @@ import Statusbar from '../../components/statusbar/statusbar';
 
 export function AddFinished(){
     
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
+    const shopKey =6;
+    // // const [shopKey, setShopKey]=useState('');
     const [fpName, setProductName] = useState('');
     const [fpPrice, setProductPrice] = useState('');
     const [fpTag, setProductTag] = useState('');
     const [fpDetail, setProductDetail] = useState('');
     const [fpFlowerList, setFlowerList] = useState('');
     const [selectedFile, setSelectedFile] = useState('');
-    const shopKey = 4;
 
     const handleFileSelect = (event) => {
         setSelectedFile(URL.createObjectURL(event.target.files[0]));
@@ -26,13 +27,13 @@ export function AddFinished(){
         console.log("됨?");
         try {
             const response = await axios.post('http://3.36.175.224:8080/finished-product/add', {
+                shopKey,
                 fpImage,
                 fpName,
                 fpTag,
                 fpPrice,
                 fpDetail,
                 fpFlowerList,
-                shopKey,
             },{
                 headers: {
                     'Content-Type': 'multipart/form-data'
