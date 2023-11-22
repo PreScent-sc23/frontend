@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Statusbar from '../../components/statusbar/statusbar';
-import Searchbar from '../../components/search/searchbar';
-import CustomerBottomTap from '../../components/bottomtap/customerbottomtap';
-import TopNav from '../../components/topnavigation/topnav';
+import Statusbar from '../../../components/statusbar/statusbar';
+import Searchbar from '../../../components/search/searchbar';
+import CustomerBottomTap from '../../../components/bottomtap/customerbottomtap';
+import TopNav from '../../../components/topnavigation/topnav';
 
 function Cart(){    
     const navigate=useNavigate('');
@@ -42,7 +42,7 @@ function Cart(){
                     </div>
                     
                 </div>
-
+                <div className={styles.Date}>픽업 일시 : 2023.12.07 (월) 13:00</div>
                 <div className={styles.MoreMessage}>요청 사항 : 포장지는 베이지 색으로 부탁드립니다!</div>
                 <div className={styles.Line}></div>
 
@@ -60,7 +60,7 @@ function Cart(){
                         <div className={styles.Text}>49,000원</div>
                     </div>
 
-                    <div className={styles.PurchaseButton} onClick={()=>(navigate('/payment'))}>전체 상품 결제 하기</div>
+                    <div className={styles.PurchaseButton} onClick={()=>(navigate('./payment'))}>전체 상품 결제 하기</div>
                 </div>
              
                 {/* <Button className={styles.PurchaseButton}>전체 상품 결제 하기</Button> */}
