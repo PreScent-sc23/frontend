@@ -26,11 +26,11 @@ function Mypage(){
                          <div className={styles.Image}>프로필이미지</div>
      
                          <div className={styles.InfoWrap}>
-                              <div className={styles.BoldText} style={{fontSize:"1.2rem"}}>사용자이름</div>
+                              <div className={styles.BoldText} style={{fontSize:"1.2rem"}}>김도윤</div>
                               <div className={styles.Line}></div>
-                              <div className={styles.InfoText}>010-0000-0000</div>
+                              <div className={styles.InfoText}>010-3333-4444</div>
                               <div className={styles.Line}></div>
-                              <div className={styles.InfoText}>test@gmail.com</div>
+                              <div className={styles.InfoText}>ajou@gmail.com</div>
                          </div>
 
                     </div>

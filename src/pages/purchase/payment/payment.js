@@ -17,7 +17,7 @@ function Payment(){
             <div>
                 <div className={styles.TitleWrap}>
                     <img src='/assets/cart.svg'></img>
-                    <div className={styles.TitleText}>주문 상품 / 총 2개</div>
+                    <div className={styles.TitleText}>주문 상품 / 총 1개</div>
                 </div>
 
                 <div className={styles.CartContainer}>

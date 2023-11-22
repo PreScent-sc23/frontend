@@ -42,14 +42,13 @@ function Cart(){
                     </div>
                     
                 </div>
-                <div className={styles.Date}>픽업 일시 : 2023.12.07 (월) 13:00</div>
+                <div className={styles.Date}>픽업 일시 : 2023.12.07 (목) 13:00</div>
                 <div className={styles.MoreMessage}>요청 사항 : 포장지는 베이지 색으로 부탁드립니다!</div>
                 <div className={styles.Line}></div>
 
                 <div className={styles.PriceWrap}>
                     <div className={styles.Price}>Total Price : </div>
                     <div className={styles.Price}>49,000</div>
-
                 </div>
             </div>
 
