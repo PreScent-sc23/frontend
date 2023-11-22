@@ -1,31 +1,39 @@
 .profileContainer{
     width: 100%;
-    border: solid red 1px;   
+    border-bottom: solid #E7E7FF 1px;   
     text-align: center;
+    padding-bottom: 10px;
 }
 
 .profilePhoto{
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     background-color: rgb(240, 240, 240);
     border: 1px solid rgb(56, 56, 56);
     border-radius: 20px;
     text-align: center;
     margin: 8px auto;
+    overflow: hidden;
+
 }
 
 .selectBox{
-    width: 143px;
-    height: 194px;
+    width: 20rem;
+    height: 7rem;
     border-radius: 48px;
     background-color: #E7E7FF;
-    margin: 20px auto;
+    margin: 8px auto;
+    display: flex;
+    align-items: center;
 }
 
 .textBox{
-    margin-top: 60%;
-    width: 100%;
+    margin: 2px auto;
+    width: 7rem;
+    height: 2.5rem;
+    background-color: black;
     text-align: center;
     font-size: 15px;
-    color: #6B4EFF;
+    font-weight: bold;
+    color: white;
 }

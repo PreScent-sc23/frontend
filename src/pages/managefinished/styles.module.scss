@@ -26,36 +26,44 @@
     margin-top : 0.2rem;
 }
 
+.ProductContainer{
+   width: 155px;
+   height: 255px;
+   margin: 8px auto;
+   border: gray 1px solid;
+   border-radius: 8px;
+   overflow: hidden; 
+}
+
+.ProductPicture{
+    width: 100%;
+    height: 195px;
+    background-color: rgb(219, 219, 219);
+}
+
+.ProductText{
+    width: 151px;
+    height: 20px;
+    font-size: 16px;
+    margin: 4px auto;
+}
+
+.ProductTag{
+    width: 151px;
+    height: 15px;
+    font-size: 12px;
+    margin: 4px auto;
+}
+
 .Container{
     overflow: auto;
     margin-top:30px;
     width:100%;
     height:600px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+
     // border: solid red 1px;
-}
-
-.ProductPhoto{
-    width:184px;
-    height:195px;
-    margin:8px auto;
-    background-color: #eeeeee;
-    padding: auto;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.ChangePhoto{
-    display: flex;
-    width:11rem;
-    height:1.8rem;
-    margin:8px auto;
-    justify-content: center;
-    align-items: center;
-    background-color: #E2E2E2;
-    border-radius: 12px;
-    font-family: Inter;
-    font-size: 12px;
-    color: #757575;
 }
 
 .Button{
@@ -75,23 +83,4 @@
     line-height: 1.5rem;
     margin: 8px auto;
         
-}
-
-.inputBox{
-    width:339px;
-    height:52px;
-    border: 2px solid #E2E2E2;
-    border-radius: 12px;
-    margin: 3px auto
-}
-
-.inputBox::placeholder{
-    font-family:'inters';
-    font-size: 16px;
-}
-
-.ProductPhoto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
