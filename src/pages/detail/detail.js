@@ -14,7 +14,7 @@ function ProductDetail(){
             <Statusbar/>
             <TopNav/>
             <div className={styles.ImageWrap}>
-                <div className={styles.Image}>샘플이미지</div>
+               <img src='/assets/bearflower.svg'></img>
             </div>
             
             <div className={styles.Line}/>
