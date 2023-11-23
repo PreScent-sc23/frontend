@@ -10,8 +10,8 @@ function Searchbar() {
 
     const navigate = useNavigate();
     const handleEnter = (e) => {
-        if (e.key === "Enter") {
-            navigate('/tagsearch');
+        if (e.key === "Click") {
+            navigate('/search');
             // handleTagSearch(fpTag);
         }
       };
@@ -23,7 +23,7 @@ function Searchbar() {
             <div className={styles.SearchBar}>
                 <img src='/assets/search.svg' alt='돋보기 아이콘' className={styles.image}/>  
                 <div className={styles.SeachInput}>
-                    <input type="text" name="search" placeholder="검색어를 입력하세요."style={{fontSize:'16px', outline:'none',background:'transparent'}} onKeyDown={(handleEnter)}/>
+                    <input type="text" name="search" placeholder="검색어를 입력하세요."style={{fontSize:'16px', outline:'none',background:'transparent'}} onClick={()=>navigate('/search')}/*onKeyDown={(handleEnter)}*//>
                 </div>
             </div>
         </div>
