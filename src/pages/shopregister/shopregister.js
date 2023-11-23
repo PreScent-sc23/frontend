@@ -79,7 +79,7 @@ function Shopregister(){
                     <div className={styles.TopNavTitle}>가게 정보</div>
             </div> */}
 
-            <div style={{overflow:'auto', display:'flex', flexDirection: 'column',width: '100%', height:'500px', marginTop:'70px', border:'1px red solid'}}>
+            <div style={{overflow:'auto', display:'flex', flexDirection: 'column',width: '100%', height:'500px', marginTop:'70px'}}>
                 <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={shopName} onChange={(e) => setShopName(e.target.value)}></input>
                 <input className={styles.inputBox} type='number' name = "shopnum" size = '50' placeholder='가게 연락처' value={shopPhoneNum} onChange={(e) => setShopNumber(e.target.value)}></input>
                 <input className={styles.inputBox} type='text' name = "shopaddress" size = '50' placeholder='가게 주소' value={shopLocation} onChange={(e) => setShopLocation(e.target.value)}></input>
@@ -89,7 +89,7 @@ function Shopregister(){
                     <div style={{borderBottom:'1px solid #7249FF', textAlign:'center'}}>
                         영업일을 선택해주세요
                     </div>
-                    <div style={{display:'flex', marginLeft:'8%'}}>
+                    <div style={{display:'flex', marginTop:'8px',marginLeft:'8%'}}>
                         {checkBoxList.map((item, idx) => (
                             <div key={idx}>
                                 <input 
@@ -109,9 +109,10 @@ function Shopregister(){
                     <div style={{borderBottom:'1px solid #7249FF', textAlign:'center'}}>
                         영업시간을 선택해주세요
                     </div>
-                    <div style={{display:'flex'}}>
-                        <div style={{display:'flex', marginTop:'2px'}}>
+                    <div style={{display:'flex', margin:'8px'}}>
+                        <div style={{display:'flex', justifyContent:'center', alignItems:'center', backgroundColor:'#7249FF', color:'white', width:'3rem', height:'1.5rem', borderRadius:'8px', marginRight:'8px'}}>
                         시작
+                        </div>
                         <select value={startHours} onChange={(e) => setStartHours(e.target.value)}>
                         {hourOptions.map((hour, idx) => (
                             <option key={idx} value={hour}>{hour}</option>
@@ -123,11 +124,11 @@ function Shopregister(){
                                 <option key={idx} value={minute}>{minute}</option>
                         ))}
                         </select>
-                        </div>
                     </div>
-                    <div style={{display:'flex'}}>
-                        <div style={{display:'flex'}}>
-                        종료:
+                    <div style={{display:'flex', margin:'8px'}}>
+                        <div style={{display:'flex', justifyContent:'center', alignItems:'center', backgroundColor:'#7249FF', color:'white', width:'3rem', height:'1.5rem', borderRadius:'8px', marginRight:'8px'}}>
+                            종료:
+                        </div>
                         <select value={finishHours} onChange={(e) => setFinishHours(e.target.value)}>
                         {hourOptions.map((hour, idx) => (
                             <option key={idx} value={hour}>{hour}</option>
@@ -139,7 +140,6 @@ function Shopregister(){
                                 <option key={idx} value={minute}>{minute}</option>
                         ))}
                         </select>
-                        </div>
                     </div>
                 </div>
             </div>
