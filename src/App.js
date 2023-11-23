@@ -19,6 +19,8 @@ import Customersignup from './pages/customersignup/customersignup';
 import StartScreen from './pages/main/main';
 import ManageProduct from './pages/manageproduct/manageproduct';
 import ManageFinished from './pages/managefinished/managefinished';
+import ManageReserve from './pages/managereserve/managereserve'
+import ManageStat from './pages/managestat/managestat';
 import AddFinished from './pages/addfinished/addfinished';
 import ProductDetail from './pages/detail/detail';
 import PSLensResults from './pages/pslens/pslensresults';
@@ -54,6 +56,8 @@ function App() {
               <Route path="/shopregister" element={<Shopregister/>}/>
               <Route path="/manageproduct" element={<ManageProduct/>}/>
               <Route path="/managefinished" element={<ManageFinished/>}/>
+              <Route path="/managereserve" element={<ManageReserve/>}/>
+              <Route path="/managestat" element={<ManageStat/>}/>
               <Route path="/addfinished" element={<AddFinished/>}/>
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>

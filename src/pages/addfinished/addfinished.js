@@ -22,21 +22,14 @@ export function AddFinished(){
     }
 
     const handleSubmission = async () => {
-        const fpImage = new FormData();
-        fpImage.append("fpImage", selectedFile);
-        console.log("됨?");
+        const formData = new FormData();
+        formData.append("fpImage", selectedFile);
+        let jsonData = JSON.stringify({'shopKey':shopKey, 'fpName':fpName, 'fpTag':fpTag, 'fpPrice':fpPrice, 'fpDetail':fpDetail,'fpFlowerList':fpFlowerList})
+        formData.append('jsonData', jsonData);
+
         try {
-            const response = await axios.post('http://3.36.175.224:8080/finished-product/add', {
-                shopKey,
-                fpImage,
-                fpName,
-                fpTag,
-                fpPrice,
-                fpDetail,
-                fpFlowerList,
-            },{
-                headers: {
-                    'Content-Type': 'multipart/form-data'
+            const response = await axios.post('http://3.36.175.224:8080/finished-product/add', formData,{
+                headers: {'Content-Type' : 'multipart/form-data'
         },
     });
             console.log("전송 완료");

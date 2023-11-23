@@ -36,12 +36,7 @@ function Customersignup(){
     return(
         <div >
             <Statusbar/>
-            {/* <TopNav/> */}
-            <div className={styles.TopNavWrap}>
-                    <img src='/assets/back.svg' className={styles.image}/>
-                    <div className={styles.TopNavTitle}>일반 고객 회원 가입</div>
-                    {/* <div className={styles.TopNavButtonContainer}> */}
-            </div>
+            <TopNav/>
             <div style={{width:'100%', textAlign:'center',marginTop:'16px'}}>
                 <form>            
                 <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={customerName} onChange={(e) => setCustomerName(e.target.value)}></input>
