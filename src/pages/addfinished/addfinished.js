@@ -23,23 +23,26 @@ export function AddFinished(){
     }
 
     const handleSubmission = async () => {
-        const formData = new FormData();
-        formData.append("fpImage", selectedFile);
-        let jsonData = JSON.stringify({'shopKey':shopKey, 'fpName':fpName, 'fpTag':fpTag, 'fpPrice':fpPrice, 'fpDetail':fpDetail,'fpFlowerList':fpFlowerList})
-        formData.append('jsonData', jsonData);
+        navigate('/managefinished')
+    }
+    // const handleSubmission = async () => {
+    //     const formData = new FormData();
+    //     formData.append("fpImage", selectedFile);
+    //     let jsonData = JSON.stringify({'shopKey':shopKey, 'fpName':fpName, 'fpTag':fpTag, 'fpPrice':fpPrice, 'fpDetail':fpDetail,'fpFlowerList':fpFlowerList})
+    //     formData.append('jsonData', jsonData);
 
-        try {
-            const response = await axios.post('http://3.36.175.224:8080/finished-product/add', formData,{
-                headers: {'Content-Type' : 'multipart/form-data'
-        },
-    });
-            console.log("전송 완료");
-            console.log(response.data);
-            navigate('/managefinished');
-        } catch (error) {
-            console.error('등록 오류:', error);
-        }
-    };
+    //     try {
+    //         const response = await axios.post('http://3.36.175.224:8080/finished-product/add', formData,{
+    //             headers: {'Content-Type' : 'multipart/form-data'
+    //     },
+    // });
+    //         console.log("전송 완료");
+    //         console.log(response.data);
+    //         navigate('/managefinished');
+    //     } catch (error) {
+    //         console.error('등록 오류:', error);
+    //     }
+    // };
 
 
     

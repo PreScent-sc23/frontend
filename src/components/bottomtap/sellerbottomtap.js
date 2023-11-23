@@ -10,23 +10,23 @@ function SellerBottomTap(){
     return (
         <div className={styles.SellerBottomTapWrap}>
             
-            <div className={styles.Button} onClick={()=>navigate('/pslens')}>
+            <div className={styles.Button} onClick={()=>navigate('/managereserve')}>
                 <img src='/assets/calendar.svg'></img>
                 <div className={styles.ButtonText}>예약</div>
             </div>
 
-            <div className={styles.Button} onClick={()=>navigate('/pslens')}>
+            <div className={styles.Button} onClick={()=>navigate('/sellerhome')}>
                 <img src='/assets/home.svg'></img>
                 <div className={styles.ButtonText}>홈</div>
             </div>
 
             
-            <div className={styles.Button} onClick={()=>navigate('/pslens')}>
+            <div className={styles.Button} onClick={()=>navigate('/manageproduct')}>
                 <img src='/assets/product.svg'></img>
                 <div className={styles.ButtonText}>상품</div>
             </div>
 
-            <div className={styles.Button} onClick={()=>navigate('/pslens')}>
+            <div className={styles.Button} onClick={()=>navigate('/managestat')}>
                 <img src='/assets/statistics.svg'></img>
                 <div className={styles.ButtonText}>통계</div>
             </div>

@@ -35,20 +35,24 @@ function Shopregister(){
         'finishminute' : finishMinutes,
     }
 
-    async function handleSubmission(){
-        console.log("됨?");
-        try {
-            const response = await axios.post('http://3.36.175.224:8080/flower-shops/add', {
-                data
-            },{headers: {'Content-Type': 'application/json'}});
-            console.log("됨2?");
-            console.log(response.data);
-            navigate('/home');
-
-        } catch (error) {
-            console.error('정보등록 오류:', error);
-        }
+    function handleSubmission(){
+        navigate('/sellerhome')
     }
+
+    // async function handleSubmission(){
+    //     console.log("됨?");
+    //     try {
+    //         const response = await axios.post('http://3.36.175.224:8080/flower-shops/add', {
+    //             data
+    //         },{headers: {'Content-Type': 'application/json'}});
+    //         console.log("됨2?");
+    //         console.log(response.data);
+    //         navigate('/home');
+
+    //     } catch (error) {
+    //         console.error('정보등록 오류:', error);
+    //     }
+    // }
 
 
 
@@ -107,9 +111,7 @@ function Shopregister(){
                     </div>
                     <div style={{display:'flex'}}>
                         <div style={{display:'flex', marginTop:'2px'}}>
-                        <div style={{fontSize:'15px', margin:'auto', width:'2.2rem', height:'1.5rem', backgroundColor:'#7249FF', color:'white'}}>
-                            시작
-                        </div>
+                        시작
                         <select value={startHours} onChange={(e) => setStartHours(e.target.value)}>
                         {hourOptions.map((hour, idx) => (
                             <option key={idx} value={hour}>{hour}</option>
