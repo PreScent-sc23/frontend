@@ -105,7 +105,7 @@ function Shopregister(){
                     <div style={{borderBottom:'1px solid #7249FF', textAlign:'center'}}>
                         영업시간을 선택해주세요
                     </div>
-                    <div style={{display:'flex',border:'1px solid red'}}>
+                    <div style={{display:'flex'}}>
                         <div style={{display:'flex', marginTop:'2px'}}>
                         <div style={{fontSize:'15px', margin:'auto', width:'2.2rem', height:'1.5rem', backgroundColor:'#7249FF', color:'white'}}>
                             시작
@@ -123,7 +123,7 @@ function Shopregister(){
                         </select>
                         </div>
                     </div>
-                    <div style={{display:'flex',border:'1px solid red'}}>
+                    <div style={{display:'flex'}}>
                         <div style={{display:'flex'}}>
                         종료:
                         <select value={finishHours} onChange={(e) => setFinishHours(e.target.value)}>

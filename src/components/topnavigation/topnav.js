@@ -41,7 +41,17 @@ function TopNav(props){
           setIcon('/assets/cart.svg');
           break;
 
-        
+
+        case '/managereserve':
+          setPageTitle('예약 관리');
+          setIcon('');
+          break;
+
+        case '/managestat':
+          setPageTitle('통계 관리');
+          setIcon('');
+          break;
+
         case '/sellersignup':
           setPageTitle('사업자 회원 가입');
           setIcon('/assets/setting.svg');
@@ -77,6 +87,22 @@ function TopNav(props){
           break;
 
 
+      
+
+        case '/login':
+          setPageTitle('로그인');
+          setIcon('');
+          break;
+          
+        case '/sellersignup':
+          setPageTitle('사업자 회원 등록');
+          setIcon('');
+          break;
+
+        case '/customersignup':
+          setPageTitle('일반 고객 회원 등록');
+          setIcon('');
+          break;
         // case '/locationset':
         //   setPageTitle('');
         //   break;

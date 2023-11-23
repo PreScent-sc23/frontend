@@ -1,8 +1,4 @@
 .profileContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     border-bottom: solid #E7E7FF 1px;   
     text-align: center;
@@ -22,9 +18,9 @@
 }
 
 .selectBox{
-    width: 23rem;
+    width: 20rem;
     height: 7rem;
-    border-radius: 12px;
+    border-radius: 48px;
     background-color: #E7E7FF;
     margin: 8px auto;
     display: flex;
@@ -32,15 +28,12 @@
 }
 
 .textBox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 2px auto;
     width: 7rem;
     height: 2.5rem;
-    background-color: rgb(36, 34, 34);
-    font-size: 16px;
+    background-color: black;
+    text-align: center;
+    font-size: 15px;
     font-weight: bold;
-    border-radius: 8px;
     color: white;
 }

@@ -11,7 +11,9 @@ function StartScreen(){
     return (
         <div>
             <Statusbar/>
-            <div className={styles.LogoContainer}>메인 로고 이미지(추후 삽입 예정)</div>
+            <div className={styles.LogoContainer}>
+                <img style={{width:'300px'}} src='/imgs/logo.png' alt='로고이미지'/>
+            </div>
             
             <div className={styles.ButtonContainer}>
                 <div className={styles.Button} onClick={()=>navigate('/login')}>로그인</div>

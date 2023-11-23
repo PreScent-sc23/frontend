@@ -13,31 +13,35 @@ const Sellersignup = ()=>{
     const [sellerPhonenum, setSellerPhonenum] = useState('');
     const navigate = useNavigate();
 
-    const handleSignUp = async () => {
-        console.log("됨?");
-        try {
-            const response = await axios.post('http://3.36.175.224:8080/seller/signup', {
-                sellerKey,
-                sellerName,
-                sellerIdEmail,
-                sellerPassword,
-                sellerPhonenum,
-            },{
-                headers: {
-                    'Content-Type': 'application/json'
-                    // Add any additional headers, such as an API key, if required
-                    // 'Authorization': 'Bearer YOUR_API_KEY'
-        },
-    });
-            console.log("됨2?");
-            console.log(response.data);
-            navigate('/home');
-            // 회원가입 성공 시 리다이렉트 또는 다른 처리를 수행할 수 있습니다.
+    const handleSignUp = () => {
+        navigate('/main')
+    }
 
-        } catch (error) {
-            console.error('회원가입 오류:', error);
-        }
-    };
+    // const handleSignUp = async () => {
+    //     console.log("됨?");
+    //     try {
+    //         const response = await axios.post('http://3.36.175.224:8080/seller/signup', {
+    //             sellerKey,
+    //             sellerName,
+    //             sellerIdEmail,
+    //             sellerPassword,
+    //             sellerPhonenum,
+    //         },{
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //                 // Add any additional headers, such as an API key, if required
+    //                 // 'Authorization': 'Bearer YOUR_API_KEY'
+    //     },
+    // });
+    //         console.log("됨2?");
+    //         console.log(response.data);
+    //         navigate('/home');
+    //         // 회원가입 성공 시 리다이렉트 또는 다른 처리를 수행할 수 있습니다.
+
+    //     } catch (error) {
+    //         console.error('회원가입 오류:', error);
+    //     }
+    // };
     
     return(
         <div >
