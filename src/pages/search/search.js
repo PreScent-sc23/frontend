@@ -14,7 +14,8 @@ function Search(){
     const [flowerquery,setFlowerQuery]=useState(''); 
     const [fpName,setFpName] =useState([]);
     const [fpPrice, setFpPrice] = useState([]);
-    const [responseData,setResponseData] = useState([0]);
+    const [responseData,setResponseData] = useState([0])
+ 
 
     const navigate = useNavigate();
     const handleEnter = (e) => {
@@ -34,6 +35,7 @@ function Search(){
             )
             if (response.status === 200) {
                 setResponseData(response.data[0]);
+                // setResponseData(response.data.fpName="러블리 꽃다발")
                 console.log("set리스폰스");
                 
             }
@@ -65,6 +67,7 @@ function Search(){
             </div>
 
             <Filter/>
+
             <div className={styles.ProductContainer}>
                 <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
                     <div className={styles.ProductImageContainer}>
@@ -77,17 +80,50 @@ function Search(){
                     </div>
                 </div>
 
+                <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
+                    <div className={styles.ProductImageContainer}>
+                        <img src='/assets/bearflower.svg' className={styles.ProductImage}></img>
+                    </div>
+                    <div className={styles.ProductDetailContainer}>
+                        <div className={styles.ProudctTitle}>러블리 꽃다발2</div>
+                        <div className={styles.ProductPrice}>49,000</div>
+                        <div className={styles.ProductTag}>#화이트데이</div>
+                    </div>
+                </div>
 
                 <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
                     <div className={styles.ProductImageContainer}>
-                        <img src='/assets/bearflower.svg' className={styles.ProductImage}>{responseData.fpImage}</img>
+                        <img src='/assets/bearflower.svg' className={styles.ProductImage}></img>
+                    </div>
+                    <div className={styles.ProductDetailContainer}>
+                        <div className={styles.ProudctTitle}>러블리 꽃다발3</div>
+                        <div className={styles.ProductPrice}>49,000</div>
+                        <div className={styles.ProductTag}>#화이트데이</div>
+                    </div>
+                </div>
+
+                <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
+                    <div className={styles.ProductImageContainer}>
+                        <img src='/assets/bearflower.svg' className={styles.ProductImage}></img>
+                    </div>
+                    <div className={styles.ProductDetailContainer}>
+                        <div className={styles.ProudctTitle}>러블리 꽃다발4</div>
+                        <div className={styles.ProductPrice}>49,000</div>
+                        <div className={styles.ProductTag}>#화이트데이</div>
+                    </div>
+                </div>
+
+
+                {/* <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
+                    <div className={styles.ProductImageContainer}>
+                        <img src='/assets/bearflower.svg' className={styles.ProductImage}></img>
                     </div>
                     <div className={styles.ProductDetailContainer}>
                         <div className={styles.ProudctTitle}>{responseData.fpName}</div>
                         <div className={styles.ProductPrice}>{responseData.fpPrice}</div>
                         <div className={styles.ProductTag}>{responseData.fpTag}</div>
                     </div>
-                </div>
+                </div> */}
 
 
         

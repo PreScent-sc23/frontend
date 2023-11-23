@@ -50,11 +50,16 @@ function ProductDetail(){
             </div>
 
             <div className={styles.Line}/>
-            
+
             <div className={styles.TextWrap}>
-                <div className={styles.Text}>픽업 일정</div>
-                <div className={styles.Text}>12.07 (목) 13:00</div>
+                <div className={styles.Text}>요청 사항 (선택)</div>
+                {/* <img src='/assets/time_check.svg' className={styles.Icon}/> */}
             </div>
+            
+            {/* <div className={styles.TextWrap}>
+                <div className={styles.Text}>픽업 일정</div>
+                {/* <div className={styles.Text}>12.07 (목) 13:00</div> */}
+            {/* </div> */}
 
 
             
