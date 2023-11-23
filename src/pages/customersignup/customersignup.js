@@ -37,7 +37,12 @@ function Customersignup(){
         <div >
             <Statusbar/>
             <TopNav/>
-            <div style={{width:'100%', textAlign:'center',marginTop:'16px'}}>
+            {/* <div className={styles.TopNavWrap}>
+                    <img src='/assets/back.svg' className={styles.image}/>
+                    <div className={styles.TopNavTitle}>일반 고객 회원 가입</div>
+                    {/* <div className={styles.TopNavButtonContainer}> */}
+            {/* </div> */} 
+            <div style={{width:'100%', textAlign:'center',marginTop:'1rem'}}>
                 <form>            
                 <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={customerName} onChange={(e) => setCustomerName(e.target.value)}></input>
                 <input className={styles.inputBox} type='number' name = "pwd" size = '50'  placeholder='전화번호' value={customerPhonenum} onChange={(e) => setCustomerPhonenum(e.target.value)}></input>
@@ -45,7 +50,7 @@ function Customersignup(){
                 <input className={styles.inputBox} type='number' name = "validnum" size = '50'  placeholder='인증 번호 입력'></input>
                 <input className={styles.inputBox} type='password' name = "pwd" size = '50'  placeholder='비밀번호' value={customerPassword} onChange={(e) => setCustomerPassword(e.target.value)}></input>
                 </form>
-                <div style={{width:'100%', height:'66px'}}></div>
+                <div style={{width:'100%', height:'3rem'}}></div>
             </div>
             <div style={{width:'100%', height:'10.0em'}}></div>
             <div style={{width:'100%', textAlign:'center'}}>

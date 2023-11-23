@@ -20,31 +20,27 @@ function TopNav(props){
 
         case '/pslens':
           setPageTitle('PSLens');
-          setIcon('');
+          setIcon('/assets/setting.svg');
           break;
 
 
         case '/pslens/results':
           setPageTitle('꽃 분석 결과');
-          setIcon('');
+          setIcon('/assets/setting.svg');
           break;
 
-
-        case '/pslens/results':
-          setPageTitle('꽃 분석 결과');
-          setIcon('');
-          break;
 
         case '/cart':
           setPageTitle('장바구니');
           setIcon('/assets/cart.svg');
           break;
 
-        
-        case '/sellerhome':
-          setPageTitle('판매자 홈');
-          setIcon('');
+
+        case '/cart/payment':
+          setPageTitle('상품 결제');
+          setIcon('/assets/cart.svg');
           break;
+
 
         case '/managereserve':
           setPageTitle('예약 관리');
@@ -55,6 +51,41 @@ function TopNav(props){
           setPageTitle('통계 관리');
           setIcon('');
           break;
+
+        case '/sellersignup':
+          setPageTitle('사업자 회원 가입');
+          setIcon('/assets/setting.svg');
+          break;
+
+
+        case '/customersignup':
+          setPageTitle('일반 고객 회원 가입');
+          setIcon('/assets/setting.svg');
+          break;
+
+        case '/addfinished':
+          setPageTitle('완제품 상품 등록');
+          setIcon('/assets/setting.svg');
+          break;
+
+
+        case '/sellerhome':
+          setPageTitle('우리가게 관리');
+          setIcon('/assets/setting.svg');
+          break;
+
+
+        case '/myhistory':
+          setPageTitle('주문 내역');
+          setIcon('/assets/cart.svg');
+          break;
+
+
+        case '/sellerhome/history':
+          setPageTitle('예약 관리');
+          setIcon('/assets/setting.svg');
+          break;
+
 
       
 

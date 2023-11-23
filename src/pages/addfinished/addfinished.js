@@ -3,11 +3,12 @@ import styles from './styles.module.scss';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Statusbar from '../../components/statusbar/statusbar';
+import TopNav from '../../components/topnavigation/topnav';
 
 export function AddFinished(){
     
-    const navigate = useNavigate();
-    const shopKey =6;
+    const navigate = useNavigate(); 
+    const shopKey=6;
     // // const [shopKey, setShopKey]=useState('');
     const [fpName, setProductName] = useState('');
     const [fpPrice, setProductPrice] = useState('');
@@ -39,13 +40,42 @@ export function AddFinished(){
             console.error('등록 오류:', error);
         }
     };
+
+
+    
+    // const handleSubmission = async () => {
+    //     const fpImage = new FormData();
+    //     fpImage.append("fpImage", selectedFile);
+    //     console.log("됨?");
+    //     try {
+    //         const response = await axios.post('http://3.36.175.224:8080/finished-product/add', {
+    //             shopKey,
+    //             fpImage,
+    //             fpName,
+    //             fpTag,
+    //             fpPrice,
+    //             fpDetail,
+    //             fpFlowerList,
+    //         },{
+    //             headers: {
+    //                 'Content-Type': 'multipart/form-data'
+    //     },
+    // });
+    //         console.log("전송 완료");
+    //         console.log(response.data);
+    //         navigate('/managefinished');
+    //     } catch (error) {
+    //         console.error('등록 오류:', error);
+    //     }
+    // };
     return(
         <div>
             <Statusbar/>
-            <div className={styles.TopNavWrap}>
+            <TopNav/>
+            {/* <div className={styles.TopNavWrap}>
                 <img src='/assets/back.svg' className={styles.image} onClick={()=>navigate('/managefinished')}/>
                 <div className={styles.TopNavTitle}>상품추가 - 완제품</div>
-            </div>
+            </div> */}
             <div className={styles.Container}>
                 <div className={styles.ProductPhoto}>{selectedFile && <img src={selectedFile} alt = "Product Image"/>}</div>
                 <input type="file" id="fileInput" style={{display:'none'}} onChange={handleFileSelect}/>

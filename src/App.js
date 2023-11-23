@@ -24,7 +24,10 @@ import ManageStat from './pages/managestat/managestat';
 import AddFinished from './pages/addfinished/addfinished';
 import ProductDetail from './pages/detail/detail';
 import PSLensResults from './pages/pslens/pslensresults';
-import Cart from './pages/cart/cart';
+import Cart from './pages/purchase/cart/cart';
+import Payment from './pages/purchase/payment/payment';
+import CustomerHistory from './pages/history/customerhistory';
+import SellerHistory from './pages/history/sellerhistory';
 
 function App() {
 
@@ -66,6 +69,13 @@ function App() {
               <Route path="/detail" element={<ProductDetail/>}/>
               <Route path="pslens/results" element = {<PSLensResults/>}/>
               <Route path="/cart" element = {<Cart/>}/>
+              <Route path="/cart/payment" element = {<Payment/>}/>
+              <Route path="/myhistory" element = {<CustomerHistory/>}/>
+              <Route path="/sellerhome/history" element = {<SellerHistory/>}/>
+              
+              
+              
+                           
               
           </Routes>
         </Router>
