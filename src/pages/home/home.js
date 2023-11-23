@@ -39,7 +39,7 @@ function Home(){
             <Statusbar/>
             <Searchbar/>
             <div style={{borderBottom:'solid #E2E2E2 1px', width:'100%', height:'200px', display:'flex', alignContent:'center'}}>
-                <div style={{width:'95%', height:'90%', margin:'4px auto', border:'solid black 2px',borderRadius:'12px', overflow:'hidden'}}><ImageSlider/></div>
+                <div style={{width:'92%', height:'90%', margin:'4px auto',borderRadius:'12px', overflow:'hidden'}}><ImageSlider/></div>
             </div>
             <CustomerBottomTap/>
            

@@ -15,7 +15,7 @@ function SellerHome(){
             <TopNav/>
             <div className={styles.profileContainer}>
                 <div className={styles.profilePhoto}></div> 
-                <div style={{fontSize:'18px', width:'10rem', height:'1.8rem', backgroundColor:'#E2E2E2', borderRadius:'8px'}}>-</div>
+                <div style={{fontSize:'18px', width:'10rem', height:'1.8rem', backgroundColor:'#E2E2E2', borderRadius:'8px', lineHeight:'1.8rem'}}>김사업자</div>
             </div>
             <div style={{width:'100%', display:'flex', flexDirection: 'column', }}>
                 <div className={styles.selectBox} style={{backgroundImage: `url(/imgs/sellermenu_1.png)`}} onClick={()=>navigate('/shopregister')}>

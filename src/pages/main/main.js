@@ -12,7 +12,7 @@ function StartScreen(){
         <div>
             <Statusbar/>
             <div className={styles.LogoContainer}>
-                <img style={{width:'300px'}} src='/imgs/logo.png' alt='로고이미지'/>
+                <img style={{width:'20rem', height :"auto"}} src='/imgs/logo.png' alt='로고이미지'/>
             </div>
             
             <div className={styles.ButtonContainer}>

@@ -80,12 +80,12 @@ function Search(){
 
                 <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
                     <div className={styles.ProductImageContainer}>
-                        <img src='/assets/bearflower.svg' className={styles.ProductImage}></img>
+                        <img src='/assets/bearflower.svg' className={styles.ProductImage}>{responseData.fpImage}</img>
                     </div>
                     <div className={styles.ProductDetailContainer}>
-                        <div className={styles.ProudctTitle}>러블리 꽃다발</div>
-                        <div className={styles.ProductPrice}>49,000</div>
-                        <div className={styles.ProductTag}>#화이트데이</div>
+                        <div className={styles.ProudctTitle}>{responseData.fpName}</div>
+                        <div className={styles.ProductPrice}>{responseData.fpPrice}</div>
+                        <div className={styles.ProductTag}>{responseData.fpTag}</div>
                     </div>
                 </div>
 
