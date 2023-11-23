@@ -12,26 +12,30 @@ function Customersignup(){
     const [customerPhonenum, setCustomerPhonenum] = useState('');
     const navigate = useNavigate();
 
-    const handleSignUp = async () => {
-        console.log("됨?");
-        try {
-            const response = await axios.post('http://3.36.175.224:8080/customer/signup', {
-                customerName,
-                customerIdEmail,
-                customerPassword,
-                customerPhonenum,
-            },{
-                headers: {
-                    'Content-Type': 'application/json'
-        },
-    });
-            console.log("됨2?");
-            console.log(response.data);
-            navigate('/home');
-        } catch (error) {
-            console.error('회원가입 오류:', error);
-        }
-    };
+
+    const handleSignUp = () => {
+        navigate('/main')
+    }
+    // const handleSignUp = async () => {
+    //     console.log("됨?");
+    //     try {
+    //         const response = await axios.post('http://3.36.175.224:8080/customer/signup', {
+    //             customerName,
+    //             customerIdEmail,
+    //             customerPassword,
+    //             customerPhonenum,
+    //         },{
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //     },
+    // });
+    //         console.log("됨2?");
+    //         console.log(response.data);
+    //         navigate('/home');
+    //     } catch (error) {
+    //         console.error('회원가입 오류:', error);
+    //     }
+    // };
     
     return(
         <div >

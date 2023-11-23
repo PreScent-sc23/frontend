@@ -74,7 +74,7 @@ function Login(){
                     <input className={styles.inputBox} type='text' name = "email" size = '50' placeholder='Email Address' value={email} onChange={(e) => setEmail(e.target.value)} ></input>
                     <input className={styles.inputBox} type='password' name = "pwd" size = '50'  placeholder='Password' value = {password} onChange={(e) => setPassword(e.target.value)}></input>
                  </form>
-                 <a href="/home" className={styles.purpleLink}>비밀번호를 잊으셨나요?</a>
+                 <a href="/main" className={styles.purpleLink}>비밀번호를 잊으셨나요?</a>
              </div>
 
             <div className={styles.ButtonContainer}>
