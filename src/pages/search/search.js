@@ -82,33 +82,33 @@ function Search(){
 
                 <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
                     <div className={styles.ProductImageContainer}>
-                        <img src='/assets/bearflower.svg' className={styles.ProductImage}></img>
+                        <img src='/assets/product1.jpeg' className={styles.ProductImage}></img>
                     </div>
                     <div className={styles.ProductDetailContainer}>
-                        <div className={styles.ProudctTitle}>러블리 꽃다발2</div>
-                        <div className={styles.ProductPrice}>49,000</div>
+                        <div className={styles.ProudctTitle}>발렌타인 보답이야</div>
+                        <div className={styles.ProductPrice}>55,000</div>
                         <div className={styles.ProductTag}>#화이트데이</div>
                     </div>
                 </div>
 
                 <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
                     <div className={styles.ProductImageContainer}>
-                        <img src='/assets/bearflower.svg' className={styles.ProductImage}></img>
+                        <img src='/assets/product3.jpg' className={styles.ProductImage}></img>
                     </div>
                     <div className={styles.ProductDetailContainer}>
-                        <div className={styles.ProudctTitle}>러블리 꽃다발3</div>
-                        <div className={styles.ProductPrice}>49,000</div>
+                        <div className={styles.ProudctTitle}>수국 21호</div>
+                        <div className={styles.ProductPrice}>21,000</div>
                         <div className={styles.ProductTag}>#화이트데이</div>
                     </div>
                 </div>
 
                 <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
                     <div className={styles.ProductImageContainer}>
-                        <img src='/assets/bearflower.svg' className={styles.ProductImage}></img>
+                        <img src='/assets/product2.jpg' className={styles.ProductImage}></img>
                     </div>
                     <div className={styles.ProductDetailContainer}>
-                        <div className={styles.ProudctTitle}>러블리 꽃다발4</div>
-                        <div className={styles.ProductPrice}>49,000</div>
+                        <div className={styles.ProudctTitle}>눈송이</div>
+                        <div className={styles.ProductPrice}>56,000</div>
                         <div className={styles.ProductTag}>#화이트데이</div>
                     </div>
                 </div>
