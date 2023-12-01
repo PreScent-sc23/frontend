@@ -11,9 +11,11 @@ export function AddCustom(){
 
 
  const handleChange = (e, index) => {
-     const newSurveys = [...surveys];
-     newSurveys[index] = e.target.value;
-     setSurveys(newSurveys);
+    if(index >= 2){
+        const newSurveys = [...surveys];
+        newSurveys[index] = e.target.value;
+        setSurveys(newSurveys);
+    }
  };
 
  const handleSubmit = async() => {
@@ -55,6 +57,13 @@ export function AddCustom(){
        });
  };
 
+ const text = "주문제작을 쉽게 받기 위한 질문을 등록해주세요!\n기본으로 제공되는 질문 2가지가 있으며\n추가적으로 8개까지 질문을 추가할 수 있어요.";
+ const textWithBreaks = text.split('\n').map((text, index) => (
+ <React.Fragment key={index}>
+   {text}
+   <br/>
+ </React.Fragment>
+));
  const navigate = useNavigate(); 
 
  return(
@@ -66,9 +75,14 @@ export function AddCustom(){
          {surveys.map((survey, index) => (
              <div style={{display:'flex',justifyItems: 'center', alignItems:'center'}} key={index}>
                <input type='text' className={styles.TextField} value={survey} onChange={(e) => handleChange(e, index)} />
-               <button className={styles.DeleteButton} onClick={() => deleteSurvey(index)}>삭제</button>
+               <button className={styles.DeleteButton} onClick={() => deleteSurvey(index)}>
+                {index < 2 ? "기본" : "삭제"}
+                </button>
              </div>
          ))}
+         <div style={{backgroundColor:'#f6f6f6', margin:'8px auto', borderRadius:'4px', padding:'10px',width:'93%', fontSize:'12px', textAlign:'center', whiteSpace:'pre-wrap'}}>
+            {textWithBreaks}
+         </div>
         </div>
          <button className={styles.AddButton} onClick={addSurvey}>양식 추가하기</button>
          <button className={styles.SubmitButton} onClick={handleSubmit}>주문제작 양식 등록</button>
