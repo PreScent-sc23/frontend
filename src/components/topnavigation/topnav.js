@@ -9,21 +9,108 @@ function TopNav(props){
     const location = useLocation();
     const [pageTitle, setPageTitle] = useState('');
     const {back=true}=props;
+    const [icon, setIcon]=useState('');
 
     useEffect(()=> {
       switch(location.pathname){
         case '/mypage':
           setPageTitle('MyPage');
+          setIcon('/assets/setting.svg');
           break;
 
         case '/pslens':
           setPageTitle('PSLens');
+          setIcon('/assets/setting.svg');
           break;
 
+
+        case '/pslens/results':
+          setPageTitle('꽃 분석 결과');
+          setIcon('/assets/setting.svg');
+          break;
+
+
+        case '/cart':
+          setPageTitle('장바구니');
+          setIcon('/assets/cart.svg');
+          break;
+
+
+        case '/cart/payment':
+          setPageTitle('상품 결제');
+          setIcon('/assets/cart.svg');
+          break;
+
+
+        case '/managereserve':
+          setPageTitle('예약 관리');
+          setIcon('');
+          break;
+
+        case '/managestat':
+          setPageTitle('통계 관리');
+          setIcon('');
+          break;
+
+        case '/sellersignup':
+          setPageTitle('사업자 회원 가입');
+          setIcon('/assets/setting.svg');
+          break;
+
+
+        case '/customersignup':
+          setPageTitle('일반 고객 회원 가입');
+          setIcon('/assets/setting.svg');
+          break;
+
+        case '/addfinished':
+          setPageTitle('완제품 상품 등록');
+          setIcon('/assets/setting.svg');
+          break;
+
+
+        case '/sellerhome':
+          setPageTitle('우리가게 관리');
+          setIcon('/assets/setting.svg');
+          break;
+
+
+        case '/myhistory':
+          setPageTitle('주문 내역');
+          setIcon('/assets/cart.svg');
+          break;
+
+
+        case '/sellerhome/history':
+          setPageTitle('예약 관리');
+          setIcon('/assets/setting.svg');
+          break;
+
+
+      
+
+        case '/login':
+          setPageTitle('로그인');
+          setIcon('');
+          break;
+          
+        case '/sellersignup':
+          setPageTitle('사업자 회원 등록');
+          setIcon('');
+          break;
+
+        case '/customersignup':
+          setPageTitle('일반 고객 회원 등록');
+          setIcon('');
+          break;
         // case '/locationset':
         //   setPageTitle('');
         //   break;
 
+        case '/addcustom':
+          setPageTitle('주문제작 양식 등록');
+          setIcon('');
+          break;
 
       }
 
@@ -39,7 +126,7 @@ function TopNav(props){
     <div className={styles.TopNavWrap}>
        {back && <img src='/assets/back.svg' className={styles.image} onClick={()=>navigate(-1)}/>}
        <div className={styles.TopNavTitle}>{pageTitle}</div>
-       <img src='/assets/setting.svg' className={styles.image}/>
+       <img src={icon} className={styles.image}/>
     </div>
     )
 }

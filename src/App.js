@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
+
 import Home from './pages/home/home';
 import PSLens from './pages/pslens/pslens';
 import Mypage from './pages/mypage/mypage';
@@ -16,15 +17,34 @@ import Login from './pages/login/login';
 import Sellersignup from './pages/sellersignup/sellersignup';
 import Customersignup from './pages/customersignup/customersignup';
 import StartScreen from './pages/main/main';
-import ProductDetail from './pages/detail/detail';
+import ManageProduct from './pages/manageproduct/manageproduct';
+import ManageFinished from './pages/managefinished/managefinished';
+import ManageReserve from './pages/managereserve/managereserve'
+import ManageStat from './pages/managestat/managestat';
 import AddFinished from './pages/addfinished/addfinished';
+import AddCustom from './pages/addcustom/addcustom';
+import ProductDetail from './pages/detail/detail';
+import PSLensResults from './pages/pslens/pslensresults';
+import Cart from './pages/purchase/cart/cart';
+import Payment from './pages/purchase/payment/payment';
+import CustomerHistory from './pages/history/customerhistory';
+import SellerHistory from './pages/history/sellerhistory';
 
 
 function App() {
 
 
 
+  // const [msg, setMsg] = useState([]);
+  // useEffect(() => {
+  //   fetch("/api/hello")
+  //       .then((res) => {return res.json();})
+  //       .then((data) => {setMsg(data);})
+  // }, []);
+
   return (
+   
+    
     <RecoilRoot>
         <Router>
           <Routes> 
@@ -39,10 +59,27 @@ function App() {
               <Route path="/login" element={<Login/>}/>
               <Route path="/sellersignup" element={<Sellersignup/>}/>
               <Route path="/shopregister" element={<Shopregister/>}/>
+              <Route path="/manageproduct" element={<ManageProduct/>}/>
+              <Route path="/managefinished" element={<ManageFinished/>}/>
+              <Route path="/managereserve" element={<ManageReserve/>}/>
+              <Route path="/managestat" element={<ManageStat/>}/>
               <Route path="/addfinished" element={<AddFinished/>}/>
+              <Route path="/addcustom" element={<AddCustom/>}/>
+              <Route path="/customersignup" element={<Customersignup/>}/>
+              <Route path="/sellerhome" element={<SellerHome/>}/>
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
               <Route path="/detail" element={<ProductDetail/>}/>
+              <Route path="pslens/results" element = {<PSLensResults/>}/>
+              <Route path="/cart" element = {<Cart/>}/>
+              <Route path="/cart/payment" element = {<Payment/>}/>
+              <Route path="/myhistory" element = {<CustomerHistory/>}/>
+              <Route path="/sellerhome/history" element = {<SellerHistory/>}/>
+              
+              
+              
+                           
+              
           </Routes>
         </Router>
     </RecoilRoot>

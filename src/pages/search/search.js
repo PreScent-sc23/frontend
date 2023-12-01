@@ -14,7 +14,8 @@ function Search(){
     const [flowerquery,setFlowerQuery]=useState(''); 
     const [fpName,setFpName] =useState([]);
     const [fpPrice, setFpPrice] = useState([]);
-    const [responseData,setResponseData] = useState([0]);
+    const [responseData,setResponseData] = useState([0])
+ 
 
     const navigate = useNavigate();
     const handleEnter = (e) => {
@@ -34,6 +35,7 @@ function Search(){
             )
             if (response.status === 200) {
                 setResponseData(response.data[0]);
+                // setResponseData(response.data.fpName="러블리 꽃다발")
                 console.log("set리스폰스");
                 
             }
@@ -65,99 +67,66 @@ function Search(){
             </div>
 
             <Filter/>
+
             <div className={styles.ProductContainer}>
-                <div className={styles.ProductCard}>
+                <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
                     <div className={styles.ProductImageContainer}>
-                        <div className={styles.ProductImage}>상품1이미지</div>
+                        <img src='/assets/bearflower.svg' className={styles.ProductImage}></img>
                     </div>
                     <div className={styles.ProductDetailContainer}>
-                        <div className={styles.ProudctTitle}>상품명목업</div>
-                        <div className={styles.ProductPrice}>가격목업</div>
-                        <div className={styles.ProductTag}>태그</div>
+                        <div className={styles.ProudctTitle}>러블리 꽃다발</div>
+                        <div className={styles.ProductPrice}>49,000</div>
+                        <div className={styles.ProductTag}>#화이트데이</div>
+                    </div>
+                </div>
+
+                <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
+                    <div className={styles.ProductImageContainer}>
+                        <img src='/assets/product1.jpeg' className={styles.ProductImage}></img>
+                    </div>
+                    <div className={styles.ProductDetailContainer}>
+                        <div className={styles.ProudctTitle}>발렌타인 보답이야</div>
+                        <div className={styles.ProductPrice}>55,000</div>
+                        <div className={styles.ProductTag}>#화이트데이</div>
+                    </div>
+                </div>
+
+                <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
+                    <div className={styles.ProductImageContainer}>
+                        <img src='/assets/product3.jpg' className={styles.ProductImage}></img>
+                    </div>
+                    <div className={styles.ProductDetailContainer}>
+                        <div className={styles.ProudctTitle}>수국 21호</div>
+                        <div className={styles.ProductPrice}>21,000</div>
+                        <div className={styles.ProductTag}>#화이트데이</div>
+                    </div>
+                </div>
+
+                <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
+                    <div className={styles.ProductImageContainer}>
+                        <img src='/assets/product2.jpg' className={styles.ProductImage}></img>
+                    </div>
+                    <div className={styles.ProductDetailContainer}>
+                        <div className={styles.ProudctTitle}>눈송이</div>
+                        <div className={styles.ProductPrice}>56,000</div>
+                        <div className={styles.ProductTag}>#화이트데이</div>
                     </div>
                 </div>
 
 
-                <div className={styles.ProductCard}>
+                {/* <div className={styles.ProductCard} onClick={()=>(navigate('/detail'))}>
                     <div className={styles.ProductImageContainer}>
-                        <div className={styles.ProductImage}>상품1이미지</div>
-                    </div>
-                    <div className={styles.ProductDetailContainer}>
-                        <div className={styles.ProudctTitle}>{responseData.fpName}</div>
-                        <div className={styles.ProductPrice}>{responseData.fpPrice}</div>
-                        <div className={styles.ProductTag}>{responseData.fpTag}</div>
-                    </div>
-                </div>
-
-                <div className={styles.ProductCard}>
-                    <div className={styles.ProductImageContainer}>
-                        <div className={styles.ProductImage}>상품1이미지</div>
-                    </div>
-                    <div className={styles.ProductDetailContainer}>
-                        <div className={styles.ProudctTitle}>{responseData.fpName}</div>
-                        <div className={styles.ProductPrice}>{responseData.fpPrice}</div>
-                        <div className={styles.ProductTag}>{responseData.fpTag}</div>
-                    </div>
-                </div>
-
-                <div className={styles.ProductCard}>
-                    <div className={styles.ProductImageContainer}>
-                        <div className={styles.ProductImage}>상품1이미지</div>
-                    </div>
-                    <div className={styles.ProductDetailContainer}>
-                        <div className={styles.ProudctTitle}>{responseData.fpName}</div>
-                        <div className={styles.ProductPrice}>{responseData.fpPrice}</div>
-                        <div className={styles.ProductTag}>{responseData.fpTag}</div>
-                    </div>
-                </div>
-
-                <div className={styles.ProductCard}>
-                    <div className={styles.ProductImageContainer}>
-                        <div className={styles.ProductImage}>상품1이미지</div>
-                    </div>
-                    <div className={styles.ProductDetailContainer}>
-                        <div className={styles.ProudctTitle}>{responseData.fpName}</div>
-                        <div className={styles.ProductPrice}>{responseData.fpPrice}</div>
-                        <div className={styles.ProductTag}>{responseData.fpTag}</div>
-                    </div>
-                </div>
-
-
-                <div className={styles.ProductCard}>
-                    <div className={styles.ProductImageContainer}>
-                        <div className={styles.ProductImage}>상품1이미지</div>
+                        <img src='/assets/bearflower.svg' className={styles.ProductImage}></img>
                     </div>
                     <div className={styles.ProductDetailContainer}>
                         <div className={styles.ProudctTitle}>{responseData.fpName}</div>
                         <div className={styles.ProductPrice}>{responseData.fpPrice}</div>
                         <div className={styles.ProductTag}>{responseData.fpTag}</div>
                     </div>
-                </div>
-
-                <div className={styles.ProductCard}>
-                    <div className={styles.ProductImageContainer}>
-                        <div className={styles.ProductImage}>상품1이미지</div>
-                    </div>
-                    <div className={styles.ProductDetailContainer}>
-                        <div className={styles.ProudctTitle}>{responseData.fpName}</div>
-                        <div className={styles.ProductPrice}>{responseData.fpPrice}</div>
-                        <div className={styles.ProductTag}>{responseData.fpTag}</div>
-                    </div>
-                </div>
+                </div> */}
 
 
-
-               
-
-                
-
-                
-
-
-                
-
-                
-               
+        
             
             </div>
 

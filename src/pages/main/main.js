@@ -10,9 +10,11 @@ function StartScreen(){
     
     return (
         <div>
-            <div className={styles.LogoContainer}>메인 로고 이미지(추후 삽입 예정)</div>
-            <div/>
-            <div/>
+            <Statusbar/>
+            <div className={styles.LogoContainer}>
+                <img style={{width:'20rem', height :"auto"}} src='/imgs/logo.png' alt='로고이미지'/>
+            </div>
+            
             <div className={styles.ButtonContainer}>
                 <div className={styles.Button} onClick={()=>navigate('/login')}>로그인</div>
                 <div className={styles.Button} onClick={()=>navigate('/customersignup')}>일반 회원 회원가입</div>

@@ -3,10 +3,13 @@ import styles from './styles.module.scss';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Statusbar from '../../components/statusbar/statusbar';
+import TopNav from '../../components/topnavigation/topnav';
 
 export function AddFinished(){
     
     const navigate = useNavigate(); 
+    const shopKey=9;
+    // // const [shopKey, setShopKey]=useState('');
     const [fpName, setProductName] = useState('');
     const [fpPrice, setProductPrice] = useState('');
     const [fpTag, setProductTag] = useState('');
@@ -15,41 +18,108 @@ export function AddFinished(){
     const [selectedFile, setSelectedFile] = useState('');
 
     const handleFileSelect = (event) => {
-        setSelectedFile(URL.createObjectURL(event.target.files[0]));
-        event.target.value='';
+        const file = event.target.files[0];
+        if (file) {
+            setSelectedFile(URL.createObjectURL(file));
+        }
+        else{
+            console.log("이미지 있긴 하냐?");
+        }
     }
 
     const handleSubmission = async () => {
-        const fpImage = new FormData();
-        fpImage.append("fpImage", selectedFile);
-        console.log("됨?");
-        try {
-            const response = await axios.post('http://3.36.175.224:8080/finished-product/add', {
-                fpImage,
-                fpName,
-                fpTag,
-                fpPrice,
-                fpDetail,
-                fpFlowerList,
-            },{
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-        },
-    });
-            console.log("전송 완료");
-            console.log(response.data);
-            navigate('/managefinished');
-        } catch (error) {
-            console.error('등록 오류:', error);
+        const formData = new FormData();
+        if (selectedFile) {
+            formData.append("fpImage", selectedFile);
         }
-    };
+        else
+        {
+            console.log("formdata비었대");
+        }
+        // formData.append("fpImage", selectedFile);
+
+        const data ={
+            shopKey : shopKey,
+            fpName : fpName,
+            fpTag : fpTag,
+            fpPrice : fpPrice,
+            fpDetail : fpDetail,
+            fpFlowerList : fpFlowerList,
+        }
+        const json = JSON.stringify(data);
+        const blob = new Blob([json],{type: "application/json"});
+        formData.append('finishedProduct',blob);
+        
+        for (let pair of formData.entries()) {
+            console.log(pair[0]+ ', '+ pair[1]); 
+        }
+
+        try {
+                    const response = await axios.post('http://3.36.175.224:8080/finished-product/add', formData,{
+                        headers: {'Content-Type' : 'multipart/form-data'
+                },
+            });
+                    console.log("전송 완료");
+                    console.log(response.data);
+                    navigate('/managefinished');
+                } catch (error) {
+                    console.error('등록 오류:', error);
+                }
+    }
+    // const handleSubmission = async () => {
+    //     const formData = new FormData();
+    //     formData.append("fpImage", selectedFile);
+    //     let jsonData = JSON.stringify({'shopKey':shopKey, 'fpName':fpName, 'fpTag':fpTag, 'fpPrice':fpPrice, 'fpDetail':fpDetail,'fpFlowerList':fpFlowerList})
+    //     formData.append('jsonData', jsonData);
+
+    //     try {
+    //         const response = await axios.post('http://3.36.175.224:8080/finished-product/add', formData,{
+    //             headers: {'Content-Type' : 'multipart/form-data'
+    //     },
+    // });
+    //         console.log("전송 완료");
+    //         console.log(response.data);
+    //         navigate('/managefinished');
+    //     } catch (error) {
+    //         console.error('등록 오류:', error);
+    //     }
+    // };
+
+
+    
+    // const handleSubmission = async () => {
+    //     const fpImage = new FormData();
+    //     fpImage.append("fpImage", selectedFile);
+    //     console.log("됨?");
+    //     try {
+    //         const response = await axios.post('http://3.36.175.224:8080/finished-product/add', {
+    //             shopKey,
+    //             fpImage,
+    //             fpName,
+    //             fpTag,
+    //             fpPrice,
+    //             fpDetail,
+    //             fpFlowerList,
+    //         },{
+    //             headers: {
+    //                 'Content-Type': 'multipart/form-data'
+    //     },
+    // });
+    //         console.log("전송 완료");
+    //         console.log(response.data);
+    //         navigate('/managefinished');
+    //     } catch (error) {
+    //         console.error('등록 오류:', error);
+    //     }
+    // };
     return(
         <div>
             <Statusbar/>
-            <div className={styles.TopNavWrap}>
+            <TopNav/>
+            {/* <div className={styles.TopNavWrap}>
                 <img src='/assets/back.svg' className={styles.image} onClick={()=>navigate('/managefinished')}/>
                 <div className={styles.TopNavTitle}>상품추가 - 완제품</div>
-            </div>
+            </div> */}
             <div className={styles.Container}>
                 <div className={styles.ProductPhoto}>{selectedFile && <img src={selectedFile} alt = "Product Image"/>}</div>
                 <input type="file" id="fileInput" style={{display:'none'}} onChange={handleFileSelect}/>

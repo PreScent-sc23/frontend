@@ -7,6 +7,7 @@ import TopNav from '../../components/topnavigation/topnav';
 
 function ProductDetail(){
 
+
     const navigate = useNavigate();
     const [productDetails, setProductDetails]=useState({
         fpName: '',
@@ -44,12 +45,13 @@ function ProductDetail(){
         }
     };
 
+
     return (
         <div>
             <Statusbar/>
             <TopNav/>
             <div className={styles.ImageWrap}>
-                <div className={styles.Image}>샘플이미지</div>
+               <img src='/assets/bearflower.svg'></img>
             </div>
             
             <div className={styles.Line}/>
@@ -67,6 +69,11 @@ function ProductDetail(){
                     <div className={styles.FpTag}>{productDetails.fpTag}</div>
                 </div>
                 <div className={styles.FpPrice}>{productDetails.fpPrice}원</div>
+           
+           
+                    
+  
+  
             </div>
 
 
@@ -85,14 +92,19 @@ function ProductDetail(){
             </div>
 
             <div className={styles.Line}/>
-            
+
             <div className={styles.TextWrap}>
-                <div className={styles.Text}>픽업 일정</div>
-                <div className={styles.Text}>11.30 (월) 13:00</div>
+                <div className={styles.Text}>요청 사항 (선택)</div>
+                {/* <img src='/assets/time_check.svg' className={styles.Icon}/> */}
             </div>
-
-
             
+            {/* <div className={styles.TextWrap}>
+                <div className={styles.Text}>픽업 일정</div>
+                {/* <div className={styles.Text}>12.07 (목) 13:00</div> */}
+            {/* </div> */}
+
+
+      
             <div className={styles.PurchaseButton} onClick={addToCart}>
                 <img src='/assets/shoppingcart.svg'className={styles.Image}/>
                 <div>장바구니에 담기</div>
