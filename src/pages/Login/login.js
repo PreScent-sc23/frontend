@@ -12,54 +12,26 @@ function Login(){
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+    const handleLogin = async () => {
+        console.log("됨?");
+        try {
+            const response = await axios.post('http://3.36.175.224:8080/api/v1/auth/seller/login', {
+                email,
+                password,
+            },{
+                headers: {
+                    'Content-Type': 'application/json'
+        },
+    });
+            console.log("로그인 완료");
 
-    const handleLogin = () =>{
-        if(email==='flower@gmail.com'){
-            navigate('/sellerhome');
-        }
-        else if(email==='ajou@gmail.com'){
+            console.log(response.data);
+            localStorage.setItem('token', response.data.token);
             navigate('/home');
+        } catch (error) {
+            console.error('로그인 실패');
         }
-        else{
-            alert('등록되지 않은 회원입니다.');
-        }
-    }
-
-    // const handleLogin = async () => {
-    //     console.log("됨?");
-    //     try {
-    //         const response = await axios.post('http://3.36.175.224:8080/api/v1/auth/seller/login', {
-    //             email,
-    //             password,
-    //         },{
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //     },
-    // });
-    //         console.log("됨2?");
-    //         console.log(response.data);
-    //         navigate('/home');
-    //     } catch (error) {
-    //         console.error('로그인 오류');
-    //     }
-    // };
-    // async function handleLogin() {
-    //     axios.defaults.withCredentials = true;
-    //     try{
-    //         const response = await axios.post('http://3.36.175.224:8080/login', {email, password},
-    //         {headers: {'Content-Type': 'application/json'},});
-    //         console.log(response)
-    //         if(response.status === 200){
-    //         let accessToken = response.headers.Authorization;
-    //         console.log('access token: ', accessToken);
-    //         localStorage.setItem("access_token", accessToken);
-    //         }
-    //     }
-    //     catch (error){
-    //         console.error('로그인 오류')
-    //     }
-    // }
-    
+    };
 
     return (
         <div>

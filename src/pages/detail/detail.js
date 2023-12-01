@@ -36,7 +36,7 @@ function ProductDetail(){
 
     const addToCart = async()=>{
         try {
-            await.axios.post('http://3.36.175.224:8080/endpoint주소/add-to-cart',{
+            await axios.post('http://3.36.175.224:8080/endpoint주소/add-to-cart',{
                 productId : productDetails.fpKey,
             });
             navigate('/cart');

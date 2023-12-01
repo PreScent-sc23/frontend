@@ -14,10 +14,6 @@ function ImageSlider() {
     const handleNext = () => {
       setCurrentIndex((currentIndex + 1) % images.length);
     };
-   
-    const handlePrev = () => {
-      setCurrentIndex((currentIndex - 1 + images.length) % images.length);
-    };
 
     useEffect(() => {
         const timer = setInterval(handleNext, 4000);
