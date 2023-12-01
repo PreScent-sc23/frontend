@@ -7,22 +7,41 @@ import Searchbar from '../../../components/search/searchbar';
 import CustomerBottomTap from '../../../components/bottomtap/customerbottomtap';
 import TopNav from '../../../components/topnavigation/topnav';
 
-
-
-
 function Payment(){
+    const navigate=useNavigate();
+    const [cartItems, setCartItems]=useState([]);
+
+    useEffect(()=>{
+        const fetchCartItems = async()=> {
+            try {
+                const response = await axios.get('http://3.36.175.224:8080/cart-items');
+                if (response.status ===200){
+                    setCartItems(response.data);
+                }
+            }catch(error){
+             console.log('장바구니 상품 에러');
+            }
+        };
+        fetchCartItems();
+    },[]);
+
+    const getTotalAmout=()=> {
+        return cartItems.reduce((total, item)=> total+item.price,0);
+    };
+
+
+
     function onClickPayment(){
         //1.가맹점 식별
         const {IMP}=window;
-        IMP.init(imp08177703);
+        IMP.init('imp08177703');
 
         //2. 결제 데이터 정의
-
         const data = {
             pg: 'html5_inicis',                           // PG사
             pay_method: 'card',                           // 결제수단
             merchant_uid: `mid_${new Date().getTime()}`,   // 주문번호
-            amount : '1000',                                 // 결제금액
+            amount : getTotalAmout().toString(),                                 // 결제금액
             name: '아임포트 결제 테스트',                  // 주문명
             buyer_name: '홍길동',                           // 구매자 이름
             buyer_tel: '01012341234',                     // 구매자 전화번호
@@ -73,7 +92,7 @@ function Payment(){
 
                     <div className={styles.PriceWrap}>
                             <div className={styles.Price}>Total Price : </div>
-                            <div className={styles.Price}>49,000</div>
+                            <div className={styles.Price}>{getTotalAmout}</div>
                     </div>
                     
                 </div>
@@ -83,7 +102,7 @@ function Payment(){
                 <div className={styles.Line}></div>
                 <div className={styles.ExpectedPrice}>
                     <div className={styles.Text}>결제 예정 금액 :</div>
-                    <div className={styles.Text} style={{color :"#7E49FF",fontWeight:"500" }}>49,000원</div>
+                    <div className={styles.Text} style={{color :"#7E49FF",fontWeight:"500" }}>{getTotalAmout}원</div>
                 </div>
                 <div className={styles.Line}></div>
 
