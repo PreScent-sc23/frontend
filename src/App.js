@@ -29,7 +29,7 @@ import Cart from './pages/purchase/cart/cart';
 import Payment from './pages/purchase/payment/payment';
 import CustomerHistory from './pages/history/customerhistory';
 import SellerHistory from './pages/history/sellerhistory';
-
+import NotFound from './pages/notfound/notfound';
 
 function App() {
 
@@ -80,6 +80,10 @@ function App() {
               
                            
               
+              
+              
+              
+              <Route path="/*" element = {<NotFound/>}/>
           </Routes>
         </Router>
     </RecoilRoot>
