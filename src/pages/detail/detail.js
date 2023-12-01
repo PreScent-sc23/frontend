@@ -7,7 +7,44 @@ import TopNav from '../../components/topnavigation/topnav';
 
 function ProductDetail(){
 
-    const navigate=useNavigate('');
+
+    const navigate = useNavigate();
+    const [productDetails, setProductDetails]=useState({
+        fpName: '',
+        fpDescription: '',
+        fpFlowers: [],
+        fpTags: [],
+        fpPrice: 0,
+        pickupDate: '',
+        pickupTime: '',
+    });
+
+    useEffect(()=> {
+        const fetchData = async ()=> {
+            try {
+                const response = await axios.get('http://3.36.175.224:8080/endpoint주소/detail');
+                if (response.status==200){
+                    setProductDetails(response.data);
+                }
+
+            }catch (error) {
+                console.log('상품 상세 fetch error');
+            }
+        };
+
+    fetchData();},[]);
+
+    const addToCart = async()=>{
+        try {
+            await.axios.post('http://3.36.175.224:8080/endpoint주소/add-to-cart',{
+                productId : productDetails.fpKey,
+            });
+            navigate('/cart');
+        }catch(error){
+            console.log('장바구니에 완제품 담기 오류');
+        }
+    };
+
 
     return (
         <div>
@@ -20,18 +57,23 @@ function ProductDetail(){
             <div className={styles.Line}/>
 
             <div className={styles.DetailWrap}>
-                <div className={styles.FpName}>러블리 꽃다발</div>
-                <div className={styles.FpDescription}>곰인형과 화이트로즈로 구성된 화이트데이 꽃다발</div>
+                <div className={styles.FpName}>{productDetails.fpName}</div>
+                <div className={styles.FpDescription}>{productDetails.fpDescription}</div>
                 <div className={styles.FpFlowerWrap}>
-                    <div className={styles.FpFlower}>화이트로즈</div>
-                    <div className={styles.FpFlower}>리시안셔스</div>
-                    <div className={styles.FpFlower}>핑크로즈</div>
+                    {productDetails.fpFlowers.map((flower,index)=>(
+                        <div key = {index} className={styles.FpFlower}>{flower}</div>
+                    ))}
                 </div>
                 
                 <div className={styles.TagWrap}>
-                    <div className={styles.FpTag}>#화이트데이</div>
+                    <div className={styles.FpTag}>{productDetails.fpTag}</div>
                 </div>
-                <div className={styles.FpPrice}>49,000원</div>
+                <div className={styles.FpPrice}>{productDetails.fpPrice}원</div>
+           
+           
+                    
+  
+  
             </div>
 
 
@@ -62,8 +104,8 @@ function ProductDetail(){
             {/* </div> */}
 
 
-            
-            <div className={styles.PurchaseButton} onClick={()=>navigate('/cart')}>
+      
+            <div className={styles.PurchaseButton} onClick={addToCart}>
                 <img src='/assets/shoppingcart.svg'className={styles.Image}/>
                 <div>장바구니에 담기</div>
             </div>
