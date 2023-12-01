@@ -8,13 +8,15 @@ import CustomerBottomTap from '../../components/bottomtap/customerbottomtap';
 import Filter from '../../components/filter/filter';
 
 function Search(){
+    
    
-    const [fpTag, setFpTag] =useState('');
-    const query = encodeURIComponent(fpTag); // query는 encodedTag임 "%23졸업식"
+    const [fpTag, setFpTag] = useState('');
+    const query = encodeURIComponent(fpTag); 
+    const [fpImage, setFpImage] =useState({});
     const [flowerquery,setFlowerQuery]=useState(''); 
-    const [fpName,setFpName] =useState([]);
-    const [fpPrice, setFpPrice] = useState([]);
-    const [responseData,setResponseData] = useState([])
+    const [fpName,setFpName] =useState('');
+    const [fpPrice, setFpPrice] = useState('');
+    const [responseData,setResponseData] = useState([]);
     
 
     const navigate = useNavigate();
@@ -23,29 +25,28 @@ function Search(){
             handleTagSearch(fpTag);
         }
       };
-
+    
     const handleTagSearch = async () => {
         console.log("성공1?");
-       
         try {
             const response = await axios.get('http://3.36.175.224:8080/search',{
                     params : {query},
             },
             {   headers: {'Content-Type': 'application/json' },}
-            )
+            );
             if (response.status === 200) {
-                setResponseData(response.data[0]);    
+                setResponseData(response.data);    
             }
-            console.log(responseData);
-            console.log(responseData.fpName);
-            console.log(responseData.fpPrice);
-            console.log(responseData.fpTag);
-
+    
         } catch (error) {
             console.error('태그 검색 오류:', error);
-        }
-
+        }    
     };
+
+    useEffect(() => {
+        console.log('Updated responseData:', responseData);
+    }, [responseData]);
+
 
 
 
@@ -60,32 +61,32 @@ function Search(){
                 </div>
             </div>
             </div>
+    
+
 
             {responseData.length===0 ?(
                 <div className={styles.NoResult}>검색 결과가 없습니다</div>
             ):(
                 <div>
-                    {responseData.map(item=>(
-                    <div className={styles.ProductContainer}>
-                        <div className={styles.ProductCard} onClick={()=>(navigate('/detail/${item.fpKey}'))}>
-                            <div className={styles.ProductImageContainer}>
-                                <img src='' className={styles.ProductImage}></img>
-                            </div>
-                            <div className={styles.ProductDetailContainer}>
-                                <div className={styles.ProudctTitle}>{item.fpName}</div>
-                                <div className={styles.ProductPrice}>{item.fpPrice}</div>
-                                <div className={styles.ProductTag}>{item.fpTag}</div>
-                            </div>
-                        </div>    
+                    {responseData && responseData.map(responseData=>(
+                        <div className={styles.ProductContainer}>
+                            <div className={styles.ProductCard} key={responseData.key} onClick={()=>(navigate('/detail/${responseData.fpKey}'))}>
+                                <div className={styles.ProductImageContainer}>
+                                    {/* <img src='' className={styles.ProductImage}>빈 이미지</img> */}
+                                </div>
+
+                                <div className={styles.ProductDetailContainer} key={responseData.key}>
+                                    <div className={styles.ProudctTitle}>{responseData.fpName}</div>
+                                    <div className={styles.ProductPrice}>{responseData.fpPrice}</div>
+                                    <div className={styles.ProductTag}>{responseData.fpTag}</div>
+                                </div>
+                            </div>    
                         </div>  
                     ))}
                 </div>
             )}
-            
-                
-            
 
-
+            
             <CustomerBottomTap/>
         </div>
         
