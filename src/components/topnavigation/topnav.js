@@ -107,6 +107,10 @@ function TopNav(props){
         //   setPageTitle('');
         //   break;
 
+        case '/addcustom':
+          setPageTitle('주문제작 양식 등록');
+          setIcon('');
+          break;
 
       }
 

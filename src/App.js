@@ -22,12 +22,14 @@ import ManageFinished from './pages/managefinished/managefinished';
 import ManageReserve from './pages/managereserve/managereserve'
 import ManageStat from './pages/managestat/managestat';
 import AddFinished from './pages/addfinished/addfinished';
+import AddCustom from './pages/addcustom/addcustom';
 import ProductDetail from './pages/detail/detail';
 import PSLensResults from './pages/pslens/pslensresults';
 import Cart from './pages/purchase/cart/cart';
 import Payment from './pages/purchase/payment/payment';
 import CustomerHistory from './pages/history/customerhistory';
 import SellerHistory from './pages/history/sellerhistory';
+
 
 function App() {
 
@@ -62,6 +64,7 @@ function App() {
               <Route path="/managereserve" element={<ManageReserve/>}/>
               <Route path="/managestat" element={<ManageStat/>}/>
               <Route path="/addfinished" element={<AddFinished/>}/>
+              <Route path="/addcustom" element={<AddCustom/>}/>
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
               <Route path="/customersignup" element={<Customersignup/>}/>
