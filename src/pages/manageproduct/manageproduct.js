@@ -12,15 +12,12 @@ export function ManageProduct(){
     return(
         <div>
             <Statusbar/>
-            <div className={styles.TopNavWrap}>
-                <img src='/assets/back.svg' className={styles.image} onClick={()=>navigate('/sellerhome')}/>
-                <div className={styles.TopNavTitle}>상품 관리</div>
-            </div>
+            <TopNav/>
             <div style={{width:'100%', display:'flex', flexDirection:'column'}}>
                 <div className={styles.selectBox} onClick={()=>navigate('/managefinished')}>
                     <div className={styles.textBox}>완제품 관리</div>
                 </div>
-                <div className={styles.selectBox} onClick={()=>navigate('/productmanage')}>
+                <div className={styles.selectBox} onClick={()=>navigate('/addcustom')}>
                     <div className={styles.textBox}>주문제작 관리</div>
                 </div>
             </div>

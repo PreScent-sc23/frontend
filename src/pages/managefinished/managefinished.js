@@ -12,10 +12,7 @@ export function ManageFinished(){
     return(
         <div>
             <Statusbar/>
-            <div className={styles.TopNavWrap}>
-                <img src='/assets/back.svg' className={styles.image} onClick={()=>navigate('/sellerhome')}/>
-                <div className={styles.TopNavTitle}>상품관리 - 완제품</div>
-            </div>
+            <TopNav/>
             <div className={styles.Container}>
                 <div className={styles.ProductContainer}>
                     <div className={styles.ProductPicture}></div>
