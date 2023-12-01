@@ -69,7 +69,7 @@ function App() {
               <Route path="/sellerhome" element={<SellerHome/>}/>
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
-              <Route path="/detail" element={<ProductDetail/>}/>
+              <Route path="/detail/:id" element={<ProductDetail/>}/>
               <Route path="pslens/results" element = {<PSLensResults/>}/>
               <Route path="/cart" element = {<Cart/>}/>
               <Route path="/cart/payment" element = {<Payment/>}/>
