@@ -8,7 +8,7 @@ import TopNav from '../../components/topnavigation/topnav';
 export function AddFinished(){
     
     const navigate = useNavigate(); 
-    const shopKey=6;
+    const shopKey=9;
     // // const [shopKey, setShopKey]=useState('');
     const [fpName, setProductName] = useState('');
     const [fpPrice, setProductPrice] = useState('');
@@ -18,12 +18,53 @@ export function AddFinished(){
     const [selectedFile, setSelectedFile] = useState('');
 
     const handleFileSelect = (event) => {
-        setSelectedFile(URL.createObjectURL(event.target.files[0]));
-        event.target.value='';
+        const file = event.target.files[0];
+        if (file) {
+            setSelectedFile(URL.createObjectURL(file));
+        }
+        else{
+            console.log("이미지 있긴 하냐?");
+        }
     }
 
     const handleSubmission = async () => {
-        navigate('/managefinished')
+        const formData = new FormData();
+        if (selectedFile) {
+            formData.append("fpImage", selectedFile);
+        }
+        else
+        {
+            console.log("formdata비었대");
+        }
+        // formData.append("fpImage", selectedFile);
+
+        const data ={
+            shopKey : shopKey,
+            fpName : fpName,
+            fpTag : fpTag,
+            fpPrice : fpPrice,
+            fpDetail : fpDetail,
+            fpFlowerList : fpFlowerList,
+        }
+        const json = JSON.stringify(data);
+        const blob = new Blob([json],{type: "application/json"});
+        formData.append('finishedProduct',blob);
+        
+        for (let pair of formData.entries()) {
+            console.log(pair[0]+ ', '+ pair[1]); 
+        }
+
+        try {
+                    const response = await axios.post('http://3.36.175.224:8080/finished-product/add', formData,{
+                        headers: {'Content-Type' : 'multipart/form-data'
+                },
+            });
+                    console.log("전송 완료");
+                    console.log(response.data);
+                    navigate('/managefinished');
+                } catch (error) {
+                    console.error('등록 오류:', error);
+                }
     }
     // const handleSubmission = async () => {
     //     const formData = new FormData();
