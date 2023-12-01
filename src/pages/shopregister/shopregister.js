@@ -109,6 +109,7 @@ function Shopregister(){
                     <div style={{borderBottom:'1px solid #7249FF', textAlign:'center'}}>
                         영업시간을 선택해주세요
                     </div>
+                    <div style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'20px'}}>
                     <div style={{display:'flex', margin:'8px'}}>
                         <div style={{display:'flex', justifyContent:'center', alignItems:'center', backgroundColor:'#7249FF', color:'white', width:'3rem', height:'1.5rem', borderRadius:'8px', marginRight:'8px'}}>
                         시작
@@ -141,6 +142,8 @@ function Shopregister(){
                         ))}
                         </select>
                     </div>
+                    </div>
+                    
                 </div>
             </div>
             <div className={styles.ButtonContainer}>
