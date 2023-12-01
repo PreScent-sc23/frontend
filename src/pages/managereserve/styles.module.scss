@@ -1,39 +1,89 @@
-.profileContainer{
-    width: 100%;
-    border-bottom: solid #E7E7FF 1px;   
-    text-align: center;
-    padding-bottom: 10px;
+.Container{
+    border: solid red 1px;
+    margin : 4px auto;
+    width: 400px;
+    height: 600px;
+    overflow: auto;
 }
 
-.profilePhoto{
-    width: 55px;
-    height: 55px;
-    background-color: rgb(240, 240, 240);
-    border: 1px solid rgb(56, 56, 56);
-    border-radius: 20px;
-    text-align: center;
-    margin: 8px auto;
-    overflow: hidden;
-
-}
-
-.selectBox{
-    width: 20rem;
-    height: 7rem;
-    border-radius: 48px;
-    background-color: #E7E7FF;
-    margin: 8px auto;
+.ProductContainer{
+    border-radius: 8px;
+    width: 350px;
+    height: 150px;
+    margin: 4px auto;
+    padding: 8px;
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.5);
     display: flex;
+    flex-direction: row;
     align-items: center;
 }
 
-.textBox{
-    margin: 2px auto;
-    width: 7rem;
-    height: 2.5rem;
-    background-color: black;
-    text-align: center;
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
+.ProductPhoto{
+    border-radius: 8px;
+    margin: 2px;
+    width: 120px;
+    height: 140px;
+    background-color: #e2e2e2;
+    overflow: hidden;
 }
+
+.ProductInfo{
+    background-color: white;
+    border: 2px solid #e2e2e2;
+    width: 218px;
+    height: 138px;
+    border-radius: 8px;
+    margin: auto auto;
+}
+
+.Popup_Container{
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+    height: 800px;
+    margin: auto auto;
+}
+
+.Popup_Top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    border-bottom: #7E49FF 2px solid;
+    margin: 0px auto;
+}
+.Popup_Image{
+    width: 180px;
+    height: 250px;
+    background-color: #e2e2e2;
+    border-radius: 8px;
+    margin : 8px;
+    margin-left: 0;
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.5);
+}
+.Popup_Info_Top{
+    width: 200px;
+    height: 250px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+.Popup_Info_Bottom{
+    width: 95%;
+    height: 0.9fr;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+ }
