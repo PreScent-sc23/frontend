@@ -10,6 +10,29 @@ function Mypage(){
     
      const navigate = useNavigate(); 
 
+     const [userInfo, setUserInfo] = useState({
+          name: '',
+          phoneNumber: '',
+          email: '',
+          location: '',
+          profilePicture: '',
+         });
+
+
+     useEffect(() => {
+     axios.get('/api/user', {
+          headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+     })
+     .then(response => {
+          setUserInfo(response.data);
+     })
+     .catch(error => {
+          console.error('사용자 정보 불러오기 실패', error);
+     });
+     }, []);
+
     return(
         <div>
             <Statusbar/>
@@ -27,11 +50,11 @@ function Mypage(){
                          {/* <div className={styles.Image}>프로필이미지</div> */}
      
                          <div className={styles.InfoWrap}>
-                              <div className={styles.BoldText} style={{fontSize:"1.2rem"}}>김도윤</div>
+                              <div className={styles.BoldText} style={{fontSize:"1.2rem"}}>{userInfo.name}</div>
                               <div className={styles.Line}></div>
-                              <div className={styles.InfoText}>010-3333-4444</div>
+                              <div className={styles.InfoText}>{userInfo.phoneNumber}</div>
                               <div className={styles.Line}></div>
-                              <div className={styles.InfoText}>ajou@gmail.com</div>
+                              <div className={styles.InfoText}>{userInfo.email}</div>
                          </div>
 
                     </div>
@@ -41,7 +64,7 @@ function Mypage(){
                          <img src='/assets/pin.svg'></img>
                          <div className={styles.LocationText}>
                               <div className={styles.InfoText}>현재 위치</div>
-                              <div className={styles.BoldText}>경기도 수원시 영통구 월드컵로</div>
+                              <div className={styles.BoldText}>{userInfo.location}</div>
 
                          </div>
                          <div className={styles.EditButton} style={{fontSize:"1rem"}}>수정</div>
