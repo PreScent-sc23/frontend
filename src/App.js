@@ -29,7 +29,7 @@ import Cart from './pages/purchase/cart/cart';
 import Payment from './pages/purchase/payment/payment';
 import CustomerHistory from './pages/history/customerhistory';
 import SellerHistory from './pages/history/sellerhistory';
-
+import NotFound from './pages/notfound/notfound';
 
 function App() {
 
@@ -69,7 +69,7 @@ function App() {
               <Route path="/sellerhome" element={<SellerHome/>}/>
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
-              <Route path="/detail" element={<ProductDetail/>}/>
+              <Route path="/detail/:id" element={<ProductDetail/>}/>
               <Route path="pslens/results" element = {<PSLensResults/>}/>
               <Route path="/cart" element = {<Cart/>}/>
               <Route path="/cart/payment" element = {<Payment/>}/>
@@ -80,6 +80,10 @@ function App() {
               
                            
               
+              
+              
+              
+              <Route path="/*" element = {<NotFound/>}/>
           </Routes>
         </Router>
     </RecoilRoot>

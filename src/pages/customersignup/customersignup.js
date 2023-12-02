@@ -6,36 +6,35 @@ import Statusbar from '../../components/statusbar/statusbar';
 import TopNav from '../../components/topnavigation/topnav';
 
 function Customersignup(){
-    const [customerName, setCustomerName] = useState('');
-    const [customerPassword, setCustomerPassword] = useState('');
-    const [customerIdEmail, setCustomerIdEmail] = useState('');
-    const [customerPhonenum, setCustomerPhonenum] = useState('');
+    const [name, setName] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [idEmail, setIdEmail] = useState('');
+    const [phonenum, setPhonenum] = useState('');
     const navigate = useNavigate();
 
 
-    const handleSignUp = () => {
-        navigate('/main')
-    }
-    // const handleSignUp = async () => {
-    //     console.log("됨?");
-    //     try {
-    //         const response = await axios.post('http://3.36.175.224:8080/customer/signup', {
-    //             customerName,
-    //             customerIdEmail,
-    //             customerPassword,
-    //             customerPhonenum,
-    //         },{
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //     },
-    // });
-    //         console.log("됨2?");
-    //         console.log(response.data);
-    //         navigate('/home');
-    //     } catch (error) {
-    //         console.error('회원가입 오류:', error);
-    //     }
-    // };
+    const handleSignUp = async () => {
+        console.log("됨?");
+        try {
+            const response = await axios.post('http://3.36.175.224:8080/customer/signup', {
+                name,
+                idEmail,
+                password,
+                confirmPassword,
+                phonenum,
+            },{
+                headers: {
+                    'Content-Type': 'application/json'
+        },
+    });
+            console.log("됨2?");
+            console.log(response.data);
+            navigate('/main');
+        } catch (error) {
+            console.error('회원가입 오류:', error);
+        }
+    };
     
     return(
         <div >
@@ -48,11 +47,12 @@ function Customersignup(){
             {/* </div> */} 
             <div style={{width:'100%', textAlign:'center',marginTop:'1rem'}}>
                 <form>            
-                <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={customerName} onChange={(e) => setCustomerName(e.target.value)}></input>
-                <input className={styles.inputBox} type='number' name = "pwd" size = '50'  placeholder='전화번호' value={customerPhonenum} onChange={(e) => setCustomerPhonenum(e.target.value)}></input>
-                <input className={styles.inputBox} type='email' name = "email" size = '50'  placeholder='Email' value={customerIdEmail} onChange={(e) => setCustomerIdEmail(e.target.value)}></input>
-                <input className={styles.inputBox} type='number' name = "validnum" size = '50'  placeholder='인증 번호 입력'></input>
-                <input className={styles.inputBox} type='password' name = "pwd" size = '50'  placeholder='비밀번호' value={customerPassword} onChange={(e) => setCustomerPassword(e.target.value)}></input>
+                <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={name} onChange={(e) => setName(e.target.value)}></input>
+                <input className={styles.inputBox} type='number' name = "pwd" size = '50'  placeholder='전화번호' value={phonenum} onChange={(e) => setPhonenum(e.target.value)}></input>
+                <input className={styles.inputBox} type='email' name = "email" size = '50'  placeholder='Email' value={idEmail} onChange={(e) => setIdEmail(e.target.value)}></input>
+                <input className={styles.inputBox} type='password' name = "pwd" size = '50'  placeholder='비밀번호' value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                <input className={styles.inputBox} type='number' name = "validnum" size = '50'  placeholder='비밀번호 확인' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></input>
+                
                 </form>
                 <div style={{width:'100%', height:'3rem'}}></div>
             </div>
