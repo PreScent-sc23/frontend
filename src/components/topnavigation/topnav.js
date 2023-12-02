@@ -64,7 +64,7 @@ function TopNav(props){
           break;
 
         case '/addfinished':
-          setPageTitle('완제품 상품 등록');
+          setPageTitle('완제품 등록');
           setIcon('/assets/setting.svg');
           break;
 
@@ -112,6 +112,15 @@ function TopNav(props){
           setIcon('');
           break;
 
+        case '/manageproduct':
+          setPageTitle('내 제품 관리');
+          setIcon('');
+          break;
+
+          case '/managefinished':
+          setPageTitle('완제품 관리');
+          setIcon('');
+          break;
       }
 
     },[location]);
