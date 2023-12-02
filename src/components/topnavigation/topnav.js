@@ -121,6 +121,11 @@ function TopNav(props){
           setPageTitle('완제품 관리');
           setIcon('');
           break;
+
+          case '/dictionary':
+          setPageTitle('PS 사전');
+          setIcon('');
+          break;
       }
 
     },[location]);
