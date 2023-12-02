@@ -20,7 +20,7 @@ export function AddFinished(){
     const handleFileSelect = (event) => {
         const file = event.target.files[0];
         if (file) {
-            setSelectedFile(URL.createObjectURL(file));
+            setSelectedFile(file);
         }
         else{
             console.log("이미지 있긴 하냐?");

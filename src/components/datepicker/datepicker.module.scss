@@ -1,22 +1,71 @@
 @charset "UTF-8";
 /* stylelint-disable */
-.datePicker{
-  display: flex;
-  align-items: center;
-  border-radius: 0.5rem;
-  background-color: #f6f6f6;
-  box-sizing: border-box;
-  width: 100%;
-  height: 2rem;
-  color: gray;
+
+.normal-day{
+  background: white !important;
+  color : black !important;
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.8;
   text-align: center;
-  // padding-right: 14px;
-  // &:focus {
-  //   border: 2px solid colors.$black;
-  // }
+  padding: 2px !important;
 }
 
 
+.selected-day {
+  background: #FED8ED !important;
+  color: white !important;
+  border-radius: 50% !important;
+  font-weight: 700;
+}
+
+.react-datepicker__day-name {
+  width: 28px;
+}
+.custom-datepicker{
+  border: 1px solid blue;
+}
+.custom-day {
+  width: 28px;
+  height: 28px;
+  line-height: 1.8;
+  text-align: center;
+}
+.gray-day {
+  color: #aba8b9;
+}
+// .selected-day {
+//   background: #2E1C8B;
+//   border-radius: 50%;
+//   font-weight: 700;
+// }
+
+
+.custom-input{
+  background-color: #294785;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  width: 240px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+// .datePicker {
+//   display: flex;
+//   align-items: center;
+//   border: 1px solid colors.$GRAY6;
+//   border-radius: 4px;
+//   background-color: colors.$BG_COLOR;
+//   box-sizing: border-box;
+//   width: 100%;
+//   height: 46px;
+//   color: colors.$WHITE;
+//   text-align: center;
+//   padding-right: 14px;
+
+//   &:focus {
+//     border: 2px solid colors.$ORANGE;
+//   }
+// }
 
 :global .react-datepicker__year-read-view--down-arrow,
 :global .react-datepicker__month-read-view--down-arrow,
@@ -81,13 +130,13 @@
   border-top-color: #aeaeae;
 }
 :global .react-datepicker-wrapper {
-  display: inline-block;
-  padding: 0;
-  border: 0;
+  position: relative !important;
+  // width: 100%;
+  // background-color: #1d5d90 !important;
 }
 :global .react-datepicker {
-  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
-  font-size: 0.8rem;
+  // font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 0.9rem;
   background-color: #fff;
   color: #000;
   border: 1px solid #aeaeae;
@@ -583,6 +632,7 @@
   position: relative;
   display: inline-block;
   width: 100%;
+  // background-color: #FED8DF;
 }
 :global .react-datepicker__input-container .react-datepicker__calendar-icon {
   position: absolute;

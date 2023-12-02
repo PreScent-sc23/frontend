@@ -12,11 +12,12 @@ function Search(){
    
     const [fpTag, setFpTag] = useState('');
     const query = encodeURIComponent(fpTag); 
-    const [fpImage, setFpImage] =useState({});
+    const [fpImage, setFpImage] =useState('');
     const [flowerquery,setFlowerQuery]=useState(''); 
     const [fpName,setFpName] =useState('');
     const [fpPrice, setFpPrice] = useState('');
     const [responseData,setResponseData] = useState([]);
+
     
 
     const navigate = useNavigate();
@@ -29,7 +30,7 @@ function Search(){
     const handleTagSearch = async () => {
         console.log("성공1?");
         try {
-            const response = await axios.get('http://3.36.175.224:8080/search',{
+            const response = await axios.get(`http://3.36.175.224:8080/search`,{
                     params : {query},
             },
             {   headers: {'Content-Type': 'application/json' },}
@@ -61,18 +62,37 @@ function Search(){
                 </div>
             </div>
             </div>
-    
+            {responseData.length === 0 ? (
+        <div className={styles.NoResult}>검색 결과가 없습니다</div>
+      ) : (
+        <div className={styles.ProductContainer}>
+          {responseData.map((item) => (
+            <div className={styles.ProductCard} key={item.key} onClick={() => navigate(`/detail/${item.fpKey}`, { state: { fpKey: item.fpKey } })}>
+              <div className={styles.ProductImageContainer}>
+                <img src={item.fpImage} className={styles.ProductImage} alt={item.fpName} />
+              </div>
+              <div className={styles.ProductDetailContainer} key={item.key}>
+                <div className={styles.ProudctTitle}>{item.fpName}</div>
+                <div className={styles.ProductPrice}>{item.fpPrice}</div>
+                <div className={styles.ProductTag}>{item.fpTag}</div>
+              </div>
+            </div>
+            
+          ))}
+        </div>
+      )}
 
 
-            {responseData.length===0 ?(
+
+            {/* {responseData.length===0 ?(
                 <div className={styles.NoResult}>검색 결과가 없습니다</div>
             ):(
                 <div>
                     {responseData && responseData.map(responseData=>(
                         <div className={styles.ProductContainer}>
-                            <div className={styles.ProductCard} key={responseData.key} onClick={()=>(navigate('/detail/${responseData.fpKey}'))}>
+                            <div className={styles.ProductCard} key={responseData.key} onClick={()=>(navigate(`/detail/${responseData.fpKey}`))}>
                                 <div className={styles.ProductImageContainer}>
-                                    {/* <img src='' className={styles.ProductImage}>빈 이미지</img> */}
+                                    <img src='' className={styles.ProductImage}>{responseData.fpImage}</img>
                                 </div>
 
                                 <div className={styles.ProductDetailContainer} key={responseData.key}>
@@ -84,7 +104,7 @@ function Search(){
                         </div>  
                     ))}
                 </div>
-            )}
+            )} */}
 
             
             <CustomerBottomTap/>

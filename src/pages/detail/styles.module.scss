@@ -1,9 +1,7 @@
 .ImageWrap{
-    
     display: flex;
-    background-color: #f6f6f6;
-    // width: 23.4375rem;
-    height: 36vh;
+    // height : auto;
+    // height: 35vh;
     // padding: 0.875rem 2.81938rem 0.875rem 2.9375rem;
     justify-content: center;
     align-items: center;
@@ -12,9 +10,17 @@
 
     }
 
-.Image{
-    color : white;
+// .ImageWrap {
+//     width: 100%;
+//     max-width: 100%;
+//     height: auto;
+//     overflow: hidden;
+//     }
     
+.ImageWrap img {
+width: 70%;
+height: auto;
+display: block;
 }
 
 .DetailWrap{
