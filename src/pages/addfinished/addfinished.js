@@ -9,18 +9,24 @@ export function AddFinished(){
     
     const navigate = useNavigate(); 
     const shopKey=9;
-    // // const [shopKey, setShopKey]=useState('');
     const [fpName, setProductName] = useState('');
     const [fpPrice, setProductPrice] = useState('');
     const [fpTag, setProductTag] = useState('');
     const [fpDetail, setProductDetail] = useState('');
     const [fpFlowerList, setFlowerList] = useState('');
     const [selectedFile, setSelectedFile] = useState('');
+    const [fileDataURL, setFileDataURL] = useState(null);
+
 
     const handleFileSelect = (event) => {
         const file = event.target.files[0];
         if (file) {
-            setSelectedFile(URL.createObjectURL(file));
+            setSelectedFile(file);
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setFileDataURL(reader.result);
+            };
+            reader.readAsDataURL(file);
         }
         else{
             console.log("이미지 있긴 하냐?");
@@ -36,7 +42,6 @@ export function AddFinished(){
         {
             console.log("formdata비었대");
         }
-        // formData.append("fpImage", selectedFile);
 
         const data ={
             shopKey : shopKey,
@@ -66,62 +71,12 @@ export function AddFinished(){
                     console.error('등록 오류:', error);
                 }
     }
-    // const handleSubmission = async () => {
-    //     const formData = new FormData();
-    //     formData.append("fpImage", selectedFile);
-    //     let jsonData = JSON.stringify({'shopKey':shopKey, 'fpName':fpName, 'fpTag':fpTag, 'fpPrice':fpPrice, 'fpDetail':fpDetail,'fpFlowerList':fpFlowerList})
-    //     formData.append('jsonData', jsonData);
-
-    //     try {
-    //         const response = await axios.post('http://3.36.175.224:8080/finished-product/add', formData,{
-    //             headers: {'Content-Type' : 'multipart/form-data'
-    //     },
-    // });
-    //         console.log("전송 완료");
-    //         console.log(response.data);
-    //         navigate('/managefinished');
-    //     } catch (error) {
-    //         console.error('등록 오류:', error);
-    //     }
-    // };
-
-
-    
-    // const handleSubmission = async () => {
-    //     const fpImage = new FormData();
-    //     fpImage.append("fpImage", selectedFile);
-    //     console.log("됨?");
-    //     try {
-    //         const response = await axios.post('http://3.36.175.224:8080/finished-product/add', {
-    //             shopKey,
-    //             fpImage,
-    //             fpName,
-    //             fpTag,
-    //             fpPrice,
-    //             fpDetail,
-    //             fpFlowerList,
-    //         },{
-    //             headers: {
-    //                 'Content-Type': 'multipart/form-data'
-    //     },
-    // });
-    //         console.log("전송 완료");
-    //         console.log(response.data);
-    //         navigate('/managefinished');
-    //     } catch (error) {
-    //         console.error('등록 오류:', error);
-    //     }
-    // };
     return(
         <div>
             <Statusbar/>
             <TopNav/>
-            {/* <div className={styles.TopNavWrap}>
-                <img src='/assets/back.svg' className={styles.image} onClick={()=>navigate('/managefinished')}/>
-                <div className={styles.TopNavTitle}>상품추가 - 완제품</div>
-            </div> */}
             <div className={styles.Container}>
-                <div className={styles.ProductPhoto}>{selectedFile && <img src={selectedFile} alt = "Product Image"/>}</div>
+                <div className={styles.ProductPhoto}>{fileDataURL && <img src={fileDataURL} alt = "Product Image"/>}</div>
                 <input type="file" id="fileInput" style={{display:'none'}} onChange={handleFileSelect}/>
                 <label htmlFor="fileInput" className={styles.ChangePhoto}>이미지 수정</label>
                 <form style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
