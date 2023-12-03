@@ -9,6 +9,25 @@ import SellerBottomTap from '../../components/bottomtap/sellerbottomtap';
 
 function SellerHome(){
     const navigate = useNavigate(); 
+    const [profilePhoto, setProfilePhoto] = useState('');
+    const [userName, setUserName] = useState('');
+
+    useEffect(() => {
+        axios.get('정보가 들어있는 주소', {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+        .then(response => {
+            // Replace 'profilePhoto' and 'userName' with the actual keys in your response data
+            setProfilePhoto(response.data.profilePhoto);
+            setUserName(response.data.userName);
+        })
+        .catch(error => {
+            console.error('Error fetching user data:', error);
+        });
+    }, []);
+
     return(
         <div>
             <Statusbar/>
@@ -24,7 +43,7 @@ function SellerHome(){
                 <div className={styles.selectBox} style={{backgroundImage: `url(/imgs/sellermenu_2.png)`}} onClick={()=>navigate('/manageproduct')}>
                     <div className={styles.textBox}>상품 관리</div>
                 </div>
-                <div className={styles.selectBox} style={{backgroundImage: `url(/imgs/sellermenu_3.png)`}} onClick={()=>navigate('/managereserve')}>
+                <div className={styles.selectBox} style={{backgroundImage: `url(/imgs/sellermenu_3.png)`}} onClick={()=>navigate('/sellerhome/history')}>
                     <div className={styles.textBox}>예약 관리</div>
                 </div>
                 <div className={styles.selectBox} style={{backgroundImage: `url(/imgs/sellermenu_4.png)`}} onClick={()=>navigate('/managestat')}>

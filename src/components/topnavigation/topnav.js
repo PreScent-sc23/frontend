@@ -120,7 +120,7 @@ function TopNav(props){
           break;
 
           case '/dictionary':
-          setPageTitle('PS 렌즈');
+          setPageTitle('PS 사전');
           setIcon('/assets/setting.svg');
           break;
 
