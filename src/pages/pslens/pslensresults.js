@@ -36,6 +36,7 @@ function PSLensResults (){
 
                     <div className={styles.ResultBox}>
                         
+                        
                         <img src='/assets/result3.jpeg'className={styles.FlowerBox}></img>
                         <div className={styles.ResultText}>거베라 - 신비, 풀 수 없는 수수께끼</div>
                     </div>
