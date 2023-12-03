@@ -35,16 +35,17 @@ function Home(){
     return(
         <div>
             <Statusbar/>
+            <div style={{display:'flex', padding : '0rem 1rem', gap:'1px', justifyContent : 'center',alignItems:'center', textAlign:'center'}}>
+              <img src='/imgs/logo.png' style={{width:'2.8rem', justifyContent : 'center',textAlign: 'center',}}></img>
+              {/* <div style={{fontFamily:'inter', fontSize:'1.6rem', fontWeight:'bold',}}>
+                PreScent
+              </div> */}
+            </div>
             <Searchbar/>
             <div style={{borderBottom:'solid #E2E2E2 1px', width:'100%', height:'200px', display:'flex', alignContent:'center'}}>
                 <div style={{width:'92%', height:'90%', margin:'4px auto',borderRadius:'12px', overflow:'hidden'}}><ImageSlider/></div>
             </div>
-            <div style={{display:'flex', gap:'2px', alignItems:'center'}}>
-              <img src='/imgs/logo.png' style={{width:'40px', margin:'8px'}}></img>
-              <div style={{fontFamily:'inter', fontSize:'28px', fontWeight:'bold',}}>
-                PreScent
-              </div>
-            </div>
+            
             <div className={styles.ButtonContatiner}>
               <div className={styles.ButtonRow}>
                 <div className= {styles.ButtonFat} onClick={()=>navigate('/myhistory')}>주문기록 버튼 이미지</div>

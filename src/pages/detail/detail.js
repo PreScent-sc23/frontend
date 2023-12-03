@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styles from './styles.module.scss';
 import { useNavigate,useParams,useLocation } from 'react-router-dom';
 import axios from 'axios';
 import Statusbar from '../../components/statusbar/statusbar';
 import TopNav from '../../components/topnavigation/topnav';
-import DatePickerComponent from '../../components/datepicker/datepicker';
 import TimePickerComponent from '../../components/timepicker/timepicker';
-
+import DatePickerComponent from '../../components/datepicker/datepicker';
 function ProductDetail(props){
 
     const navigate = useNavigate();
@@ -16,7 +15,7 @@ function ProductDetail(props){
     const fpKey = location.state ? location.state.fpKey : null;
     const [pickupDate,setPickupDate] = useState('');
     const [pickupTime,setPickupTime] = useState('');
-    // const fpKey = props.match.params.fpKey;
+    
 
     const [productDetails, setProductDetails]=useState({
         fpKey:'',
@@ -26,8 +25,6 @@ function ProductDetail(props){
         fpFlowerList: [],
         fpTags: '',
         fpPrice: 0,
-        // pickupDate: '',
-        // pickupTime: '',
     });
 
     useEffect(()=> {
@@ -67,7 +64,27 @@ function ProductDetail(props){
     const toggleTimePicker = () => {
         setIsTimePickerOpen(!isTimePickerOpen);
       };
+    
+    // const handleDateChange=useCallback((date)=>{
+    //     console.log(date);
+    //     setPickupDate(date);
+    // },[]);
+
+    // const handleTimeChange=useCallback((time)=>{
+    //     console.log(time);
+    //     setPickupTime(time);
+    // },[]);
    
+     const handleDateChange=(date)=>{
+        setPickupDate(date);
+        console.log(pickupDate);
+    }
+
+    const handleTimeChange=(time)=>{
+        setPickupTime(time);
+        console.log(pickupTime);
+    }
+
     return (
         <div>
             <Statusbar/>
@@ -100,17 +117,22 @@ function ProductDetail(props){
 
             <div className={styles.TextWrap}>
                 <div className={styles.Text}>픽업 날짜 선택</div>
-                {isDatePickerOpen && <DatePickerComponent />}
-                <img src='/assets/calendar_check.svg'className={styles.Icon}onClick={toggleDatePicker}/>
-                
+                <div className={styles.smallWrap}>
+                    {isDatePickerOpen &&<DatePickerComponent onDateChange={handleDateChange}/>}
+                    <img src='/assets/calendar_check.svg'className={styles.Icon}onClick={toggleDatePicker}/>
+                </div>
+               
             </div>
             
             <div className={styles.Line}/>
 
             <div className={styles.TextWrap}>
                 <div className={styles.Text}>픽업 시간 선택</div>
-                {isTimePickerOpen && <TimePickerComponent />}
-                <img src='/assets/time_check.svg' className={styles.Icon} onClick={toggleTimePicker}/>
+                <div className={styles.smallWrap}>
+                    {isTimePickerOpen && <TimePickerComponent onTimeChange={handleTimeChange}/>}
+                    <img src='/assets/time_check.svg' className={styles.Icon} onClick={toggleTimePicker}/>
+                </div>
+                
             </div>
             
 
@@ -121,10 +143,10 @@ function ProductDetail(props){
                 {/* <img src='/assets/time_check.svg' className={styles.Icon}/> */}
              {/* </div>  */} 
             
-            <div className={styles.TextWrap}>
+            {/* <div className={styles.TextWrap}>
                 <div className={styles.Text}>예약 일정</div>
-                {/* <div className={styles.Text}>12.07 (목) 13:00</div> */}
-            </div>
+                <div className={styles.Text}>{pickupDate} {pickupTime}</div>}
+            </div> */}
 
 
       

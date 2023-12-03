@@ -11,24 +11,24 @@ function SellerBottomTap(){
         <div className={styles.SellerBottomTapWrap}>
             
             <div className={styles.Button} onClick={()=>navigate('/managereserve')}>
-                <img src='/assets/calendar.svg'></img>
-                <div className={styles.ButtonText}>예약</div>
+                <img src='/assets/calendar.svg' style={{color : '##FF7074' ,width : '1.8rem', heigth : '1.8rem'}}></img>
+                {/* <div className={styles.ButtonText}>예약</div> */}
             </div>
 
             <div className={styles.Button} onClick={()=>navigate('/sellerhome')}>
-                <img src='/assets/home.svg'></img>
-                <div className={styles.ButtonText}>홈</div>
+                <img src='/assets/home.svg' style={{color : '##FF7074' ,width : '1.8rem', heigth : '1.8rem'}}></img>
+                {/* <div className={styles.ButtonText}>홈</div> */}
             </div>
 
             
             <div className={styles.Button} onClick={()=>navigate('/manageproduct')}>
-                <img src='/assets/product.svg'></img>
-                <div className={styles.ButtonText}>상품</div>
+                <img src='/assets/product.svg' style={{color : '##FF7074' ,width : '1.8rem', heigth : '1.8rem'}}></img>
+                {/* <div className={styles.ButtonText}>상품</div> */}
             </div>
 
             <div className={styles.Button} onClick={()=>navigate('/managestat')}>
-                <img src='/assets/statistics.svg'></img>
-                <div className={styles.ButtonText}>통계</div>
+                <img src='/assets/statistics.svg' style={{color : '##FF7074' ,width : '1.8rem', heigth : '1.8rem'}}></img>
+                {/* <div className={styles.ButtonText}>통계</div> */}
             </div>
 
 

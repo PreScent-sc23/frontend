@@ -3,7 +3,7 @@
     padding: 0.75rem 1.8rem;
     // margin-top: 2.94rem;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     background-color: white;
     justify-content: space-between;
     
@@ -23,6 +23,8 @@
 .Icons{
     width: 1.5rem;
     height: 1.5rem; 
+    align-items: center;
+    line-height: 0.5rem;
 }
 
 .TopNavButton{

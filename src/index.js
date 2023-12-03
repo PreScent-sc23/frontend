@@ -7,6 +7,7 @@ import Statusbar from './components/statusbar/statusbar';
 import Searchbar from './components/search/searchbar';
 import CustomerBottomTap from './components/bottomtap/customerbottomtap';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
