@@ -126,6 +126,11 @@ function TopNav(props){
           setPageTitle('PS 사전');
           setIcon('');
           break;
+
+          case '/dictionary/':
+          setPageTitle('PS 사전');
+          setIcon('');
+          break;
       }
 
     },[location]);
