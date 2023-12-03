@@ -30,6 +30,7 @@ import Payment from './pages/purchase/payment/payment';
 import CustomerHistory from './pages/history/customerhistory';
 import SellerHistory from './pages/history/sellerhistory';
 import NotFound from './pages/notfound/notfound';
+import Dictionary from './pages/dictionary/dictionary';
 
 function App() {
 
@@ -53,6 +54,7 @@ function App() {
               <Route path="/login" element={<Login/>}/>
               <Route path="/locationset" element={<LocationSet/>}/>
               <Route path="/home" element={<Home/>}/>
+              <Route path="/dictionary" element={<Dictionary/>}/>
               <Route path="/pslens" element={<PSLens/>}/>
               <Route path="/mypage" element={<Mypage/>}/>
               <Route path="/search" element={<Search/>}/>
@@ -69,18 +71,12 @@ function App() {
               <Route path="/sellerhome" element={<SellerHome/>}/>
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
-              <Route path="/detail/:id" element={<ProductDetail/>}/>
+              <Route path="/detail/:fpkey" element={<ProductDetail/>}/>
               <Route path="pslens/results" element = {<PSLensResults/>}/>
               <Route path="/cart" element = {<Cart/>}/>
               <Route path="/cart/payment" element = {<Payment/>}/>
               <Route path="/myhistory" element = {<CustomerHistory/>}/>
               <Route path="/sellerhome/history" element = {<SellerHistory/>}/>
-              
-              
-              
-                           
-              
-              
               
               
               <Route path="/*" element = {<NotFound/>}/>

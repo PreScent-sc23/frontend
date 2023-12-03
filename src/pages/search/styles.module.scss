@@ -44,13 +44,15 @@
 .ProductContainer{ // 상품 카드 리스트 전체 컨테이너
     display: grid;
     flex-direction: row;
-    // flex-wrap:wrap;
+    flex-wrap:wrap;
     // width : 100%;
     grid-template-columns: repeat(2, 1fr);
     // grid-template-rows: 5rem;
     // border: 1px solid black;
     margin : 1rem;
+    // grid-auto-rows: minmax(200, auto);
     grid-auto-rows: minmax(200, auto);
+    
     grid-gap: 1rem;
     
     // padding : 0.5rem;

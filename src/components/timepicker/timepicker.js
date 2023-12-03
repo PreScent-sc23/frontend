@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { useState } from 'react';
-import styles from './datepicker.module.scss';
+import styles from './timepicker.module.scss';
 import {getMonth,getDate, getDay} from "date-fns"
 import { ko } from "date-fns/esm/locale";
 import DatePicker from 'react-datepicker';
@@ -8,7 +8,7 @@ import DatePicker from 'react-datepicker';
 
 
 
-function DatePickerComponent({type}){
+function TimePickerComponent(){
 
   // function seletTime() {
   //   let Days = ['일', '월', '화', '수', '목', '금', '토'];
@@ -42,7 +42,7 @@ function DatePickerComponent({type}){
           closeOnScroll={true}    // 스크롤을 움직였을 때 자동으로 닫히도록 설정 기본값 false
           placeholderText="픽업 날짜 선택"
           popperPlacement="bottom"    // placeholder
-          customInput={<CustomInput inputType={type}/>} // Use a custom input component
+          customInput={<CustomInput/>} // Use a custom input component
           
             dayClassName={(d)=>
               // d.getDate() === date.getDate()
@@ -57,4 +57,4 @@ function DatePickerComponent({type}){
         />
       );
 }
-export default DatePickerComponent;
+export default TimePickerComponent;

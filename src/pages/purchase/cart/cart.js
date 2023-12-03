@@ -82,7 +82,7 @@ function Cart() {
             <div className={styles.Text} style={{ color: "#72777A", fontSize: "1rem" }}>결제 예정 금액</div>
             <div className={styles.Text}>{totalPrice}원</div>
           </div>
-          <div className={styles.PurchaseButton} onClick={() => navigate('/payment')}>
+          <div className={styles.PurchaseButton} onClick={() => navigate('/cart/payment')}>
             전체 상품 결제 하기
           </div>
         </div>

@@ -36,7 +36,7 @@ function SellerHome(){
             <img src={profilePhoto} alt="Profile" className={styles.profilePhoto} /> 
                 <div style={{fontSize:'18px', width:'10rem', height:'1.8rem', backgroundColor:'#E2E2E2', borderRadius:'8px', lineHeight:'1.8rem'}}>{userName}</div>
             </div>
-            <div style={{width:'100%', display:'flex', flexDirection: 'column', }}>
+            <div style={{width:'430px', height:'600px',display:'flex', flexDirection: 'column', justifyContent:'center', alignItems:'center'}}>
                 <div className={styles.selectBox} style={{backgroundImage: `url(/imgs/sellermenu_1.png)`}} onClick={()=>navigate('/shopregister')}>
                     <div className={styles.textBox}>가게 관리</div>
                 </div>

@@ -51,7 +51,7 @@ function Home(){
                 <div className= {styles.ButtonFat} onClick={()=>navigate('/pslens')}>PSlens 버튼 이미지</div>
               </div>
               <div className={styles.ButtonRow}>
-                <div className={styles.ButtonSlim} onClick={()=>navigate('/404')}>꽃말 사전 버튼 이미지</div>
+                <div className={styles.ButtonSlim} onClick={()=>navigate('/dictionary')}>꽃말 사전 버튼 이미지</div>
               </div>
               <div className={styles.ButtonRow}>
                 <div className={styles.ButtonSlim} onClick={()=>navigate('/404')}>아무거나</div>
