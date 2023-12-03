@@ -8,7 +8,7 @@ import TopNav from '../../components/topnavigation/topnav';
 export function AddFinished(){
     
     const navigate = useNavigate(); 
-    const shopKey=9;
+    const shopKey=32;
     const [fpName, setProductName] = useState('');
     const [fpPrice, setProductPrice] = useState('');
     const [fpTag, setProductTag] = useState('');

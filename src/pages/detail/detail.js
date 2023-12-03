@@ -45,16 +45,16 @@ function ProductDetail(props){
     fetchData();
 },[fpKey]);
 
-    const addToCart = async()=>{
-        try {
-            await axios.post('http://3.36.175.224:8080/endpoint주소/add-to-cart',{
-                productId : productDetails.fpKey,
-            });
-            navigate('/cart');
-        }catch(error){
-            console.log('장바구니에 완제품 담기 오류');
-        }
-    };
+    // const addToCart = async()=>{
+    //     try {
+    //         await axios.post('http://3.36.175.224:8080/endpoint주소/add-to-cart',{
+    //             productId : productDetails.fpKey,
+    //         });
+    //         navigate('/cart');
+    //     }catch(error){
+    //         console.log('장바구니에 완제품 담기 오류');
+    //     }
+    // };
     const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
     const toggleDatePicker = () => {
         setIsDatePickerOpen(!isDatePickerOpen);
@@ -150,7 +150,7 @@ function ProductDetail(props){
 
 
       
-            <div className={styles.PurchaseButton} onClick={addToCart}>
+            <div className={styles.PurchaseButton} /*onClick={addToCart}*/onClick={()=>navigate(`/cart`)}>
                 <img src='/assets/shoppingcart.svg'className={styles.Image}/>
                 <div>장바구니에 담기</div>
             </div>
