@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# PreScent 🎁
+> PreScent는 선물을 의미하는 Present와 꽃의 향기를 의미하는 Scent의 합성어입니다.  
+> 꽃의 구매, 판매를 좀 더 직관적으로 편하게 만들고자 프로젝트를 시작하게 되었습니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 구현 목표 🎯
+- 판매자 기능
+  - [x] 회원가입 페이지
+  - [x] 판매자 홈 페이지
+  - [x] 가게등록 페이지
+  - [x] 상품관리 페이지
+  - [x] 완제품 상품등록 페이지
+  - [x] 주문제작 상품등록 페이지
+  - [x] 주문내역 조회 페이지
+  - [x] 홈 광고 배너
+  - [ ] 통계 페이지
 
-In the project directory, you can run:
+- 고객 기능
+  - [x] 회원가입 페이지
+  - [x] 고객 홈 페이지
+  - [x] 태그 검색 페이지
+  - [x] 상품 세부정보 페이지
+  - [x] 장바구니 페이지
+  - [x] 꽃말 사전 페이지 (PS:사전)
+  - [x] 꽃 분석 페이지 (PS:Lens)
+  - [x] 결제 페이지
+  - [x] 고객 마이페이지
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ ## PreScent 프론트엔드 구성원 😎
+ |학과|이름|역할|이메일|
+ |---|-------|---|---|
+ |소프트웨어|윤정환|전반적 UI,UX 설계 / 리소스 제작 / PS:사전|jungwani98@ajou.ac.kr|
+ |소프트웨어|최윤지|전반적 UI,UX 설계 / 컴포넌트 관리 / PS:Lens|yyy0304@ajou.ac.kr|
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ ## 프로젝트 도구 📝
+ <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+ <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+ <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+ <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+ <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 서비스 소개 포스터 🎞
