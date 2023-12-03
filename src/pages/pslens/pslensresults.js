@@ -29,7 +29,7 @@ function PSLensResults() {
                 max_tokens: 400
             }, {
                 headers: {
-                    'Authorization': `Bearer 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` // Replace with your actual API key
+                    // 'Authorization': `` // Replace with your actual API key
                 }
             });
 
