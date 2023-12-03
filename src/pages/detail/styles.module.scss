@@ -57,7 +57,7 @@ display: block;
     line-height: 1.125rem; /* 75% */
     letter-spacing: 0.00625rem;
     text-align: end;
-    color: #6B4EFF;
+    color: #FF7074;
     }
 
 .FpTagWrap{
@@ -124,11 +124,18 @@ display: block;
 .TextWrap{
     display: flex;
     padding: 0rem 2.5rem;
-    align-items: stretch;
+    align-items: center;
     // gap : 10rem;
     justify-content: space-between;
 
 
+}
+.smallWrap
+{
+    display : flex;
+    flex-direction: row;
+    // justify-content: space-between;
+    gap : 0.6rem;
 }
 
 .Text{
@@ -138,6 +145,7 @@ display: block;
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 500;
+    margin-right : 2rem;
     // line-height: 1.125rem; /* 90% */
 }
 
@@ -156,7 +164,7 @@ display: block;
     // align-items: center;
     gap: 0.5rem;
     border-radius: 0.75rem;
-    background: #7E49FF;
+    background: #FF7074;
     color : white;
     flex-direction: row;
     align-items: flex-start;
