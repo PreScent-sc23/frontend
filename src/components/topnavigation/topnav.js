@@ -123,6 +123,11 @@ function TopNav(props){
           setPageTitle('PS 렌즈');
           setIcon('/assets/setting.svg');
           break;
+
+          case '/dictionary/':
+          setPageTitle('PS 사전');
+          setIcon('');
+          break;
       }
 
     },[location]);
