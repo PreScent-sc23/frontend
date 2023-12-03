@@ -48,14 +48,42 @@ function Home(){
             
             <div className={styles.ButtonContatiner}>
               <div className={styles.ButtonRow}>
-                <div className= {styles.ButtonFat} onClick={()=>navigate('/myhistory')}>주문기록 버튼 이미지</div>
-                <div className= {styles.ButtonFat} onClick={()=>navigate('/pslens')}>PSlens 버튼 이미지</div>
+                <div className= {styles.ButtonFat} onClick={()=>navigate('/cart')}>
+                  <div className={styles.ButtonText} style={{margin: '12px',borderBottom:'solid #FF9494 2px'}}>
+                    장바구니
+                  </div>
+                  <div className={styles.ButtonEmoji} style={{marginLeft:'40px', marginBottom:'80px'}}>
+                  <img style={{width:'150px'}} src='/imgs/cart.png'></img>
+                  </div>
+                </div>
+                <div className= {styles.ButtonFat} onClick={()=>navigate('/pslens')}>
+                  <div className={styles.ButtonText} style={{margin: '12px',borderBottom:'solid #FF9494 2px'}}>
+                    검색
+                  </div>
+                  <div className={styles.ButtonEmoji} style={{marginLeft:'40px', marginBottom:'80px'}}>
+                  <img style={{width:'150px'}} src='/imgs/search.png'></img>
+                  </div>
+                </div>
               </div>
               <div className={styles.ButtonRow}>
-                <div className={styles.ButtonSlim} onClick={()=>navigate('/dictionary')}>꽃말 사전 버튼 이미지</div>
+                <div className={styles.ButtonSlim} onClick={()=>navigate('/pslens')}>
+                  <div className={styles.ButtonText} style={{borderBottom:'solid #FF9494 2px', margin: '12px', marginBottom:'120px'}}>
+                    PS:Lens
+                  </div>
+                  <div className={styles.SlimButtonEmoji} style={{marginLeft:'230px',marginBottom:'100px'}}>
+                  <img style={{width:'150px'}} src='/imgs/pslens.png'></img>
+                  </div>
+                </div>
               </div>
               <div className={styles.ButtonRow}>
-                <div className={styles.ButtonSlim} onClick={()=>navigate('/404')}>아무거나</div>
+                <div className={styles.ButtonSlim} onClick={()=>navigate('/dictionary')}>
+                <div className={styles.ButtonText} style={{borderBottom:'solid #FF9494 2px', margin: '12px', marginBottom:'120px'}}>
+                    PS:사전
+                  </div>
+                  <div className={styles.SlimButtonEmoji} style={{marginLeft:'230px',marginBottom:'100px'}}>
+                  <img style={{width:'150px'}} src='/imgs/dictionary.png'></img>
+                  </div>
+                </div>
               </div>
             </div>    
             <CustomerBottomTap/>

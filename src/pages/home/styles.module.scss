@@ -20,28 +20,45 @@
 
 
 .ButtonFat{
-    background-color: #F6F6F6;
+    background-color: #fefefe;
    
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
     width:42%;
     height: 12rem;
     border-radius: 12px;
     margin :0.4rem;
     box-shadow:0px 4px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .ButtonSlim{
-    background-color: #F6F6F6;
+    background-color: #fefefe;
     
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
     width: 88%;
     height: 11rem;
     border-radius: 12px;
     // margin: 8px auto;
     margin : 0.6rem;
     box-shadow:0px 4px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.ButtonText{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ButtonEmoji{
+    transform: translateY(10px);
+}
+
+.SlimButtonEmoji{
+    transform: translate(-10px, -110px);
 }
