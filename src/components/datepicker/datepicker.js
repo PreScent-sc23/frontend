@@ -42,7 +42,7 @@
 //           placeholderText="픽업 날짜 선택"
 //           popperPlacement="bottom"    // placeholder
 //           customInput={<CustomInput/>} // Use a custom input component
-          
+        
 //           dayClassName={(d)=>
 //           getDate(d)===getDate(pickupDate) && getMonth(d) ===getMonth(pickupDate)
 //             ? 'normal-day selected-day'
@@ -52,3 +52,4 @@
 //       );
 // }
 // export default DatePickerComponent;
+
