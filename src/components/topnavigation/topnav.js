@@ -85,10 +85,7 @@ function TopNav(props){
           setPageTitle('예약 관리');
           setIcon('/assets/setting.svg');
           break;
-
-
-      
-
+          
         case '/login':
           setPageTitle('로그인');
           setIcon('');
@@ -123,8 +120,8 @@ function TopNav(props){
           break;
 
           case '/dictionary':
-          setPageTitle('PS 사전');
-          setIcon('');
+          setPageTitle('PS 렌즈');
+          setIcon('/assets/setting.svg');
           break;
       }
 
@@ -140,7 +137,8 @@ function TopNav(props){
     <div className={styles.TopNavWrap}>
        {back && <img src='/assets/back.svg' className={styles.image} onClick={()=>navigate(-1)}/>}
        <div className={styles.TopNavTitle}>{pageTitle}</div>
-       <img src={icon} className={styles.image}/>
+       <img src={icon} className={styles.image} onClick= {()=>navigate(`/cart`)}/>
+       {/* <img src={icon} className={styles.image}/> */}
     </div>
     )
 }
