@@ -12,16 +12,16 @@ function ProductDetail({ Component, pageProps }){
     const params = useParams();
     const location = useLocation();
     // const fpKey = location.state.fpKey;
-    const fpKey = location.state ? location.state.fpKey : null;
-    const userKey='';//추후 토큰으로 교체  
+    // const fpKey = location.state ? location.state.fpKey : null;
+    const fpKey =3;
+    const userKey=3;//추후 토큰으로 교체  
     const [pickupDate,setPickupDate] = useState('');
     const [pickupTime,setPickupTime] = useState('');
     const [amount, setAmount]=useState(1);
-
     
    
     const cart= {
-        'userKey' : userKey,
+        'userKey' :userKey,
         'fpKey' : fpKey,
         'pickupDate' : pickupDate,
         'pickupTime' : pickupTime,
@@ -35,7 +35,7 @@ function ProductDetail({ Component, pageProps }){
         fpDetail: '',
         fpFlowerList: [],
         fpTags: '',
-        fpPrice: 0,
+        fpPrice: '',
     });
 
 
@@ -70,10 +70,17 @@ function ProductDetail({ Component, pageProps }){
 
     const addToCart = async()=>{
         try {
-            await axios.post('http://3.36.175.224:8080/customer/cart/add-to-cart',{
-                cart
-            },{headers: {'Content-Type': 'application/json'}});
-            navigate('/cart');
+            await axios.post(`http://3.36.175.224:8080/customer/cart/add-to-cart`,{
+                userKey: userKey,
+                fpKey: fpKey,
+                pickupDate: pickupDate,
+                pickupTime: pickupTime,
+                amount: amount,
+            },{headers: {'Content-Type': 'application/json'}}
+            );
+            console.log(userKey);
+            navigate(`/home`, { state: { userKey: userKey } })
+            // navigate(`/cart/${userKey}`, { state: { userKey: userKey } })
 
         }catch(error){
             console.log(cart);

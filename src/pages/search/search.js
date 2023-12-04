@@ -17,9 +17,7 @@ function Search(){
     const [fpName,setFpName] =useState('');
     const [fpPrice, setFpPrice] = useState('');
     const [responseData,setResponseData] = useState([]);
-
     
-
     const navigate = useNavigate();
     const handleEnter = (e) => {
         if (e.key === "Enter") {

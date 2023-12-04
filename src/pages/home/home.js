@@ -31,7 +31,7 @@ function ImageSlider() {
 
 function Home(){
   const navigate = useNavigate(); 
-
+  const userKey =3;
     return(
         <div>
             <Statusbar/>
@@ -48,7 +48,7 @@ function Home(){
             
             <div className={styles.ButtonContatiner}>
               <div className={styles.ButtonRow}>
-                <div className= {styles.ButtonFat} onClick={()=>navigate('/cart')}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/cart/${userKey}`)}>
                   <div className={styles.ButtonText} style={{margin: '12px',borderBottom:'solid #FF9494 2px'}}>
                     장바구니
                   </div>

@@ -7,10 +7,36 @@ import Searchbar from '../../../components/search/searchbar';
 import CustomerBottomTap from '../../../components/bottomtap/customerbottomtap';
 import TopNav from '../../../components/topnavigation/topnav';
 
-function Payment(){
+function Payment(props){
+    const userKey=87;
+    const testTotalPrice=1000;
     const navigate=useNavigate();
-    const [cartItems, setCartItems]=useState([]);
+    const [cartItems, setCartItems] = useState({
+        userKey:'',
+        totalPrice :'',
+        totalCount : '',
+        flowerShopName:'',
+        fpKey:'',
+        fpImage:'',
+        fpName: '',
+        // fpDetail: '',
+        // fpFlowerList: [],
+        // fpTags: '',
+        fpPrice: '',
+      });
 
+
+    //   useEffect(() => {
+    //     axios.get(`http://3.36.175.224:8080/cart/view-in-cart/${userKey}`)
+    //       .then(response => {
+    //         setCartItems(response.data);
+    //         setTotalPrice(response.data.totalPrice);
+    //         setTotalAmount(response.data.totalAmount);
+    //       })
+    //       .catch(error => {
+    //         console.log('cart 상품 불러오기 오류', error);
+    //       });
+    //   }, []);  
     useEffect(()=>{
         const fetchCartItems = async()=> {
             try {
@@ -23,11 +49,11 @@ function Payment(){
             }
         };
         fetchCartItems();
-    },[]);
+    },[userKey]);
 
-    const getTotalAmout=()=> {
-        return cartItems.reduce((total, item)=> total+item.price,0);
-    };
+    // const getTotalAmout=()=> {
+    //     return cartItems.reduce((total, item)=> total+item.price,0);
+    // };
 
 
 
@@ -42,9 +68,9 @@ function Payment(){
             pay_method: 'card',                           // 결제수단
             merchant_uid: `mid_${new Date().getTime()}`,   // 주문번호
             // amount : getTotalAmout().toString(),                                 // 결제금액
-            amount : '49000',
+            amount : testTotalPrice,
             name: '아임포트 결제 테스트',                  // 주문명
-            buyer_name: '홍길동',                           // 구매자 이름
+            buyer_name: userKey,                           // 구매자 이름
             buyer_tel: '01012341234',                     // 구매자 전화번호
             buyer_email: 'example@example',               // 구매자 이메일
             buyer_addr: '신사동 661-16',                    // 구매자 주소
