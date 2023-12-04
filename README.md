@@ -64,4 +64,5 @@
  
 
 ## 서비스 소개 포스터 🎞
-![PreScent_sc23](https://github.com/PreScent-sc23/PreScent/assets/118275773/002444e4-928d-4f7a-ab85-aedb05f58924)
+![1_11zon](https://github.com/PreScent-sc23/frontend/assets/92291198/33ccf97d-2c3b-4c36-b0b5-eb726f74951b)
+
