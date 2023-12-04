@@ -10,6 +10,7 @@ function TopNav(props){
     const [pageTitle, setPageTitle] = useState('');
     const {back=true}=props;
     const [icon, setIcon]=useState('');
+    const userKey = 3;
 
     useEffect(()=> {
       switch(location.pathname){
@@ -30,7 +31,7 @@ function TopNav(props){
           break;
 
 
-        case '/cart':
+        case `/cart/${userKey}`:
           setPageTitle('장바구니');
           setIcon('/assets/cart.svg');
           break;
@@ -142,7 +143,7 @@ function TopNav(props){
     <div className={styles.TopNavWrap}>
        {back && <img src='/assets/back.svg' className={styles.image} onClick={()=>navigate(-1)}/>}
        <div className={styles.TopNavTitle}>{pageTitle}</div>
-       <img src={icon} className={styles.image} onClick= {()=>navigate(`/cart`)}/>
+       <img src={icon} className={styles.image} onClick= {()=>navigate(`/cart/${userKey}`)}/>
        {/* <img src={icon} className={styles.image}/> */}
     </div>
     )
