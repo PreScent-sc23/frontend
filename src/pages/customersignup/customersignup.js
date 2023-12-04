@@ -13,16 +13,24 @@ function Customersignup(){
     const [phonenum, setPhonenum] = useState('');
     const navigate = useNavigate();
 
+    const userKey = 123;
+    const location = '아주대학교';
 
     const handleSignUp = async () => {
         console.log("됨?");
+        if (password != confirmPassword){
+            alert('비밀번호가 서로 다릅니다! 다시 확인 해주세요.')
+            return;
+        }
         try {
             const response = await axios.post('http://3.36.175.224:8080/customer/signup', {
+                userKey,
                 name,
                 idEmail,
                 password,
                 confirmPassword,
                 phonenum,
+                location,
             },{
                 headers: {
                     'Content-Type': 'application/json'
