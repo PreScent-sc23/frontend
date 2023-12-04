@@ -3,7 +3,7 @@
 > PreScent는 선물을 의미하는 Present와 꽃의 향기를 의미하는 Scent의 합성어입니다.  
 > 꽃의 구매, 판매를 좀 더 직관적으로 편하게 만들고자 프로젝트를 시작하게 되었습니다.
 
-## 서비스 메인 로고
+## 메인 로고
 <img src="https://github.com/PreScent-sc23/frontend/assets/134992891/3fd67d35-404d-4794-a435-84df6bd03c1e/svglogo.svg" width="60" height="60"/>
 
 ## 프로젝트 개요
@@ -42,7 +42,7 @@
  |학과|이름|역할|이메일|
  |---|-------|---|---|
  |소프트웨어|윤정환|전반적 UI,UX 설계 / 리소스 제작 / PS:사전|jungwani98@ajou.ac.kr|
- |소프트웨어|최윤지|전반적 UI,UX 디자인 및 설계 / 서비스 메인 로고 디자안 / 컴포넌트 관리 / PS:Lens / GPT API 꽃 이미지 분위기 추출|yyy0304@ajou.ac.kr|
+ |소프트웨어|최윤지|전반적 UI,UX 디자인 및 설계 / 메인 로고 디자인 / 컴포넌트 관리 / PS:Lens / GPT API 꽃 이미지 분위기 추출|yyy0304@ajou.ac.kr|
 
  ## 프로젝트 도구 📝
  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
