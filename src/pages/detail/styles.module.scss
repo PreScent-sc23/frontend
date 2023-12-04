@@ -175,3 +175,70 @@ display: block;
     line-height: 1.5rem; /* 133.333% */
 }
 
+
+
+// .AmountWrap {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     margin-top: 20px;
+  
+//     .Text {
+//       font-size: 16px;
+//       margin-bottom: 10px;
+//     }
+  
+//     .AmountControls {
+//       display: flex;
+//       align-items: center;
+  
+//       .AmountButton {
+//         background-color: #007bff;
+//         color: #fff;
+//         border: none;
+//         padding: 8px 12px;
+//         font-size: 18px;
+//         cursor: pointer;
+//         transition: background-color 0.3s;
+  
+//         &:hover {
+//           background-color: #0056b3;
+//         }
+//       }
+  
+//       .Amount {
+//         font-size: 18px;
+//         margin: 0 10px;
+//       }
+//     }
+// }
+
+.AmountControls {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      
+          .AmountButton {
+            background-color: #ffffff;
+            color: #858585;
+            border: 0.5px solid #858585;
+            border-radius: 0.2rem;
+            padding: 0.1rem 0.6rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+      
+            &:hover {
+              background-color: #E2E2E2;
+            }
+          }
+      
+          .Amount {
+            font-size: 1rem;
+            margin: 0 0.6rem;
+            font-weight: 600;
+            text-align: center;
+        
+            
+          }
+        }
