@@ -6,26 +6,49 @@ import Statusbar from '../../components/statusbar/statusbar';
 import TopNav from '../../components/topnavigation/topnav';
 import TimePickerComponent from '../../components/timepicker/timepicker';
 import DatePickerComponent from '../../components/datepicker/datepicker';
-function ProductDetail(props){
+function ProductDetail({ Component, pageProps }){
 
     const navigate = useNavigate();
     const params = useParams();
     const location = useLocation();
     // const fpKey = location.state.fpKey;
     const fpKey = location.state ? location.state.fpKey : null;
+    const userKey='';//추후 토큰으로 교체  
     const [pickupDate,setPickupDate] = useState('');
     const [pickupTime,setPickupTime] = useState('');
+    const [amount, setAmount]=useState(1);
+
     
+   
+    const cart= {
+        'userKey' : userKey,
+        'fpKey' : fpKey,
+        'pickupDate' : pickupDate,
+        'pickupTime' : pickupTime,
+        'amount' : amount,
+    }
 
     const [productDetails, setProductDetails]=useState({
         fpKey:'',
         fpImage:'',
         fpName: '',
-        fpDescription: '',
+        fpDetail: '',
         fpFlowerList: [],
         fpTags: '',
         fpPrice: 0,
     });
+
+
+    const increaseAmount = () => {
+        setAmount(amount + 1);
+      };
+    
+      const decreaseAmount = () => {
+        if (amount > 1) {
+          setAmount(amount - 1);
+        }
+      };
+
 
     useEffect(()=> {
         console.log('fpKey in useEffect:', fpKey);
@@ -45,25 +68,36 @@ function ProductDetail(props){
     fetchData();
 },[fpKey]);
 
-    // const addToCart = async()=>{
-    //     try {
-    //         await axios.post('http://3.36.175.224:8080/endpoint주소/add-to-cart',{
-    //             productId : productDetails.fpKey,
-    //         });
-    //         navigate('/cart');
-    //     }catch(error){
-    //         console.log('장바구니에 완제품 담기 오류');
-    //     }
-    // };
-    const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
-    const toggleDatePicker = () => {
-        setIsDatePickerOpen(!isDatePickerOpen);
-      };
+    const addToCart = async()=>{
+        try {
+            await axios.post('http://3.36.175.224:8080/customer/cart/add-to-cart',{
+                cart
+            },{headers: {'Content-Type': 'application/json'}});
+            navigate('/cart');
 
-    const [isTimePickerOpen, setIsTimePickerOpen] = useState(false);
-    const toggleTimePicker = () => {
-        setIsTimePickerOpen(!isTimePickerOpen);
-      };
+        }catch(error){
+            console.log(cart);
+            console.log('장바구니에 완제품 담기 오류');
+        }
+    };
+
+    // const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
+    // const toggleDatePicker = () => {
+    //     setIsDatePickerOpen(!isDatePickerOpen);
+    //   };
+
+    // const [isTimePickerOpen, setIsTimePickerOpen] = useState(false);
+    // const toggleTimePicker = () => {
+    //     setIsTimePickerOpen(!isTimePickerOpen);
+    //   };
+
+    // const toggleDatePicker = () => {
+    //     setIsDatePickerOpen(!isDatePickerOpen);
+    //   };
+    
+    // const toggleTimePicker = () => {
+    //     setIsTimePickerOpen(!isTimePickerOpen);
+    //   };
     
     // const handleDateChange=useCallback((date)=>{
     //     console.log(date);
@@ -77,12 +111,12 @@ function ProductDetail(props){
    
      const handleDateChange=(date)=>{
         setPickupDate(date);
-        console.log(pickupDate);
+        console.log(date);
     }
 
     const handleTimeChange=(time)=>{
         setPickupTime(time);
-        console.log(pickupTime);
+        console.log(time);
     }
 
     return (
@@ -98,7 +132,7 @@ function ProductDetail(props){
             
             <div className={styles.DetailWrap} key = {productDetails.fpKey}>
                 <div className={styles.FpName}>{productDetails.fpName}</div>
-                <div className={styles.FpDescription}>{productDetails.fpDescription}</div>
+                <div className={styles.FpDescription}>{productDetails.fpDetail}</div>
                 <div className={styles.FpFlowerWrap}>        
                     {/* <div className={styles.fpFlowerList}>{productDetails.fpFlowerList}</div> */}
                     {productDetails.fpFlowerList.map((flower,index)=>(
@@ -114,12 +148,31 @@ function ProductDetail(props){
 
 
             <div className={styles.Line}/>
+            
+            <div className={styles.TextWrap}>
+                <div className={styles.Text}>상품 수량</div>
+                <div className={styles.smallWrap}>
+                    <div className={styles.AmountControls}>
+                        <button onClick={decreaseAmount} className={styles.AmountButton}>-</button>
+                        <div className={styles.Amount}>{amount}</div>
+                        <button onClick={increaseAmount} className={styles.AmountButton}>+</button>
+                    </div>
+                </div>
+            </div>
+               
+        
+            
+
+
+
+            <div className={styles.Line}/>
 
             <div className={styles.TextWrap}>
                 <div className={styles.Text}>픽업 날짜 선택</div>
                 <div className={styles.smallWrap}>
-                    {isDatePickerOpen &&<DatePickerComponent onDateChange={handleDateChange}/>}
-                    <img src='/assets/calendar_check.svg'className={styles.Icon}onClick={toggleDatePicker}/>
+                    <DatePickerComponent {...pageProps} onDateChange={handleDateChange}/>
+                    {/* {isDatePickerOpen && <DatePickerComponent onDateChange={handleDateChange}/>} */}
+                    <img src='/assets/calendar_check.svg'className={styles.Icon}/*onClick={toggleDatePicker}*//>
                 </div>
                
             </div>
@@ -129,8 +182,9 @@ function ProductDetail(props){
             <div className={styles.TextWrap}>
                 <div className={styles.Text}>픽업 시간 선택</div>
                 <div className={styles.smallWrap}>
-                    {isTimePickerOpen && <TimePickerComponent onTimeChange={handleTimeChange}/>}
-                    <img src='/assets/time_check.svg' className={styles.Icon} onClick={toggleTimePicker}/>
+                   <TimePickerComponent {...pageProps} onTimeChange={handleTimeChange}/>
+                    {/* {isTimePickerOpen && <TimePickerComponent onTimeChange={handleTimeChange}/>} */}
+                    <img src='/assets/time_check.svg' className={styles.Icon} /*onClick={toggleTimePicker}*//>
                 </div>
                 
             </div>
@@ -150,12 +204,13 @@ function ProductDetail(props){
 
 
       
-            <div className={styles.PurchaseButton} /*onClick={addToCart}*/onClick={()=>navigate(`/cart`)}>
+            <div className={styles.PurchaseButton} onClick={addToCart}>
                 <img src='/assets/shoppingcart.svg'className={styles.Image}/>
                 <div>장바구니에 담기</div>
             </div>
         
         </div>
+
     )
 
 }
