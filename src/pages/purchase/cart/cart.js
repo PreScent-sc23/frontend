@@ -8,7 +8,7 @@ import CustomerBottomTap from '../../../components/bottomtap/customerbottomtap';
 function Cart() {
   const navigate = useNavigate();
   const userKey =1;
-  const fpKey =3;
+  // const fpKey =3;
 
   const [cartItems,setCartItems]=useState([]);
   const [totalPrice, setTotalPrice] = useState('');
