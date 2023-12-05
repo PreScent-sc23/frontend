@@ -9,13 +9,13 @@ import DatePickerComponent from '../../components/datepicker/datepicker';
 function ProductDetail({ Component, pageProps }){
 
     const navigate = useNavigate();
-    const params = useParams();
+    // const params = useParams();
     // const { fpKey } = useParams();
-
+    // const fpKey = params.fpKey;
     const location = useLocation();
     // const fpKey = location.state.fpKey;
-    // const fpKey = location.state ? location.state.fpKey : null;
-    const fpKey ='';
+    const fpKey = location.state ? location.state.fpKey : null;
+    // const fpKey ='';
     const userKey=1;//추후 토큰으로 교체  
     const [pickupDate,setPickupDate] = useState('');
     const [pickupTime,setPickupTime] = useState('');

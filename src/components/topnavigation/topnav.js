@@ -11,6 +11,7 @@ function TopNav(props){
     const {back=true}=props;
     const [icon, setIcon]=useState('');
     const userKey = 1;
+    
 
     useEffect(()=> {
       switch(location.pathname){
@@ -37,7 +38,7 @@ function TopNav(props){
           break;
 
 
-        case '/cart/payment':
+        case `/cart/payment/${userKey}`:
           setPageTitle('상품 결제');
           setIcon('/assets/cart.svg');
           break;
@@ -91,6 +92,11 @@ function TopNav(props){
           setPageTitle('로그인');
           setIcon('');
           break;
+
+        // case `/detail/${fpKey}`:
+        //   setPageTitle('상품 상세 정보');
+        //   setIcon('');
+        //   break;
           
         case '/sellersignup':
           setPageTitle('사업자 회원 등록');
