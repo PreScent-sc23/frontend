@@ -4,7 +4,15 @@
     padding: 0.8125rem 1rem 0.8125rem 2rem;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: fixed;
+    width: 88vw;
+    height : auto;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    // width: 100%;
+    z-index: 1000; /* 적절한 z-index 값을 선택하세요 */
   }
   
   .iosStatusBarTime {

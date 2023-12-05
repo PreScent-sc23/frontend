@@ -7,12 +7,13 @@ import TopNav from '../../../components/topnavigation/topnav';
 import CustomerBottomTap from '../../../components/bottomtap/customerbottomtap';
 function Cart() {
   const navigate = useNavigate();
-  const userKey =3;
+  const userKey =1;
   const fpKey =3;
 
   const [cartItems,setCartItems]=useState([]);
   const [totalPrice, setTotalPrice] = useState('');
   const [totalCount, setTotalCount] =useState('');
+
 
 
   useEffect(()=> {
@@ -39,33 +40,50 @@ fetchCart();
 },[userKey]);
 console.log('카트아이템state에 잘 들어간?',cartItems);
 
-// useEffect(() => {
-//   const updatedTotalCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-//   const updatedTotalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
-//   setTotalCount(updatedTotalCount);
-//   setTotalPrice(updatedTotalPrice);
-// }, [cartItems]);
+useEffect(() => {
+  // Calculate the total price and quantity when cartItems change
+  const updatedTotalPrice = cartItems.reduce((acc, item) => acc + item.fpPrice * item.count, 0);
+  const updatedTotalCount = cartItems.reduce((acc, item) => acc + item.count, 0);
 
-  const handleRemoveItem = async (itemId) => {
-    try {
-      await axios.delete(`http://3.36.175.224:8080/customer/cart/remove-item/${itemId}`, {
-        params: { userKey }
-      });
+  setTotalPrice(updatedTotalPrice);
+  setTotalCount(updatedTotalCount);
+}, [cartItems]);
 
-      const updatedCart = cartItems.filter(item => item.id !== itemId);
-      setCartItems(updatedCart);
 
-      const updatedTotalPrice = updatedCart.reduce((acc, item) => acc + item.price, 0);
-      setTotalPrice(updatedTotalPrice);
+const handleRemoveItem = async (cartItemKey) => {
+  try {
+    await axios.delete(`http://3.36.175.224:8080/customer/cart/delete-cart-item/`, {
+      params: { cartItemKey}  
+  });
+    console.log(cartItemKey);
+    const updatedCart = cartItems.filter(item => item.cartItemKey !== cartItemKey);
+    setCartItems(prevCartItems => updatedCart);
 
-      const updatedTotalCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-      setTotalCount(updatedTotalCount)
+  } catch (error) {
+    console.log('장바구니 상품 삭제 요청 실패:', error);
+  }
+};
 
-    } catch (error) {
-      console.log('장바구니 상품 삭제 요청 실패:', error);
-    }
-  };
+  // const handleRemoveItem = async (itemId) => {
+  //   try {
+  //     await axios.delete(`http://3.36.175.224:8080/customer/cart/delete-cart-item/${itemId}`, {
+  //       params: { userKey }
+  //     });
+
+  //     const updatedCart = cartItems.filter(item => item.id !== itemId);
+  //     setCartItems(updatedCart);
+
+  //     const updatedTotalPrice = updatedCart.reduce((acc, item) => acc + item.price, 0);
+  //     setTotalPrice(updatedTotalPrice);
+
+  //     const updatedTotalCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  //     setTotalCount(updatedTotalCount)
+
+  //   } catch (error) {
+  //     console.log('장바구니 상품 삭제 요청 실패:', error);
+  //   }
+  // };
 
   // const handleRemoveItem = (itemId) => {
   //   const updatedCart = cartItems.filter(item => item.id !== itemId);
@@ -84,27 +102,27 @@ console.log('카트아이템state에 잘 들어간?',cartItems);
       {cartItems.length === 0 ? (
         <div className={styles.Empty}>장바구니에 담긴 상품이 없습니다.</div>
     ) : (
-          <div>
+          <div className={styles.Screen}>
               {cartItems.map((item) => (
-                <div className={styles.CartContainer} key={item.fpKey}>
+                <div className={styles.CartContainer} key={item.cartItemKey}>
                   <div className={styles.TitleWrap}>
                     <img src='/assets/pin.svg' alt='pin' />
                     <div className={styles.ShopName}>{item.flowerShopName}</div>
-                    <img src='/assets/trash.svg' onClick={() => handleRemoveItem(item.id)}></img>
+                    <img src='/assets/trash.svg' onClick={() => handleRemoveItem(item.cartItemKey)}></img>
                   </div>
 
                   <div className={styles.Line} />
 
                   <div className={styles.ContentWrap}>
                     <div className={styles.ProductImage}>
-                      <img src={item.fpImage} alt='product' />
+                      <img src={item.fpImage} className={styles.ProductImage}/>
                     </div>
 
                     <div className={styles.InfoWrap}>
                       <div className={styles.ProductName}>{item.fpName}</div>
                       <div className={styles.Description}>{item.fpDetail}</div>
                       <div className={styles.TagWrap}>
-                        <div className={styles.Tag}>#{item.fpTag}</div>
+                        <div className={styles.Tag}>{item.fpTag}</div>
                       </div>
                       <div className={styles.FlowerWrap}>
                         {item.fpFlowerList.map((flower, index) => (
@@ -115,12 +133,17 @@ console.log('카트아이템state에 잘 들어간?',cartItems);
                       </div>
                     </div>      
                 </div>
+                <div className={styles.DateTime}>
+                  <div className={styles.dtText}>픽업 일시 : </div>
+                  <div className={styles.dtText}>{item.pickupDate}{item.pickupDate}</div>                  
+                  {/* <span>{item.pickupDate}{item.pickupTime}</span>                   */}
+                </div>
 
                 <div className={styles.Line}></div>
 
                 <div className={styles.PriceWrap}>
-                  <div className={styles.Price}>Total Price (총 수량 : {item.amount}): </div>
-                  <div className={styles.Price}>{item.fpPrice}</div>
+                  <div className={styles.Price}>Total Price (총 수량 : {item.count}) </div>
+                  <div className={styles.Price}>{item.fpPrice*item.count}</div>
                 </div>
               </div>
             ))}
@@ -130,7 +153,7 @@ console.log('카트아이템state에 잘 들어간?',cartItems);
             <div className={styles.TotalPriceBox}>
               <div className={styles.Content}>
                 <div className={styles.TextBox}>
-                  <div className={styles.Text} style={{ color: '#72777A', fontSize: '1rem' }}>결제 예정 금액 ( 총 수량 : {totalCount}) </div>
+                  <div className={styles.Text} style={{ color: '#72777A', fontSize: '1rem' }}>결제 예정 금액 </div>
                   <div className={styles.Text}>{totalPrice}원</div>
                 </div>
               <div className={styles.PurchaseButton} onClick={() => navigate(`/cart/payment/${userKey}`, { state: { userKey: userKey } })}>
@@ -144,7 +167,8 @@ console.log('카트아이템state에 잘 들어간?',cartItems);
       </div>
 
       <CustomerBottomTap />
-    </div>
+      </div>
+
   );
 }export default Cart;
 

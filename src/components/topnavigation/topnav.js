@@ -10,7 +10,7 @@ function TopNav(props){
     const [pageTitle, setPageTitle] = useState('');
     const {back=true}=props;
     const [icon, setIcon]=useState('');
-    const userKey = 3;
+    const userKey = 1;
 
     useEffect(()=> {
       switch(location.pathname){

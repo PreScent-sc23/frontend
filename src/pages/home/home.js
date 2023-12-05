@@ -31,7 +31,7 @@ function ImageSlider() {
 
 function Home(){
   const navigate = useNavigate(); 
-  const userKey =3;
+  const userKey =1;
     return(
         <div>
             <Statusbar/>

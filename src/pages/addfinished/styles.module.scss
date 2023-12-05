@@ -30,7 +30,9 @@
     overflow: auto;
     margin-top:30px;
     width:100%;
-    height:600px;
+    display : flex;
+    flex-direction: column;
+    margin-top: 6rem;
     // border: solid red 1px;
 }
 
