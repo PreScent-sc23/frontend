@@ -50,15 +50,15 @@ function Mypage(){
                </div>
 
                <div className={styles.MenuWrap}>
-                    <div className={styles.MypageMenu} onClick={()=>navigate('/myhistory')}>
+                    <div className={styles.MypageMenu} onClick={()=>navigate('/myhistory')} >
                          <div className={styles.MenuTitle}>주문내역</div>
-                         <img src='/assets/right.svg'  ></img>
+                         <img src='/assets/right.svg'></img>
                     </div>
 
 
-                    <div className={styles.MypageMenu}  onClick={()=>navigate('/cart')}>
+                    <div className={styles.MypageMenu} onClick={()=>navigate('/cart')}>
                          <div className={styles.MenuTitle}>장바구니</div>
-                         <img src='/assets/right.svg' ></img> 
+                         <img src='/assets/right.svg'></img>
                     </div>
 
                     <div className={styles.MypageMenu} onClick={()=>navigate('/dictionary')}>

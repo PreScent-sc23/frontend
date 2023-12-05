@@ -44,14 +44,14 @@
  ## PreScent 프론트엔드 구성원 😎
  |학과|이름|역할|이메일|
  |---|-------|---|---|
- |소프트웨어|윤정환|전반적 UI,UX 설계 / 리소스 제작 / 페이지 연동 / PS:사전|jungwani98@ajou.ac.kr|
- |소프트웨어|최윤지|전반적 UI,UX 디자인 및 설계 / 메인 로고 디자인 / 컴포넌트 관리 / PS:Lens / GPT API 꽃 이미지 분위기 추출|yyy0304@ajou.ac.kr|
+ |소프트웨어|윤정환| UI,UX 디자인 <br/> 담당 기능 : 고객 홈 화면 / 판매자 홈 화면 / 로그인 / 회원가입 / 상품 등록 / 주문제작 양식 등록 / 예약 내역 / 꽃말 사전 (PS:사전) |jungwani98@ajou.ac.kr|
+ |소프트웨어|최윤지| UI,UX 디자인 및 설계 / 전체 컴포넌트 개발 / 메인 로고 디자인 <br/> 담당 기능 : 검색 / 상품 세부 정보 확인 및 예약 정보 설정 / 장바구니 / 상품 결제 / 카드 간편 결제 / AI 꽃 분석 페이지 PS:Lens / 고객 마이페이지 / GPT 기반 꽃 이미지 분위기 추출|yyy0304@ajou.ac.kr|
 
  ## 프로젝트 도구 📝
  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
-<img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=Sass&logoColor=white">
+ <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=Sass&logoColor=white">
   
     
  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
