@@ -26,7 +26,7 @@ function PSLens(){
         formData.append("uploadImage", selectedFile);
         console.log("됨?");
         try {
-            const response = await axios.post('http://3.36.175.224:8080/pslens', {
+            const response = await axios.get('http://3.36.175.224:8080/pslens', {
                 selectedFile,
             },{
                 headers: {
@@ -35,7 +35,7 @@ function PSLens(){
     });
             console.log("전송 완료");
             console.log(response.data);
-            // navigate('/pslens/results');
+            navigate('/pslens/results', {state : {resultData : response.resultdata}});
 
         } catch (error) {
             console.error('이미지 업로드 오류:', error);
@@ -64,13 +64,21 @@ function PSLens(){
 
                 </div>
 
+
                 <div className={styles.ImageWrap}>
-                    <img src='/assets/exampleimage.png'></img>
+                    {!selectedFile ? (<img src ='/assets/exampleimage.png'/>) 
+                    : (<img src={selectedFile}/>) }
                 </div>
+
+                {/* <div className={styles.ImageWrap}>
+                    <img src='/assets/exampleimage.png'></img>
+                </div> */}
+                
+                
                 <div style={{opacity : "0.6", textAlign:"center", textSize:"1.5rem"}}>- 예시 이미지 - </div>
 
 
-                <div className={styles.ImageWrap}>{selectedFile && <img src={selectedFile} alt = "Product Image"/>}</div>
+                {/* <div className={styles.ImageWrap}>{selectedFile && <img src={selectedFile} alt = "Product Image"/>}</div> */}
                 <input type="file" id="fileInput" style={{display:'none'}} onChange={handleFileSelect}/>
                 <label htmlFor="fileInput" className={styles.Button}>이미지 업로드하기</label>
                 <div className={styles.Button} onClick={()=>navigate('./results')}>결과 확인</div>
