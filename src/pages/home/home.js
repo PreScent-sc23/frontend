@@ -56,9 +56,9 @@ function Home(){
                   <img style={{width:'150px'}} src='/imgs/cart.png'></img>
                   </div>
                 </div>
-                <div className= {styles.ButtonFat} onClick={()=>navigate('/search')}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate('/myhistory')}>
                   <div className={styles.ButtonText} style={{margin: '12px',borderBottom:'solid #FF9494 2px'}}>
-                    검색
+                    주문내역
                   </div>
                   <div className={styles.ButtonEmoji} style={{marginLeft:'40px', marginBottom:'80px'}}>
                   <img style={{width:'150px'}} src='/imgs/search.png'></img>
