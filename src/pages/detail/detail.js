@@ -10,23 +10,25 @@ function ProductDetail({ Component, pageProps }){
 
     const navigate = useNavigate();
     const params = useParams();
+    // const { fpKey } = useParams();
+
     const location = useLocation();
     // const fpKey = location.state.fpKey;
     // const fpKey = location.state ? location.state.fpKey : null;
-    const fpKey =3;
-    const userKey=3;//추후 토큰으로 교체  
+    const fpKey ='';
+    const userKey=1;//추후 토큰으로 교체  
     const [pickupDate,setPickupDate] = useState('');
     const [pickupTime,setPickupTime] = useState('');
     const [amount, setAmount]=useState(1);
     
    
-    const cart= {
-        'userKey' :userKey,
-        'fpKey' : fpKey,
-        'pickupDate' : pickupDate,
-        'pickupTime' : pickupTime,
-        'amount' : amount,
-    }
+    // const cart= {
+    //     'userKey' :userKey,
+    //     'fpKey' : fpKey,
+    //     'pickupDate' : pickupDate,
+    //     'pickupTime' : pickupTime,
+    //     'amount' : amount,
+    // }
 
     const [productDetails, setProductDetails]=useState({
         fpKey:'',
@@ -83,7 +85,7 @@ function ProductDetail({ Component, pageProps }){
             // navigate(`/cart/${userKey}`, { state: { userKey: userKey } })
 
         }catch(error){
-            console.log(cart);
+            // console.log(cart);
             console.log('장바구니에 완제품 담기 오류');
         }
     };
