@@ -15,12 +15,8 @@ const Sellersignup = ()=>{
     const [phonenum, setPhonenum] = useState('');
     const navigate = useNavigate();
 
-    const userKey = 100;
     const isgrant = 1;
 
-    // const handleSignUp = () => {
-    //     navigate('/main')
-    // }
 
     const verifyEmailCode = async () => {
         try {
@@ -48,7 +44,6 @@ const Sellersignup = ()=>{
         }
         try {
             const response = await axios.post('http://3.36.175.224:8080/seller/signup', {
-                userKey,
                 businessKey,
                 name,
                 idEmail,
