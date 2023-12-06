@@ -27,8 +27,18 @@ function Login(){
     });
             console.log("됨2?");
             console.log(response.data);
-            localStorage.setItem('token',response.data);
-            navigate('/home');
+            localStorage.setItem('token',response.data.token);
+            switch(response.data.role)
+            {
+                case 0:
+                    navigate('/sellerhome')
+                    break;
+                case 1:
+                    navigate('/home')
+                    break;
+                default:
+                    navigate('/404')
+            }
         } catch (error) {
             console.error('로그인 오류');
         }
