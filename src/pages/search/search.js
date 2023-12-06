@@ -7,26 +7,45 @@ import Searchbar from '../../components/search/searchbar';
 import CustomerBottomTap from '../../components/bottomtap/customerbottomtap';
 import Filter from '../../components/filter/filter';
 
-function Search(){
+function Search({props}){
     
    
     const [fpTag, setFpTag] = useState('');
-    const query = encodeURIComponent(fpTag); 
+    // const query = encodeURIComponent(fpTag); 
     const [fpImage, setFpImage] =useState('');
     const [flowerquery,setFlowerQuery]=useState(''); 
     const [fpName,setFpName] =useState('');
     const [fpPrice, setFpPrice] = useState('');
     const [responseData,setResponseData] = useState([]);
+
+    useEffect(() => {
+        const query = window.location.pathname.split('/').pop();
+        console.log("서치페이지 쿼리 :", query);
+        setFpTag((prevFpTag) => {
+            const newFpTag = decodeURIComponent(query);
+            handleTagSearch(newFpTag);
+            return newFpTag;
+          });
+        }, []);
+    //     setFpTag(decodeURIComponent(query));
+    //     handleTagSearch(fpTag);
+    //   }, []); // Empty dependency array ensures it only runs once on mount
+    
     
     const navigate = useNavigate();
     const handleEnter = (e) => {
         if (e.key === "Enter") {
+            console.log("태그 :",fpTag);
             handleTagSearch(fpTag);
+            
         }
       };
-    
-    const handleTagSearch = async () => {
+
+
+    const handleTagSearch = async (fpTag) => {
         console.log("성공1?");
+        console.log("서치페이지 넘어온 태그", fpTag);
+        const query = (encodeURIComponent(fpTag));
         try {
             const response = await axios.get(`http://3.36.175.224:8080/search`,{
                     params : {query},

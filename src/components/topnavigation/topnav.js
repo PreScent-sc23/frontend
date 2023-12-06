@@ -1,65 +1,77 @@
 import React, { useState, useEffect } from 'react';
 import styles from './topnav.module.scss';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function TopNav(props){
     const navigate = useNavigate(); 
+    const params=useParams();
     const [currentPage,setCurrentPage] = useState([]);
     const location = useLocation();
     const [pageTitle, setPageTitle] = useState('');
     const {back=true}=props;
     const [icon, setIcon]=useState('');
     const userKey = 1;
+    const { fpKey } = useParams();
     
 
     useEffect(()=> {
-      switch(location.pathname){
-        case '/mypage':
-          setPageTitle('MyPage');
+      const isDetailPage = location.pathname.startsWith('/detail/');
+
+      
+      switch(true){
+        case isDetailPage:
+          setPageTitle('상품 상세 정보');
           setIcon('/assets/setting.svg');
           break;
 
-        case '/pslens':
+          case location.pathname === '/mypage':
+          setPageTitle('마이페이지');
+          setIcon('/assets/setting.svg');
+          break;
+
+          case location.pathname === '/pslens':
           setPageTitle('PSLens');
           setIcon('/assets/setting.svg');
           break;
 
-
-        case '/pslens/results':
+          case location.pathname === '/pslens/results':
+        // case '/pslens/results':
           setPageTitle('꽃 분석 결과');
           setIcon('/assets/setting.svg');
           break;
 
-
-        case `/cart/${userKey}`:
+          case location.pathname === `/cart/${userKey}`:
+        // case `/cart/${userKey}`:
           setPageTitle('장바구니');
-          setIcon('/assets/cart.svg');
-          break;
-
-
-        case `/cart/payment/${userKey}`:
-          setPageTitle('상품 결제');
-          setIcon('/assets/cart.svg');
-          break;
-
-
-        case '/managereserve':
-          setPageTitle('예약 관리');
-          setIcon('');
-          break;
-
-        case '/managestat':
-          setPageTitle('통계 관리');
-          setIcon('');
-          break;
-
-        case '/sellersignup':
-          setPageTitle('사업자 회원 가입');
           setIcon('/assets/setting.svg');
           break;
 
+          case location.pathname === `/cart/payment/${userKey}`:
+        // case `/cart/payment/${userKey}`:
+          setPageTitle('상품 결제');
+          setIcon('/assets/setting.svg');
+          break;
 
+          case location.pathname === `/managereserve`:
+        // case '/managereserve':
+          setPageTitle('예약 관리');
+          setIcon('/assets/setting.svg');
+          break;
+
+          case location.pathname === `/managerestat`:
+        // case '/managestat':
+          setPageTitle('통계 관리');
+          setIcon('/assets/setting.svg');
+          break;
+
+          case location.pathname === `/sellersignup`:
+        // case '/sellersignup':
+          setPageTitle('사업자 회원 가입');
+          setIcon('/assets/setting.svg');
+          break
+
+        case location.pathname === `/sellersignup`:
         case '/customersignup':
           setPageTitle('일반 고객 회원 가입');
           setIcon('/assets/setting.svg');
@@ -83,7 +95,8 @@ function TopNav(props){
             
 
 
-        case '/myhistory':
+        case location.pathname === `/myhistory/${userKey}`:
+        // case '/myhistory':
           setPageTitle('주문 내역');
           setIcon('/assets/cart.svg');
           break;
@@ -94,15 +107,11 @@ function TopNav(props){
           setIcon('/assets/setting.svg');
           break;
           
-        case '/login':
-          setPageTitle('로그인');
-          setIcon('');
-          break;
 
-        // case `/detail/${fpKey}`:
-        //   setPageTitle('상품 상세 정보');
-        //   setIcon('');
-        //   break;
+        case `/detail/${fpKey}`:
+          setPageTitle('상품 상세 정보');
+          // setIcon('');
+          break;
           
         case '/sellersignup':
           setPageTitle('사업자 회원 등록');
@@ -144,7 +153,7 @@ function TopNav(props){
           break;
       }
 
-    },[location]);
+    },[location,fpKey]);
 
     
 
@@ -154,9 +163,9 @@ function TopNav(props){
     
     return (
     <div className={styles.TopNavWrap}>
-       {back && <img src='/assets/back.svg' className={styles.image} onClick={()=>navigate(-1)}/>}
+       {back && <img src='/assets/back.svg' className={styles.Icons} onClick={()=>navigate(-1)}/>}
        <div className={styles.TopNavTitle}>{pageTitle}</div>
-       <img src={icon} className={styles.image} onClick= {()=>navigate(`/cart/${userKey}`)}/>
+       <img src={icon} className={styles.Icons} /*onClick= {()=>navigate(`/cart/${userKey}`)}*//>
        {/* <img src={icon} className={styles.image}/> */}
     </div>
     )

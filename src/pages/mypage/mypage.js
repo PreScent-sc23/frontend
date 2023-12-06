@@ -23,7 +23,7 @@ function Mypage(){
                <div className={styles.ProfileWrap}>
                     <div className={styles.Profile}>
                     
-                         <img src='/assets/profile_ex.svg' className={styles.Image}></img>
+                         <img src='/assets/user_pink.svg' className={styles.Image}></img>
                          {/* <div className={styles.Image}>프로필이미지</div> */}
      
                          <div className={styles.InfoWrap}>
@@ -51,7 +51,7 @@ function Mypage(){
 
                <div className={styles.MenuWrap}>
                     <div className={styles.MypageMenu} onClick={()=>navigate('/myhistory')} >
-                         <div className={styles.MenuTitle}>주문내역</div>
+                         <div className={styles.MenuTitle} >주문내역</div>
                          <img src='/assets/right.svg'></img>
                     </div>
 
