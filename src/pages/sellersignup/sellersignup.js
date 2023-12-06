@@ -15,12 +15,8 @@ const Sellersignup = ()=>{
     const [phonenum, setPhonenum] = useState('');
     const navigate = useNavigate();
 
-    const userKey = 100;
     const isgrant = 1;
 
-    // const handleSignUp = () => {
-    //     navigate('/main')
-    // }
 
     const verifyEmailCode = async () => {
         try {
@@ -48,7 +44,6 @@ const Sellersignup = ()=>{
         }
         try {
             const response = await axios.post('http://3.36.175.224:8080/seller/signup', {
-                userKey,
                 businessKey,
                 name,
                 idEmail,
@@ -77,13 +72,8 @@ const Sellersignup = ()=>{
         <div >
             <Statusbar/>
             <TopNav/>
-            {/* <div className={styles.TopNavWrap}>
-                    <img src='/assets/back.svg' className={styles.image}/>
-                    <div className={styles.TopNavTitle}>사업자 회원 가입</div>
-                    {/* <div className={styles.TopNavButtonContainer}> */}
-            {/* </div> */}
 
-            <div style={{width:'100%', textAlign:'center',marginTop:'16px'}}>
+            <div style={{width:'100%', textAlign:'center',marginTop:'8rem'}}>
                 <form>            
                 <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={name} onChange={(e) => setName(e.target.value)}></input>
                 <input className={styles.inputBox} type='number' name = "pwd" size = '50'  placeholder='전화번호' value={phonenum} onChange={(e) => setPhonenum(e.target.value)}></input>

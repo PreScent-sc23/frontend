@@ -27,28 +27,23 @@ function Login(){
     });
             console.log("됨2?");
             console.log(response.data);
-            localStorage.setItem('token',response.data);
-            navigate('/home');
+            localStorage.setItem('token',response.data.token);
+            switch(response.data.role)
+            {
+                case 0:
+                    navigate('/home')
+                    break;
+                case 1:
+                    navigate('/sellerhome')
+                    break;
+                default:
+                    navigate('/404')
+            }
         } catch (error) {
             console.error('로그인 오류');
         }
     };
-    // async function handleLogin() {
-    //     axios.defaults.withCredentials = true;
-    //     try{
-    //         const response = await axios.post('http://3.36.175.224:8080/login', {email, password},
-    //         {headers: {'Content-Type': 'application/json'},});
-    //         console.log(response)
-    //         if(response.status === 200){
-    //         let accessToken = response.headers.Authorization;
-    //         console.log('access token: ', accessToken);
-    //         localStorage.setItem("access_token", accessToken);
-    //         }
-    //     }
-    //     catch (error){
-    //         console.error('로그인 오류')
-    //     }
-    // }
+
     return (
         <div>
             <Statusbar/>
