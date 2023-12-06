@@ -32,14 +32,8 @@ function ImageSlider() {
 function Home(){
   const navigate = useNavigate(); 
 
-  const [showPopup, setShowPopup] = useState(false); 
   const [userInfo, setUserInfo] = useState([]);
   const userKey = 909;
-
-  const handleClosePopup = () => {
-    setUserInfo({location:1});
-    setShowPopup(false);
-}
 
   useEffect(()=> {
     console.log('사용자 정보 불러오기');
@@ -66,7 +60,7 @@ function Home(){
 
 useEffect(() => {
   if (userInfo.location === null) {
-      setShowPopup(true);
+      navigate('/locationset')
   }
 }, [userInfo]);
 
@@ -124,21 +118,6 @@ useEffect(() => {
                 </div>
               </div>
             </div>    
-
-            {showPopup && (
-               <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                  <div style={{ display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', backgroundColor: 'white', width:'370px', height:'700px',padding: '20px', borderRadius: '12px' }}>
-                    
-                    <div className={styles.LogoContainer} style={{width:'410px'}}>
-                        <img src='/imgs/logo.png' style={{height:'60px'}}></img>
-                    </div>
-                    <div style={{width:'100%', height:'100%'}}>
-                    <Kakao/>
-                    </div>
-                    <button className={styles.PopClose} onClick={handleClosePopup}>뒤로 가기</button>
-                  </div>
-               </div>
-           )}
             <CustomerBottomTap/>
            
         </div>

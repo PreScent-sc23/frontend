@@ -3,5 +3,28 @@
     height: 100%;
     align-items: center;
     justify-content: center;
+}
+
+.wrapper {
+    width: 94%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 4px auto;
+}
+
+
+.PopClose{
+    width: 20rem;
+    height: 3rem;
+    margin: 2px auto;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #FF9494;
+    color: white;
+    border-radius: 12px;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.20);
+
 }

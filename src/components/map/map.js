@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import styles from './map.module.scss';
-function Kakao() {
+function Kakao(props) {
   
     //스크립트 파일 읽어오기
     const new_script = src => { 
@@ -33,11 +33,21 @@ function Kakao() {
           }; 
           const map = new kakao.maps.Map(mapContainer, options); //맵생성
           //마커설정
-          const markerPosition = new kakao.maps.LatLng(37.2844, 127.0445); 
-          const marker = new kakao.maps.Marker({ 
-            position: markerPosition
+          var marker = new kakao.maps.Marker({ 
+            position: map.getCenter()
           }); 
           marker.setMap(map); 
+          
+          kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+    
+            // 클릭한 위도, 경도 정보를 가져옵니다 
+            var latlng = mouseEvent.latLng; 
+            var lat = latlng.getLat();
+            var lng = latlng.getLng();
+            // 마커 위치를 클릭한 위치로 옮깁니다
+            marker.setPosition(latlng);
+            props.updateLocation(lat,lng);
+        });
         });   
       }); 
     }, []);
