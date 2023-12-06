@@ -113,9 +113,10 @@ function TopNav(props){
           setPageTitle('일반 고객 회원 등록');
           setIcon('');
           break;
-        // case '/locationset':
-        //   setPageTitle('');
-        //   break;
+
+          case '/locationset':
+          setPageTitle('위치 설정');
+          break;
 
         case '/addcustom':
           setPageTitle('주문제작 양식 등록');
