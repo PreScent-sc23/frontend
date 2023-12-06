@@ -20,14 +20,17 @@ function LocationSet(){
         console.log("됨?");
         console.log(location);
         try {
+            const token = localStorage.getItem('token');
             const response = await axios.post('http://3.36.175.224:8080/customer/signup', {
                 location,
             },{
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
         },
     });
             console.log("됨2?");
+            console.log(response);
             navigate(-1);
         } catch (error) {
             console.error('오류');
