@@ -25,6 +25,7 @@ function Kakao(props) {
       my_script.then(() => { 
         console.log('script loaded!!!');  
         const kakao = window['kakao']; 
+        
         kakao.maps.load(() => {
           const mapContainer = document.getElementById('map');
           const options = { 
@@ -32,11 +33,14 @@ function Kakao(props) {
             level: 3 
           }; 
           const map = new kakao.maps.Map(mapContainer, options); //맵생성
+
           //마커설정
           var marker = new kakao.maps.Marker({ 
             position: map.getCenter()
           }); 
           marker.setMap(map); 
+
+
           
           kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
     
@@ -47,8 +51,10 @@ function Kakao(props) {
             // 마커 위치를 클릭한 위치로 옮깁니다
             marker.setPosition(latlng);
             props.updateLocation(lat,lng);
-        });
+            console.log(latlng)
+          });
         });   
+        // load 끝
       }); 
     }, []);
   
