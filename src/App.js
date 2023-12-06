@@ -74,6 +74,7 @@ function App() {
               {/* <Route path="pslens/results" element = {<PSLensResults/>}/> */}
               <Route path="/cart/:userkey" element = {<Cart/>}/>
               <Route path="/cart/payment/:userkey" element = {<Payment/>}/>
+              {/* <Route path="/myhistory" element = {<CustomerHistory/>}/> */}
               <Route path="/myhistory/:userkey" element = {<CustomerHistory/>}/>
               <Route path="/sellerhome/history" element = {<SellerHistory/>}/>
               

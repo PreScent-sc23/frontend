@@ -118,7 +118,7 @@ function Home(){
                   <img style={{width:'150px'}} src='/imgs/cart.png'></img>
                   </div>
                 </div>
-                <div className= {styles.ButtonFat} onClick={()=>navigate('/myhistory')}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/myhistory/${userKey}`)}>
                   <div className={styles.ButtonText} style={{margin: '12px',borderBottom:'solid #FF9494 2px'}}>
                     주문내역
                   </div>

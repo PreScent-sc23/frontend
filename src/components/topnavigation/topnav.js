@@ -76,19 +76,21 @@ function TopNav(props){
           setPageTitle('일반 고객 회원 가입');
           setIcon('/assets/setting.svg');
           break;
-
-        case '/addfinished':
+        
+          case location.pathname === `/addfinished`:
+        // case '/addfinished':
           setPageTitle('완제품 등록');
           setIcon('/assets/setting.svg');
           break;
 
-
-        case '/sellerhome':
+        case location.pathname === `/sellerhome`:
+        // case '/sellerhome':
           setPageTitle('우리가게 관리');
           setIcon('/assets/setting.svg');
           break;
           
-          case '/shopregister':
+          case location.pathname === `/shopregister`:
+          // case '/shopregister':
             setPageTitle('가게 등록');
             setIcon('/assets/setting.svg');
             break;
@@ -98,59 +100,66 @@ function TopNav(props){
         case location.pathname === `/myhistory/${userKey}`:
         // case '/myhistory':
           setPageTitle('주문 내역');
-          setIcon('/assets/cart.svg');
+          setIcon('/assets/emptyicon.svg');
           break;
 
-
-        case '/sellerhome/history':
+        case location.pathname === `sellerhome/history`:
+        // case '/sellerhome/history':
           setPageTitle('예약 관리');
-          setIcon('/assets/setting.svg');
+          setIcon('/assets/emptyicon.svg');
           break;
           
-
-        case `/detail/${fpKey}`:
+        case location.pathname === `detail/${fpKey}`:
+        // case `/detail/${fpKey}`:
           setPageTitle('상품 상세 정보');
-          // setIcon('');
+          setIcon('/assets/emptyicon.svg');
           break;
           
-        case '/sellersignup':
+          case location.pathname === `/sellersignup`:
+        // case '/sellersignup':
           setPageTitle('사업자 회원 등록');
           setIcon('');
           break;
 
-        case '/customersignup':
+        case location.pathname === `/customersignup`:
+        // case '/customersignup':
           setPageTitle('일반 고객 회원 등록');
-          setIcon('');
+          setIcon('/assets/emptyicon.svg');
           break;
 
           case '/locationset':
           setPageTitle('위치 설정');
+          setIcon('/assets/emptyicon.svg');
           break;
 
-        case '/addcustom':
+          case location.pathname === `/addcustom`:
+          // case '/addcustom':
           setPageTitle('주문제작 양식 등록');
-          setIcon('');
-          break;
-
-        case '/manageproduct':
-          setPageTitle('내 제품 관리');
-          setIcon('');
-          break;
-
-          case '/managefinished':
-          setPageTitle('완제품 관리');
-          setIcon('');
-          break;
-
-          case '/dictionary':
-          setPageTitle('PS 사전');
           setIcon('/assets/setting.svg');
           break;
 
-          case '/dictionary/':
-          setPageTitle('PS 사전');
-          setIcon('');
+          case location.pathname === `/manageproduct`:
+        // case '/manageproduct':
+          setPageTitle('내 제품 관리');
+          setIcon('/assets/setting.svg');
           break;
+
+          case location.pathname === `/managefinished`:
+          // case '/managefinished':
+          setPageTitle('완제품 관리');
+          setIcon('/assets/setting.svg');
+          break;
+
+          case location.pathname === `/dictionary`:
+          // case '/dictionary':
+          setPageTitle('PS 사전');
+          setIcon('/assets/emptyicon.svg');
+          break;
+
+          // case '/dictionary/':
+          // setPageTitle('PS 사전');
+          // setIcon('');
+          // break;
       }
 
     },[location,fpKey]);

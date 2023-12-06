@@ -23,7 +23,7 @@ function Login(){
                 headers: {
                     'Content-Type': 'application/json'
         },
-    });
+        });
             console.log("됨2?");
             console.log(response.data);
             localStorage.setItem('token',response.data.token);
@@ -35,8 +35,8 @@ function Login(){
                 case 1:
                     navigate('/sellerhome')
                     break;
-                default:
-                    navigate('/404')
+                // default:
+                //     navigate('/404')
             }
         } catch (error) {
             console.error('로그인 오류');

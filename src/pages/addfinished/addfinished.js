@@ -8,12 +8,13 @@ import TopNav from '../../components/topnavigation/topnav';
 export function AddFinished(){
     
     const navigate = useNavigate(); 
-    const shopKey=32;
+    const shopKey=1;
+    const userKey =2;
     const [fpName, setProductName] = useState('');
     const [fpPrice, setProductPrice] = useState('');
     const [fpTag, setProductTag] = useState('');
     const [fpDetail, setProductDetail] = useState('');
-    const [fpFlowerList, setFlowerList] = useState('');
+    const [getFpFlowerList, setGetFpFlowerList] = useState('');
     const [selectedFile, setSelectedFile] = useState('');
     const [fileDataURL, setFileDataURL] = useState(null);
 
@@ -49,7 +50,7 @@ export function AddFinished(){
             fpTag : fpTag,
             fpPrice : fpPrice,
             fpDetail : fpDetail,
-            fpFlowerList : fpFlowerList,
+            getFpFlowerList : getFpFlowerList,
         }
         const json = JSON.stringify(data);
         const blob = new Blob([json],{type: "application/json"});
@@ -84,7 +85,7 @@ export function AddFinished(){
                     <input className={styles.inputBox} type='number' name = "pwd" size = '50'  placeholder='가격' value={fpPrice} onChange={(e) => setProductPrice(e.target.value)}></input>
                     <input className={styles.inputBox} type='text' name = "email" size = '50'  placeholder='상품과 관련된 키워드를 하나 입력하세요' value={fpTag} onChange={(e) => setProductTag(e.target.value)}></input>
                     <input className={styles.inputBox} type='text' name = "validnum" size = '50'  placeholder='상품에 대한 상세정보를 입력하세요' value={fpDetail} onChange={(e) => setProductDetail(e.target.value)}></input>
-                    <input className={styles.inputBox} type='text' name = "flowerlist" size = '50'  placeholder='들어가는 꽃의 종류를 입력하세요' value={fpFlowerList} onChange={(e) => setFlowerList(e.target.value)}></input>
+                    <input className={styles.inputBox} type='text' name = "flowerlist" size = '50'  placeholder='들어가는 꽃의 종류를 입력하세요' value={getFpFlowerList} onChange={(e) => setGetFpFlowerList(e.target.value)}></input>
                 </form>
             </div>
 
