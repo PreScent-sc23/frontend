@@ -33,7 +33,7 @@ function Kakao() {
           }; 
           const map = new kakao.maps.Map(mapContainer, options); //맵생성
           //마커설정
-          const markerPosition = new kakao.maps.LatLng(37.56000302825312, 126.97540593203321); 
+          const markerPosition = new kakao.maps.LatLng(37.2844, 127.0445); 
           const marker = new kakao.maps.Marker({ 
             position: markerPosition
           }); 

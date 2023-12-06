@@ -128,11 +128,12 @@ useEffect(() => {
             {showPopup && (
                <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   <div style={{ display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', backgroundColor: 'white', width:'370px', height:'700px',padding: '20px', borderRadius: '12px' }}>
+                    
+                    <div className={styles.LogoContainer} style={{width:'410px'}}>
+                        <img src='/imgs/logo.png' style={{height:'60px'}}></img>
+                    </div>
                     <div style={{width:'100%', height:'100%'}}>
                     <Kakao/>
-                    </div>
-                    <div className={styles.LogoContainer} style={{width:'410px', marginTop:'12px'}}>
-                        <img src='/imgs/logo.png' style={{height:'60px'}}></img>
                     </div>
                     <button className={styles.PopClose} onClick={handleClosePopup}>뒤로 가기</button>
                   </div>
