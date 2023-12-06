@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Statusbar from '../../components/statusbar/statusbar';
 import TopNav from '../../components/topnavigation/topnav';
+import Kakao from '../../components/map/map';
 
 //꽃 팔러 오셨나요? 사러 오셨나요 -> 화면 띄우기 전에 선택지 넣으면 좋을듯!
 
@@ -11,8 +12,6 @@ function Login(){
     const [idEmail, setIdEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-
-
     
     const handleLogin = async () => {
         console.log("됨?");
@@ -53,6 +52,7 @@ function Login(){
         <div>
             <Statusbar/>
             <TopNav/>
+            <Kakao/>
              <div className={styles.LogoContainer}>
              <img style={{width:'300px'}} src="/imgs/logo.png" alt="로고이미지"/>   
              </div>
