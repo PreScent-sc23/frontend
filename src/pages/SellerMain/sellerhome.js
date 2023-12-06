@@ -9,8 +9,7 @@ import SellerBottomTap from '../../components/bottomtap/sellerbottomtap';
 
 function SellerHome(){
     const navigate = useNavigate(); 
-    const [profilePhoto, setProfilePhoto] = useState('');
-    const [userName, setUserName] = useState('');
+    const [userDatas, setUserDatas] = useState('');
 
     useEffect(() => {
         axios.get('정보가 들어있는 주소', {
@@ -19,8 +18,7 @@ function SellerHome(){
             }
         })
         .then(response => {
-            setProfilePhoto(response.data.profilePhoto);
-            setUserName(response.data.userName);
+            setUserDatas(response.data);
         })
         .catch(error => {
             console.error('Error fetching user data:', error);

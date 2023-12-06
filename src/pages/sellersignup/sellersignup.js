@@ -77,13 +77,8 @@ const Sellersignup = ()=>{
         <div >
             <Statusbar/>
             <TopNav/>
-            {/* <div className={styles.TopNavWrap}>
-                    <img src='/assets/back.svg' className={styles.image}/>
-                    <div className={styles.TopNavTitle}>사업자 회원 가입</div>
-                    {/* <div className={styles.TopNavButtonContainer}> */}
-            {/* </div> */}
 
-            <div style={{width:'100%', textAlign:'center',marginTop:'16px'}}>
+            <div style={{width:'100%', textAlign:'center',marginTop:'8rem'}}>
                 <form>            
                 <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={name} onChange={(e) => setName(e.target.value)}></input>
                 <input className={styles.inputBox} type='number' name = "pwd" size = '50'  placeholder='전화번호' value={phonenum} onChange={(e) => setPhonenum(e.target.value)}></input>
