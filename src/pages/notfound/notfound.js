@@ -4,8 +4,8 @@ function NotFound(){
             <div style={{backgroundColor: 'white', borderRadius:'50px', overflow:'hidden'}}>
             <img style={{width:'100%', height :"100%"}} src='/imgs/logo.png' alt='로고이미지'/>
             </div>
-            <span style={{fontSize:'1.2rem', fontWeight:'bold', color : '#858585', textAlign:'center'}}>
-                존재하지 않는 페이지입니다!
+            <span style={{fontSize:'1.5rem', fontWeight:'bold', color : '#858585', textAlign:'center'}}>
+                - 개발중 -
             </span>
         </div>
     )

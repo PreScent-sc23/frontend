@@ -12,8 +12,8 @@ function StartScreen(){
         <div>
             <Statusbar/>
             <div className={styles.LogoContainer}>
-                <img style={{width:'10rem', height :"auto",marginBottom : '-1rem'}} src='/imgs/logo.png' alt='로고이미지'/>
-                <img src='/assets/titlelogo.png' style={{width:'14rem', height :"auto"}}></img>
+                <img style={{width:'8rem', height :"auto",marginTop: '10rem'}} src='/assets/svglogo.svg' alt='로고이미지'/>
+                {/* <img src='/assets/titlelogo.png' style={{width:'14rem', height :"auto"}}></img> */}
                 
             </div>
             

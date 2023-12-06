@@ -52,9 +52,9 @@ function Login(){
     return (
         <div>
             <Statusbar/>
-            <TopNav/>
+            {/* <TopNav/> */}
              <div className={styles.LogoContainer}>
-             <img style={{width:'300px'}} src="/imgs/logo.png" alt="로고이미지"/>   
+             <img  src="/assets/svglogo.svg" style={{width : '8rem', height :'auto', justifyContent:'center'}} alt="로고이미지"/>   
              </div>
 
              <div className={styles.LoginContainer}>
@@ -62,7 +62,7 @@ function Login(){
                     <input className={styles.inputBox} type='text' name = "email" size = '50' placeholder='Email Address' value={idEmail} onChange={(e) => setIdEmail(e.target.value)} ></input>
                     <input className={styles.inputBox} type='password' name = "pwd" size = '50'  placeholder='Password' value = {password} onChange={(e) => setPassword(e.target.value)}></input>
                  </form>
-                 <a href="/main" className={styles.purpleLink}>비밀번호를 잊으셨나요?</a>
+                 {/* <a href="/main" className={styles.purpleLink}>비밀번호를 잊으셨나요?</a> */}
              </div>
 
             <div className={styles.ButtonContainer}>
