@@ -52,7 +52,6 @@ function Login(){
         <div>
             <Statusbar/>
             <TopNav/>
-            <Kakao/>
              <div className={styles.LogoContainer}>
              <img style={{width:'300px'}} src="/imgs/logo.png" alt="로고이미지"/>   
              </div>

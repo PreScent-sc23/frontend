@@ -6,7 +6,7 @@ import Statusbar from '../../components/statusbar/statusbar';
 import Searchbar from '../../components/search/searchbar';
 import BottomTap from '../../components/bottomtap/customerbottomtap';
 import CustomerBottomTap from '../../components/bottomtap/customerbottomtap';
-
+import Kakao from '../../components/map/map';
 
 function ImageSlider() {
     const [images, setImages] = useState(['/imgs/banner_1.jpeg', '/imgs/banner_2.jpeg', '/imgs/banner_3.jpeg', '/imgs/banner_4.jpeg']);
@@ -31,7 +31,45 @@ function ImageSlider() {
 
 function Home(){
   const navigate = useNavigate(); 
-  const userKey =1;
+
+  const [showPopup, setShowPopup] = useState(false); 
+  const [userInfo, setUserInfo] = useState([]);
+  const userKey = 909;
+
+  const handleClosePopup = () => {
+    setUserInfo({location:1});
+    setShowPopup(false);
+}
+
+  useEffect(()=> {
+    console.log('사용자 정보 불러오기');
+    
+    const fetchInfo = async ()=> {
+      try {
+        const response = await axios.get(`http://3.36.175.224:8080/`, {
+          params: { userKey }
+        });
+
+        console.log('Response:', response);
+        if (response.status==200){
+            setUserInfo(response.data);
+        }
+
+        } catch (error) {
+            console.log('사용자 정보 불러오기 실패');
+        }
+    };
+
+    fetchInfo();
+    setUserInfo({location:null})
+},[userKey]);
+
+useEffect(() => {
+  if (userInfo.location === null) {
+      setShowPopup(true);
+  }
+}, [userInfo]);
+
     return(
         <div>
             <Statusbar/>
@@ -86,6 +124,20 @@ function Home(){
                 </div>
               </div>
             </div>    
+
+            {showPopup && (
+               <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <div style={{ display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', backgroundColor: 'white', width:'370px', height:'700px',padding: '20px', borderRadius: '12px' }}>
+                    <div style={{width:'100%', height:'100%'}}>
+                    <Kakao/>
+                    </div>
+                    <div className={styles.LogoContainer} style={{width:'410px', marginTop:'12px'}}>
+                        <img src='/imgs/logo.png' style={{height:'60px'}}></img>
+                    </div>
+                    <button className={styles.PopClose} onClick={handleClosePopup}>뒤로 가기</button>
+                  </div>
+               </div>
+           )}
             <CustomerBottomTap/>
            
         </div>

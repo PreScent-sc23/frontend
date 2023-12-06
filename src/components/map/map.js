@@ -28,7 +28,7 @@ function Kakao() {
         kakao.maps.load(() => {
           const mapContainer = document.getElementById('map');
           const options = { 
-            center: new kakao.maps.LatLng(37.56000302825312, 126.97540593203321), //좌표설정
+            center: new kakao.maps.LatLng(37.2844, 127.0445), //좌표설정
             level: 3 
           }; 
           const map = new kakao.maps.Map(mapContainer, options); //맵생성
