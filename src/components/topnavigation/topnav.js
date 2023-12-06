@@ -75,6 +75,12 @@ function TopNav(props){
           setPageTitle('우리가게 관리');
           setIcon('/assets/setting.svg');
           break;
+          
+          case '/shopregister':
+            setPageTitle('가게 등록');
+            setIcon('/assets/setting.svg');
+            break;
+            
 
 
         case '/myhistory':

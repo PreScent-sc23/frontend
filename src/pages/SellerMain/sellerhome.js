@@ -19,7 +19,6 @@ function SellerHome(){
             }
         })
         .then(response => {
-            // Replace 'profilePhoto' and 'userName' with the actual keys in your response data
             setProfilePhoto(response.data.profilePhoto);
             setUserName(response.data.userName);
         })
