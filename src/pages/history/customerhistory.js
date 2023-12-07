@@ -10,7 +10,7 @@ function CustomerHistory(){
 
      const [tap,setTap]=useState(true);
      const [orderDatas, setOrderDatas] = useState([]);
-    const userKey=1;
+     const userKey=1;
 
 
      useEffect(()=> {
@@ -55,7 +55,7 @@ function CustomerHistory(){
                     <div className={styles.ProductCard} key={order.fpOrderKey}>
                         <div className={styles.OrderStatus}>
                             <img src='/assets/shopping-bag.svg'></img>
-                            <div className={styles.Status}>{`${order.fpOrderState} - ${order.fpName}`}</div>
+                            <div className={styles.Status}>{`${order.fpOrderState} - ${order.flowerShopName}`}</div>
                             {/* <span style={{fontSize:"0.8rem",fontWeight:"400",color : "#6B4EFF"}}>주문 상세 보기</span> */}
                         </div>
                         
@@ -63,12 +63,12 @@ function CustomerHistory(){
 
                         <div className={styles.ContentWrap}>
                             <div className={styles.ProductImage}>
-                                <img src={order.fpImage}></img>
+                                <img src={order.fpImage} className={styles.ProductImage}></img>
                             </div>
 
                             <div className={styles.InfoWrap}>
                                 <div className={styles.ProductName}>{order.fpName}</div>
-                                <div className={styles.Description}>{order.Description}</div>
+                                <div className={styles.Description}>{order.fpDetail}</div>
                                 <div className={styles.TagWrap}>
                                     <div className={styles.Tag}>{order.fpTag}</div>
                                 </div>
@@ -80,7 +80,7 @@ function CustomerHistory(){
                             </div>
                             
                         </div>
-                        <div className={styles.Date}>{`픽업 일시 : 20${order.pickupDate} - ${order.pickupTime}`}</div>
+                        <div className={styles.Date}>{`픽업 일시 : ${order.pickupDate} ${order.pickupTime}`}</div>
                         {/* <div className={styles.MoreMessage}>요청 사항 : 포장지는 베이지 색으로 부탁드립니다!</div> */}
                         <div className={styles.Line}></div>
 

@@ -6,7 +6,7 @@ import Statusbar from '../../components/statusbar/statusbar';
 import Searchbar from '../../components/search/searchbar';
 import BottomTap from '../../components/bottomtap/customerbottomtap';
 import CustomerBottomTap from '../../components/bottomtap/customerbottomtap';
-
+import Kakao from '../../components/map/map';
 
 function ImageSlider() {
     const [images, setImages] = useState(['/imgs/banner_1.jpeg', '/imgs/banner_2.jpeg', '/imgs/banner_3.jpeg', '/imgs/banner_4.jpeg']);
@@ -43,6 +43,40 @@ function Home(){
     }
   };
   const userKey =1;
+
+//   const [userInfo, setUserInfo] = useState([]);
+//   const userKey = 909;
+
+//   useEffect(()=> {
+//     console.log('사용자 정보 불러오기');
+    
+//     const fetchInfo = async ()=> {
+//       try {
+//         const response = await axios.get(`http://3.36.175.224:8080/`, {
+//           params: { userKey }
+//         });
+
+//         console.log('Response:', response);
+//         if (response.status==200){
+//             setUserInfo(response.data);
+//         }
+
+//         } catch (error) {
+//             console.log('사용자 정보 불러오기 실패');
+//         }
+//     };
+
+//     fetchInfo();
+//     setUserInfo({location:null})
+// },[userKey]);
+
+// useEffect(() => {
+//   if (userInfo.location === null) {
+//       navigate('/locationset')
+//   }
+// }, [userInfo]);
+
+
     return(
         <div>
             <Statusbar/>
@@ -84,7 +118,7 @@ function Home(){
                   <img style={{width:'150px'}} src='/imgs/cart.png'></img>
                   </div>
                 </div>
-                <div className= {styles.ButtonFat} onClick={()=>navigate('/myhistory')}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/myhistory/${userKey}`)}>
                   <div className={styles.ButtonText} style={{margin: '12px',borderBottom:'solid #FF9494 2px'}}>
                     주문내역
                   </div>
