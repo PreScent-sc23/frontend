@@ -9,6 +9,7 @@ import CustomerBottomTap from '../../components/bottomtap/customerbottomtap';
 function Mypage(){
     
      const navigate = useNavigate(); 
+     const userKey=1;
 
     return(
         <div>
@@ -50,13 +51,13 @@ function Mypage(){
                </div>
 
                <div className={styles.MenuWrap}>
-                    <div className={styles.MypageMenu} onClick={()=>navigate('/myhistory')} >
+                    <div className={styles.MypageMenu} onClick={()=>navigate(`/myhistory/${userKey}`)} >
                          <div className={styles.MenuTitle} >주문내역</div>
                          <img src='/assets/right.svg'></img>
                     </div>
 
 
-                    <div className={styles.MypageMenu} onClick={()=>navigate('/cart')}>
+                    <div className={styles.MypageMenu} onClick={()=>navigate(`/cart/${userKey}`)}>
                          <div className={styles.MenuTitle}>장바구니</div>
                          <img src='/assets/right.svg'></img>
                     </div>
