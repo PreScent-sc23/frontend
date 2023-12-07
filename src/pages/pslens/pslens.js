@@ -24,7 +24,7 @@ function PSLens() {
   
 const handleResult = async () => {
     if (!selectedFile) {
-        console.error('이미지를 업로드하세요');
+        alert('이미지를 업로드하세요');
         return;
     }
 

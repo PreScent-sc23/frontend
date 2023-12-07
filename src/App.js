@@ -32,8 +32,6 @@ import NotFound from './pages/notfound/notfound';
 import Dictionary from './pages/dictionary/dictionary';
 
 function App() {
-  // const apikey =process.env.WEATHER_APIKEY;
-
 
   // const [msg, setMsg] = useState([]);
   // useEffect(() => {
@@ -71,7 +69,7 @@ function App() {
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
               <Route path="/detail/:fpkey" element={<ProductDetail/>}/>
-              {/* <Route path="pslens/results" element = {<PSLensResults/>}/> */}
+              <Route path="pslens/results" element = {<PSLensResults/>}/>
               <Route path="/cart/:userkey" element = {<Cart/>}/>
               <Route path="/cart/payment/:userkey" element = {<Payment/>}/>
               {/* <Route path="/myhistory" element = {<CustomerHistory/>}/> */}
