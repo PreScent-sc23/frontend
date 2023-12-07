@@ -71,7 +71,7 @@ function App() {
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
               <Route path="/detail/:fpkey" element={<ProductDetail/>}/>
-              {/* <Route path="pslens/results" element = {<PSLensResults/>}/> */}
+              <Route path="pslens/results" element = {<PSLensResults/>}/> 
               <Route path="/cart/:userkey" element = {<Cart/>}/>
               <Route path="/cart/payment/:userkey" element = {<Payment/>}/>
               {/* <Route path="/myhistory" element = {<CustomerHistory/>}/> */}
