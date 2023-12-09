@@ -57,11 +57,11 @@ function Home(){
         });
 
         console.log('Response:', response);
-        if (response.status==200){
+        if (response.status===200){
             setUserInfo(response.data);
-            if(userInfo.latitude === null){
+            if(response.data.address === null || response.data.latitude === null || response.data.longitude === null){
               alert('초기 위치 정보 설정을 마치고, PreScent의 서비스를 이용하세요!');
-              navigate('/locationset');
+              navigate('/customerlocationset');
             };
         }
 
@@ -69,7 +69,6 @@ function Home(){
             console.log('사용자 정보 불러오기 실패');
         }
     };
-
     fetchInfo();
 },[]);
 

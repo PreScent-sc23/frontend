@@ -12,7 +12,7 @@ function Mypage(){
      const [name, setName] = useState('-');
      const [phonenum, setPhoneNum] = useState('-');
      const [idEmail, setIdEmail] = useState('-');
-     const [location, setLocation] = useState('-');
+     const [address, setAddress] = useState('-');
      useEffect(() => {
           const fetchInfo = async () => {
               try {
@@ -23,7 +23,7 @@ function Mypage(){
                       setName(response.data.name);
                       setPhoneNum(response.data.phonenum);
                       setIdEmail(response.data.idEmail);
-                      setLocation(response.data.location);
+                      setAddress(response.data.address);
                   }
               } catch (error) {
                   console.log('Failed to fetch user info');
@@ -62,7 +62,7 @@ function Mypage(){
                          <img src='/assets/pin.svg'></img>
                          <div className={styles.LocationText}>
                               <div className={styles.InfoText}>현재 위치</div>
-                              <div className={styles.BoldText}>{location}</div>
+                              <div className={styles.BoldText}>{address}</div>
 
                          </div>
                          <div className={styles.EditButton} style={{fontSize:"1rem"}}>수정</div>
