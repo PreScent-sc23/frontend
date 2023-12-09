@@ -36,11 +36,11 @@ function SellerHome(){
               
               <div className={styles.ButtonRow}>
                 <div className= {styles.ButtonFat} onClick={()=>navigate(`/shopregister`)}>
-                  <img style={{width:'10rem'}} src='/assets/shopmanagebutton.svg'></img>
+                  <img style={{width:'10rem', height : '16rem'}} src='/assets/shopmanagebutton.svg'></img>
                 </div>
                  
                 <div className= {styles.ButtonFat} onClick={()=>navigate(`/manageproduct`)}>
-                  <img style={{width:'10rem'}} src='/assets/productmanagebutton.svg'></img>
+                  <img style={{width:'10rem', height : '13rem'}} src='/assets/productmanagebutton.svg'></img>
                 </div>
               </div>
 
@@ -53,7 +53,7 @@ function SellerHome(){
                  
                 <div className= {styles.ButtonFat} onClick={()=>navigate(`/managestat`)}>
             
-                  <img style={{width:'10rem'}} src='/assets/xhdrPbutton.svg'></img>
+                  <img style={{width:'10rem', height : '13rem'}} src='/assets/xhdrPbutton.svg'></img>
                 </div>
               </div>
 
