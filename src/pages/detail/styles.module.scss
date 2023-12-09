@@ -1,39 +1,25 @@
 .ImageWrap{
     display: flex;
-    // height : auto;
-    // height: 35vh;
-    // padding: 0.875rem 2.81938rem 0.875rem 2.9375rem;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
     border-radius: 0rem 0rem 1.5625rem 1.5625rem;
-    margin-top :6rem;
+    margin-top :1rem;
     }
 
-// .ImageWrap {
-//     width: 100%;
-//     max-width: 100%;
-//     height: auto;
-//     overflow: hidden;
-//     }
     
 .ImageWrap img {
-width: 70%;
-height: auto;
-display: block;
+    width: 70%;
+    height: auto;
+    display: block;
 }
 
 .DetailWrap{
     display: flex;
     flex-direction: column;
-    // height : 16vh;
-    // align-items: flex-start;
     gap: 0.8rem;
     background-color: white;
     padding: 0.8rem 2.3rem;
-    // justify-content: space-between;
-    // width: 23.4375rem;
-    // height: 10.25rem;
     flex-shrink: 0;
 }
 
@@ -41,8 +27,7 @@ display: block;
 
 .FpName{
     color: #090A0A;
-    // text-align: center;
-    font-family: Inter;
+    font-family: 'Pretendard';
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 700;
@@ -58,12 +43,11 @@ display: block;
     letter-spacing: 0.00625rem;
     text-align: end;
     color: #FF7074;
+    font-family: 'Pretendard';
     }
 
 .FpTagWrap{
-    // display : flex;
     display: flex;
-    // padding: 0.5rem;
     align-items: flex-start;
     gap: 0.8rem;
     flex-wrap: wrap;
@@ -75,6 +59,7 @@ display: block;
     align-items: center;
     border-radius: 2rem;
     background: #F2F4F5;
+    font-family: 'Pretendard';
  
 }
 
@@ -82,21 +67,20 @@ display: block;
 
 .FpDescription{
     color:  #090A0A;
-    // text-align: center;
     font-family: Inter;
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
     line-height: 1.125rem; /* 128.571% */
     padding-left: 0.2rem;
+    font-family: 'Pretendard';
 
 
 }
 
 .FpFlowerWrap{
-    // display : flex;
+
     display: inline-flex;
-    // padding: 0.5rem;
     align-items: flex-start;
     gap: 0.8rem;
     flex-wrap: wrap;
@@ -108,12 +92,13 @@ display: block;
     align-items: center;
     border-radius: 2rem;
     background: #F2F4F5;
+    font-family: 'Pretendard';
  
 }
 
 .Line{
     margin : 1rem 1.5rem;
-    // width: 22rem;
+   
     display: flex;
     height: 0.2rem;
     background: #EDEDED;
@@ -125,7 +110,7 @@ display: block;
     display: flex;
     padding: 0rem 2.5rem;
     align-items: center;
-    // gap : 10rem;
+    
     justify-content: space-between;
 
 
@@ -134,84 +119,41 @@ display: block;
 {
     display : flex;
     flex-direction: row;
-    // justify-content: space-between;
     gap : 0.6rem;
 }
 
 .Text{
     color: #090A0A;
     text-align: center;
-    font-family: Inter;
+    font-family: 'Pretendard';
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 500;
     margin-right : 2rem;
-    // line-height: 1.125rem; /* 90% */
+    
 }
 
-.Icon{
-    // text-align: end;
-}
+
 
 
 .PurchaseButton{
     display: flex;
-    // width: 20.1875rem;
     padding: 1rem 1.5rem;
-    // margin : 2rem;
     margin : 1rem 2rem;
     justify-content: center;
-    // align-items: center;
     gap: 0.5rem;
     border-radius: 0.75rem;
     background: #FF7074;
     color : white;
     flex-direction: row;
     align-items: flex-start;
-    font-family: Inter;
+    font-family: 'Pretendard';
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 700;
     line-height: 1.5rem; /* 133.333% */
 }
 
-
-
-// .AmountWrap {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     margin-top: 20px;
-  
-//     .Text {
-//       font-size: 16px;
-//       margin-bottom: 10px;
-//     }
-  
-//     .AmountControls {
-//       display: flex;
-//       align-items: center;
-  
-//       .AmountButton {
-//         background-color: #007bff;
-//         color: #fff;
-//         border: none;
-//         padding: 8px 12px;
-//         font-size: 18px;
-//         cursor: pointer;
-//         transition: background-color 0.3s;
-  
-//         &:hover {
-//           background-color: #0056b3;
-//         }
-//       }
-  
-//       .Amount {
-//         font-size: 18px;
-//         margin: 0 10px;
-//       }
-//     }
-// }
 
 .AmountControls {
           display: flex;
@@ -225,6 +167,7 @@ display: block;
             border-radius: 0.2rem;
             padding: 0.1rem 0.6rem;
             font-size: 1.2rem;
+            font-family: 'Pretendard';
             cursor: pointer;
             transition: background-color 0.3s;
       
@@ -238,6 +181,7 @@ display: block;
             margin: 0 0.6rem;
             font-weight: 600;
             text-align: center;
+            font-family: 'Pretendard';
         
             
           }

@@ -8,11 +8,15 @@ import Searchbar from '../../components/search/searchbar';
 import Kakao from '../../components/map/map';
 
 function LocationSet(){
-    const [location, setLocation] = useState({ lat: null, lng: null });
+    const [location, setLocation] = useState({ lat: null, lng: null, address:null });
     const navigate = useNavigate(); 
 
-    const updateLocation = (lat, lng) => {
-        setLocation({ lat, lng });
+    const updateLocation = (lat, lng, address) => {
+        setLocation({ lat, lng, address });
+        console.log(`위치 설정 성공)`);
+        console.log(`위도 : ${lat}`);
+        console.log(`경도 : ${lng}`);
+        console.log(`주소 : ${address}`);
       };
 
 
@@ -21,8 +25,8 @@ function LocationSet(){
         console.log(location);
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.post('http://3.36.175.224:8080/customer/signup', {
-                location,
+            const response = await axios.post('http://3.36.175.224:8080/API주소 필요함', {
+                location
             },{
                 headers: {
                     'Content-Type': 'application/json',
@@ -38,16 +42,12 @@ function LocationSet(){
     };
 
         return(
-            <div>
-                <Statusbar/>
+            <div style={{width:'100%', height:'100%', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
                 <TopNav/>
-                <div style={{width:'100%', height:'100%',display:'flex', justifyContent:'center', alignContent:'center', flexDirection:'column'}}>
+                <div style={{width:'100%', height:'90%',display:'flex', justifyContent:'center', alignContent:'center', flexDirection:'column'}}>
                 <Kakao updateLocation={updateLocation}/>
                 <button className={styles.PopClose} onClick={handleSubmission}>위치 설정하기</button>
                 </div>
-
-                
-                
             </div>
         )
 }export default LocationSet;

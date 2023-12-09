@@ -14,20 +14,20 @@ function Shopregister(){
     const [flowers, setFlowers] = useState('');
     const checkBoxList=['월', '화', '수', '목', '금','토','일']
     const [checkedList, setCheckedList] = useState([]);
-    const [openHour, setOpenHour] = useState('');
-    const [openMinute, setOpenMinute] = useState('');
-    const [closeHour, setCloseHour] = useState('');
-    const [closeMinute, setCloseMinute] = useState('');
+    const [openHour, setOpenHour] = useState(Number('0'));
+    const [openMinute, setOpenMinute] = useState(Number('0'));
+    const [closeHour, setCloseHour] = useState(Number('0'));
+    const [closeMinute, setCloseMinute] = useState(Number('0'));
     const hourOptions = Array.from({length: 24}, (_, i) => i);
     const minuteOptions = Array.from({length: 6}, (_, i) => i * 10)
 
 
-    const data = {
+    const flowerShopDto = {
         'shopName' : shopName,
         'shopPhoneNum' : shopPhoneNum,
         'shopLocation' : shopLocation,
         'description' : description,
-        'flowers' : flowers,
+        'flowerListGetFromFE' : flowers,
         'workday' : checkedList,
         'openHour' : openHour,
         'openMinute' : openMinute,
@@ -40,9 +40,9 @@ function Shopregister(){
         try {
             const token = localStorage.getItem('token');
             console.log(token);
-            const response = await axios.post('http://3.36.175.224:8080/flower-shops/add', {
-                data
-            },{headers: {'Content-Type': 'application/json', 'Authorization' : `Bearer ${token}`}});
+            const response = await axios.post('http://3.36.175.224:8080/flower-shops/add', 
+                flowerShopDto
+            ,{headers: {'Content-Type': 'application/json', 'Authorization' : `Bearer ${token}`}});
             console.log("됨2?");
             console.log(response.data);
             navigate('/sellerhome');
@@ -70,10 +70,9 @@ function Shopregister(){
 
     return(
         <div >
-            <Statusbar/>
             <TopNav/>
 
-            <div style={{overflow:'auto', display:'flex', flexDirection: 'column',width: '100%', height:'500px', marginTop:'8rem'}}>
+            <div style={{overflow:'auto', display:'flex', flexDirection: 'column',width: '100%', height:'500px', marginTop:'1rem'}}>
                 <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={shopName} onChange={(e) => setShopName(e.target.value)}></input>
                 <input className={styles.inputBox} type='number' name = "shopnum" size = '50' placeholder='가게 연락처' value={shopPhoneNum} onChange={(e) => setShopNumber(e.target.value)}></input>
                 <input className={styles.inputBox} type='text' name = "shopaddress" size = '50' placeholder='가게 주소' value={shopLocation} onChange={(e) => setShopLocation(e.target.value)}></input>
@@ -99,37 +98,37 @@ function Shopregister(){
                     </div>
                     
                 </div>
-                <div style={{margin:'0.5rem auto',width:'80%', border:'solid #E3E5E5 1px', borderRadius:'5px', padding:'10px'}}>
+                <div style={{alignItems:'center',justifyContent:'center',margin:'0.5rem auto',width:'80%', border:'solid #E3E5E5 1px', borderRadius:'5px', padding:'10px'}}>
                     <div style={{borderBottom:'2px solid #FF9494', textAlign:'center'}}>
                         영업시간을 선택해주세요
                     </div>
-                    <div style={{display:'flex', margin:'0.5rem'}}>
+                    <div style={{display:'flex', margin:'0.5rem', alignItems :'center', justifyContent:'center'}}>
                         <div style={{display:'flex', justifyContent:'center', alignItems:'center', backgroundColor:'#FF9494', color:'white', width:'3rem', height:'1.5rem', borderRadius:'8px', marginRight:'8px'}}>
                         시작
                         </div>
-                        <select value={openHour} onChange={(e) => setOpenHour(e.target.value)}>
+                        <select value={openHour} onChange={(e) => setOpenHour(Number(e.target.value))}>
                         {hourOptions.map((hour, idx) => (
                             <option key={idx} value={hour}>{hour}</option>
                         ))}
                         </select>
                 
-                        <select value={openMinute} onChange={(e) => setOpenMinute(e.target.value)}>
+                        <select value={openMinute} onChange={(e) => setOpenMinute(Number(e.target.value))}>
                             {minuteOptions.map((minute, idx) => (
                                 <option key={idx} value={minute}>{minute}</option>
                         ))}
                         </select>
                     </div>
-                    <div style={{display:'flex', margin:'8px'}}>
+                    <div style={{display:'flex', margin:'1rem', alignItems :'center', justifyContent:'center'}}>
                         <div style={{display:'flex', justifyContent:'center', alignItems:'center', backgroundColor:'#FF9494', color:'white', width:'3rem', height:'1.5rem', borderRadius:'8px', marginRight:'8px'}}>
-                            종료:
+                            종료
                         </div>
-                        <select value={closeHour} onChange={(e) => setCloseHour(e.target.value)}>
+                        <select value={closeHour} onChange={(e) => setCloseHour(Number(e.target.value))}>
                         {hourOptions.map((hour, idx) => (
                             <option key={idx} value={hour}>{hour}</option>
                         ))}
                         </select>
             
-                        <select value={closeMinute} onChange={(e) => setCloseMinute(e.target.value)}>
+                        <select value={closeMinute} onChange={(e) => setCloseMinute(Number(e.target.value))}>
                             {minuteOptions.map((minute, idx) => (
                                 <option key={idx} value={minute}>{minute}</option>
                         ))}
@@ -138,7 +137,7 @@ function Shopregister(){
                 </div>
             </div>
             <div className={styles.ButtonContainer}>
-                <div className={styles.Button} onClick={handleSubmission}>등록</div>
+                <button className={styles.Button} onClick={handleSubmission}>등록</button>
             </div>
         </div>
         

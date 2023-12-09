@@ -68,7 +68,8 @@ function Payment(props) {
         if (success === true) {
           console.log('결제 성공');
           await sendPaymentSuccessToBackend(imp_uid);
-          navigate('/myhistory');
+          navigate(`/myhistory/${userKey}`);
+          // navigate(`/myhistory/${userKey}`);
         } else {
           console.log('결제 실패');
         }
@@ -139,7 +140,7 @@ function Payment(props) {
                 </div>
                 <div className={styles.DateTime}>
                   <div className={styles.dtText}>픽업 일시 : </div>
-                  <div className={styles.dtText}>{item.pickupDate}{item.pickupDate}</div>
+                  <div className={styles.dtText}>{item.pickupDate}{item.pickupTime}</div>
                   {/* <span>{item.pickupDate}{item.pickupTime}</span> */}
                 </div>
 

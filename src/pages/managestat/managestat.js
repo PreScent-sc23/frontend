@@ -11,9 +11,8 @@ function ManageStat(){
     const navigate = useNavigate(); 
     return(
         <div>
-            <Statusbar/>
             <TopNav/>
-            준비중 - 통계 관리
+            <div style ={{fontFamily:'Pretendard', fontSize : '1.4rem', fontWeight : 500, textAlign:'center', marginTop :'1rem'}}>페이지 준비중</div>
             <SellerBottomTap/>
         </div>
         
