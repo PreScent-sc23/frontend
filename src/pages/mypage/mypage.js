@@ -9,7 +9,30 @@ import CustomerBottomTap from '../../components/bottomtap/customerbottomtap';
 function Mypage(){
     
      const navigate = useNavigate(); 
-     const userKey =1;
+     const [name, setName] = useState('-');
+     const [phonenum, setPhoneNum] = useState('-');
+     const [idEmail, setIdEmail] = useState('-');
+     const [location, setLocation] = useState('-');
+     useEffect(() => {
+          const fetchInfo = async () => {
+              try {
+                  const token = localStorage.getItem('token')
+                  const headers = { 'Authorization': `Bearer ${token}`};
+                  const response = await axios.get('http://3.36.175.224:8080/customer-my-info', { headers });
+                  if (response.status === 200) {
+                      setName(response.data.name);
+                      setPhoneNum(response.data.phonenum);
+                      setIdEmail(response.data.idEmail);
+                      setLocation(response.data.location);
+                  }
+              } catch (error) {
+                  console.log('Failed to fetch user info');
+              }
+          };
+
+          fetchInfo();
+       }, []);
+
 
     return(
         <div>
@@ -25,11 +48,11 @@ function Mypage(){
                     
                          <img src='/assets/user_pink.svg' className={styles.Image}></img>
                          <div className={styles.InfoWrap}>
-                              <div className={styles.BoldText} style={{fontSize:"1.2rem"}}>김구매자</div>
+                              <div className={styles.BoldText} style={{fontSize:"1.2rem"}}>{name}</div>
                               <div className={styles.Line}></div>
-                              <div className={styles.InfoText}>010-1234-1234</div>
+                              <div className={styles.InfoText}>{phonenum}</div>
                               <div className={styles.Line}></div>
-                              <div className={styles.InfoText}>buyer@naver.com</div>
+                              <div className={styles.InfoText}>{idEmail}</div>
                          </div>
 
                     </div>
@@ -39,7 +62,7 @@ function Mypage(){
                          <img src='/assets/pin.svg'></img>
                          <div className={styles.LocationText}>
                               <div className={styles.InfoText}>현재 위치</div>
-                              <div className={styles.BoldText}>아주대학교 팔달관 1층</div>
+                              <div className={styles.BoldText}>{location}</div>
 
                          </div>
                          <div className={styles.EditButton} style={{fontSize:"1rem"}}>수정</div>
@@ -48,13 +71,13 @@ function Mypage(){
                </div>
 
                <div className={styles.MenuWrap}>
-                    <div className={styles.MypageMenu} onClick={()=>navigate(`/myhistory/${userKey}`)} >
+                    <div className={styles.MypageMenu} onClick={()=>navigate(`/myhistory`)} >
                          <div className={styles.MenuTitle} >주문내역</div>
                          <img src='/assets/right.svg'></img>
                     </div>
 
 
-                    <div className={styles.MypageMenu} onClick={()=>navigate(`/cart/${userKey}`)}>
+                    <div className={styles.MypageMenu} onClick={()=>navigate(`/cart`)}>
                          <div className={styles.MenuTitle}>장바구니</div>
                          <img src='/assets/right.svg'></img>
                     </div>

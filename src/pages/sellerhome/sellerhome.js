@@ -10,9 +10,8 @@ import SellerBottomTap from '../../components/bottomtap/sellerbottomtap';
 function SellerHome(){
     const navigate = useNavigate(); 
     const [userDatas, setUserDatas] = useState('');
-
     useEffect(() => {
-        axios.get('정보가 들어있는 주소', {
+        axios.get('http://3.36.175.224:8080/seller-my-info', {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -30,7 +29,7 @@ function SellerHome(){
             <TopNav/>
             <div className={styles.profileContainer}>
                 <img src ='/assets/florist.png' style={{width : '6rem', height:'auto', marginBottom : '0.5rem'}}></img>
-                <span style={{textAlign : 'center',fontSize:'1.4rem',borderRadius:'4px', lineHeight:'1.8rem'}}>김사업자</span>
+                <span style={{textAlign : 'center',fontSize:'1.4rem',borderRadius:'4px', lineHeight:'1.8rem'}}>{userDatas.name ? userDatas.name : '-'}</span>
             </div>
             
             <div className={styles.ButtonContatiner}>
@@ -53,6 +52,7 @@ function SellerHome(){
                 </div>
                  
                 <div className= {styles.ButtonFat} onClick={()=>navigate(`/managestat`)}>
+            
                   <img style={{width:'10rem'}} src='/assets/xhdrPbutton.svg'></img>
                 </div>
               </div>

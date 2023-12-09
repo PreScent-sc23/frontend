@@ -14,20 +14,20 @@ function Shopregister(){
     const [flowers, setFlowers] = useState('');
     const checkBoxList=['월', '화', '수', '목', '금','토','일']
     const [checkedList, setCheckedList] = useState([]);
-    const [openHour, setOpenHour] = useState('');
-    const [openMinute, setOpenMinute] = useState('');
-    const [closeHour, setCloseHour] = useState('');
-    const [closeMinute, setCloseMinute] = useState('');
+    const [openHour, setOpenHour] = useState(Number('0'));
+    const [openMinute, setOpenMinute] = useState(Number('0'));
+    const [closeHour, setCloseHour] = useState(Number('0'));
+    const [closeMinute, setCloseMinute] = useState(Number('0'));
     const hourOptions = Array.from({length: 24}, (_, i) => i);
     const minuteOptions = Array.from({length: 6}, (_, i) => i * 10)
 
 
-    const data = {
+    const flowerShopDto = {
         'shopName' : shopName,
         'shopPhoneNum' : shopPhoneNum,
         'shopLocation' : shopLocation,
         'description' : description,
-        'flowers' : flowers,
+        'flowerListGetFromFE' : flowers,
         'workday' : checkedList,
         'openHour' : openHour,
         'openMinute' : openMinute,
@@ -40,9 +40,9 @@ function Shopregister(){
         try {
             const token = localStorage.getItem('token');
             console.log(token);
-            const response = await axios.post('http://3.36.175.224:8080/flower-shops/add', {
-                data
-            },{headers: {'Content-Type': 'application/json', 'Authorization' : `Bearer ${token}`}});
+            const response = await axios.post('http://3.36.175.224:8080/flower-shops/add', 
+                flowerShopDto
+            ,{headers: {'Content-Type': 'application/json', 'Authorization' : `Bearer ${token}`}});
             console.log("됨2?");
             console.log(response.data);
             navigate('/sellerhome');
@@ -106,13 +106,13 @@ function Shopregister(){
                         <div style={{display:'flex', justifyContent:'center', alignItems:'center', backgroundColor:'#FF9494', color:'white', width:'3rem', height:'1.5rem', borderRadius:'8px', marginRight:'8px'}}>
                         시작
                         </div>
-                        <select value={openHour} onChange={(e) => setOpenHour(e.target.value)}>
+                        <select value={openHour} onChange={(e) => setOpenHour(Number(e.target.value))}>
                         {hourOptions.map((hour, idx) => (
                             <option key={idx} value={hour}>{hour}</option>
                         ))}
                         </select>
                 
-                        <select value={openMinute} onChange={(e) => setOpenMinute(e.target.value)}>
+                        <select value={openMinute} onChange={(e) => setOpenMinute(Number(e.target.value))}>
                             {minuteOptions.map((minute, idx) => (
                                 <option key={idx} value={minute}>{minute}</option>
                         ))}
@@ -122,13 +122,13 @@ function Shopregister(){
                         <div style={{display:'flex', justifyContent:'center', alignItems:'center', backgroundColor:'#FF9494', color:'white', width:'3rem', height:'1.5rem', borderRadius:'8px', marginRight:'8px'}}>
                             종료
                         </div>
-                        <select value={closeHour} onChange={(e) => setCloseHour(e.target.value)}>
+                        <select value={closeHour} onChange={(e) => setCloseHour(Number(e.target.value))}>
                         {hourOptions.map((hour, idx) => (
                             <option key={idx} value={hour}>{hour}</option>
                         ))}
                         </select>
             
-                        <select value={closeMinute} onChange={(e) => setCloseMinute(e.target.value)}>
+                        <select value={closeMinute} onChange={(e) => setCloseMinute(Number(e.target.value))}>
                             {minuteOptions.map((minute, idx) => (
                                 <option key={idx} value={minute}>{minute}</option>
                         ))}
