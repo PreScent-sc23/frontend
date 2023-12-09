@@ -11,6 +11,21 @@ function PSLens() {
   const navigate = useNavigate();
   const [selectedFile, setSelectedFile] = useState(null);
   const [fileURL, setFileURL] = useState('');
+  const [showUploadModal, setShowUploadModal] = useState(false);
+
+  const UploadModal = ({ onClose }) => (
+    <div className={styles.ModalOverlay}>
+      <div className={styles.UploadModal}>
+        <p>이미지를 업로드 해주세요!</p>
+        <button onClick={onClose}>닫기</button>
+      </div>
+    </div>
+  );
+  
+  const closeUploadModal = () => {
+    setShowUploadModal(false);
+  };
+  
 
 
   const handleFileSelect = (event) => {
@@ -24,7 +39,8 @@ function PSLens() {
   
 const handleResult = async () => {
     if (!selectedFile) {
-        alert('이미지를 업로드하세요');
+      setShowUploadModal(true);
+        // alert('이미지를 업로드하세요');
         return;
     }
 
@@ -50,7 +66,7 @@ const handleResult = async () => {
 
   return (
     <div>
-      <Statusbar />
+    
       <TopNav />
 
       <div>
@@ -78,6 +94,7 @@ const handleResult = async () => {
         <label htmlFor="fileInput" className={styles.Button} >
           이미지 업로드하기
         </label>
+        {showUploadModal && <UploadModal onClose={closeUploadModal} />}
         <div className={styles.Button} onClick={handleResult}>분석 결과 확인</div>
       </div>
       <CustomerBottomTap />

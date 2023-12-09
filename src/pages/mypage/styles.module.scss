@@ -4,10 +4,10 @@
     
     justify-content: space-between;
     align-items: center;
-    // gap: 13.125rem;
-    margin-top :6rem;
+
+    margin-top :0rem;
     background-color: transparent;
-    // box-sohadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
+    
 }
 
 .ProfileTitle{
@@ -23,8 +23,7 @@
     display: flex;
     flex-direction: column;
     margin : 0rem 2rem;
-    // width: 19.9375rem;
-    // height: 11.25rem;
+
     flex-shrink: 0;
     border-radius: 1.25rem;
     background: #FFF;
@@ -33,7 +32,7 @@
 
 .EditButton{
     color: #FF7074;
-    font-family: Inter;
+    font-family: 'Pretendard';
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
@@ -44,10 +43,8 @@
     display: inline-flex;
     flex-direction: row;
     padding: 1rem;
-    // align-items: flex-start;
     gap: 1rem;
     box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
-    
 
 }
 
@@ -67,7 +64,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    // text-align: center;
 }
 
 .InfoWrap{
@@ -75,7 +71,6 @@
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
-    // box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
 }
 
 .InfoText{
@@ -100,7 +95,6 @@
 
 
 .Location{ 
-    // width: 19.5625rem;
     height: 3.125rem;
     flex-shrink: 0;
     background-color: white;
@@ -110,7 +104,7 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 1.25rem;
-    // align-items: flex-start;
+    
     box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
 }
 
@@ -120,7 +114,7 @@
     height: 2.5rem;
     flex-direction: column;
     font-family: 'Pretendard';
-    // justify-content: center;
+   
     align-items: flex-start;
     gap: 0.4rem;
     flex-shrink: 0;

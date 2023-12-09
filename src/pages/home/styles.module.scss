@@ -1,10 +1,6 @@
 .SearchWrap{
     display: flex;
-    //width : 100%;
-    // width: 23.4375rem;
-    //height : 2.5rem;
     padding: 0.5rem 1rem;
-    // margin-top:rem;
     flex-direction: column;
     align-items: flex-start;
     background-color: white;
@@ -16,10 +12,8 @@
     align-items: center;
     align-self: stretch;
     border-radius: 0.75rem;
-    //border: 1px solid #F6F6F6;
     background: #F6F6F6;
     gap : 0.5rem;
-    // margin-top: 3rem;
 
 }
 
@@ -45,13 +39,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // margin : 1rem 0rem;
 }
 
 .ButtonContatiner{
-    margin:4px auto;
-    // width: 30rem;
-    // height: 20rem;
+    margin:0.1rem auto;
     overflow: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -59,29 +50,26 @@
 
 .ButtonContatiner::-webkit-scrollbar {
     display: none;
-    // display : flex;
  }
 
 
 .ButtonFat{
     background-color: #fefefe;
-   
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    // align-items: center;
+    // justify-content: center;
     flex-direction: column;
     width:44%;
     height: 12rem;
     border-radius: 0.8rem;
     margin :0.4rem;
     box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.1);
-    // box-shadow:0px 4px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
 .ButtonSlim{
     background-color: #fefefe;
-    
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -89,7 +77,6 @@
     width: 90%;
     height: 11rem;
     border-radius: 0.8rem;
-    // margin: 8px auto;
     margin : 0.6rem;
     box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -108,11 +95,6 @@
     transform: translate(-10px, -110px);
 }
 
-
-*{
-    font-family: inter;
-    margin:0;
-}
 .LogoContainer{
     width: 100%;
     display: flex;

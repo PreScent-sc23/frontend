@@ -79,7 +79,7 @@ function PSLensResults() {
 
     return (
         <div>
-            <Statusbar/>
+
             <TopNav/>
             <div>
                 <div className={styles.ImageWrap} style={{height: '20rem', borderRadius:'0rem', marginTop: '6rem'}}>
