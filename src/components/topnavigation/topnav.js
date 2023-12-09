@@ -20,9 +20,24 @@ function TopNav(props){
 
       
       switch(true){
-        case isDetailPage:
+        case location.pathname === `/sellersignup`:
+          // case '/sellersignup':
+          setPageTitle('사업자 회원 가입');
+          setIcon('/assets/emptyicon.svg');
+          break
+
+        case location.pathname === `/customersignup`:
+        // case '/customersignup':
+          setPageTitle('일반 고객 회원 가입');
+          setIcon('/assets/emptyicon.svg');
+          break;
+
+
+
+
+          case isDetailPage:
           setPageTitle('상품 상세 정보');
-          setIcon('/assets/setting.svg');
+          setIcon('/assets/emptyicon.svg');
           break;
 
           case location.pathname === '/mypage':
@@ -32,25 +47,25 @@ function TopNav(props){
 
           case location.pathname === '/pslens':
           setPageTitle('PSLens');
-          setIcon('/assets/setting.svg');
+          setIcon('/assets/emptyicon.svg');
           break;
 
           case location.pathname === '/pslens/results':
         // case '/pslens/results':
           setPageTitle('꽃 분석 결과');
-          setIcon('/assets/setting.svg');
+          setIcon('/assets/emptyicon.svg');
           break;
 
           case location.pathname === `/cart/${userKey}`:
         // case `/cart/${userKey}`:
           setPageTitle('장바구니');
-          setIcon('/assets/setting.svg');
+          setIcon('/assets/emptyicon.svg');
           break;
 
           case location.pathname === `/cart/payment/${userKey}`:
         // case `/cart/payment/${userKey}`:
           setPageTitle('상품 결제');
-          setIcon('/assets/setting.svg');
+          setIcon('/assets/emptyicon.svg');
           break;
 
           case location.pathname === `/managereserve`:
@@ -65,17 +80,7 @@ function TopNav(props){
           setIcon('/assets/setting.svg');
           break;
 
-          case location.pathname === `/sellersignup`:
-        // case '/sellersignup':
-          setPageTitle('사업자 회원 가입');
-          setIcon('/assets/setting.svg');
-          break
-
-        case location.pathname === `/sellersignup`:
-        case '/customersignup':
-          setPageTitle('일반 고객 회원 가입');
-          setIcon('/assets/setting.svg');
-          break;
+       
         
           case location.pathname === `/addfinished`:
         // case '/addfinished':
@@ -89,11 +94,11 @@ function TopNav(props){
           setIcon('/assets/setting.svg');
           break;
           
-          case location.pathname === `/shopregister`:
-          // case '/shopregister':
-            setPageTitle('가게 등록');
-            setIcon('/assets/setting.svg');
-            break;
+        case location.pathname === `/shopregister`:
+        // case '/shopregister':
+          setPageTitle('가게 등록');
+          setIcon('/assets/setting.svg');
+          break;
             
 
 
@@ -103,14 +108,13 @@ function TopNav(props){
           setIcon('/assets/emptyicon.svg');
           break;
 
-        case location.pathname === `sellerhome/history`:
+        case location.pathname === `/sellerhome/history`:
         // case '/sellerhome/history':
           setPageTitle('예약 관리');
           setIcon('/assets/emptyicon.svg');
           break;
           
-        case location.pathname === `detail/${fpKey}`:
-        // case `/detail/${fpKey}`:
+        case location.pathname === `/detail/${fpKey}`:
           setPageTitle('상품 상세 정보');
           setIcon('/assets/emptyicon.svg');
           break;
@@ -121,13 +125,9 @@ function TopNav(props){
           setIcon('');
           break;
 
-        case location.pathname === `/customersignup`:
-        // case '/customersignup':
-          setPageTitle('일반 고객 회원 등록');
-          setIcon('/assets/emptyicon.svg');
-          break;
 
-          case '/locationset':
+          case location.pathname === `/locationset`:
+          // case '/locationset':
           setPageTitle('위치 설정');
           setIcon('/assets/emptyicon.svg');
           break;
@@ -155,6 +155,19 @@ function TopNav(props){
           setPageTitle('PS 사전');
           setIcon('/assets/emptyicon.svg');
           break;
+          
+          case location.pathname === `/managestat`:
+          // case '/managefinished':
+          setPageTitle('매장 통계');
+          setIcon('/assets/setting.svg');
+          break;
+
+        
+          case location.pathname === `/locationset`:
+            // case '/dictionary':
+            setPageTitle('위치 설정');
+            setIcon('/assets/emptyicon.svg');
+            break;
 
           // case '/dictionary/':
           // setPageTitle('PS 사전');
@@ -164,18 +177,14 @@ function TopNav(props){
 
     },[location,fpKey]);
 
-    
-
-    // const changePage = (newPage) => {
-    //     setCurrentPage(newPage);
-    //   };
+  
     
     return (
     <div className={styles.TopNavWrap}>
        {back && <img src='/assets/back.svg' className={styles.Icons} onClick={()=>navigate(-1)}/>}
        <div className={styles.TopNavTitle}>{pageTitle}</div>
        <img src={icon} className={styles.Icons} /*onClick= {()=>navigate(`/cart/${userKey}`)}*//>
-       {/* <img src={icon} className={styles.image}/> */}
+       
     </div>
     )
 }

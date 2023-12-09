@@ -70,10 +70,9 @@ function Shopregister(){
 
     return(
         <div >
-            <Statusbar/>
             <TopNav/>
 
-            <div style={{overflow:'auto', display:'flex', flexDirection: 'column',width: '100%', height:'500px', marginTop:'8rem'}}>
+            <div style={{overflow:'auto', display:'flex', flexDirection: 'column',width: '100%', height:'500px', marginTop:'1rem'}}>
                 <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={shopName} onChange={(e) => setShopName(e.target.value)}></input>
                 <input className={styles.inputBox} type='number' name = "shopnum" size = '50' placeholder='가게 연락처' value={shopPhoneNum} onChange={(e) => setShopNumber(e.target.value)}></input>
                 <input className={styles.inputBox} type='text' name = "shopaddress" size = '50' placeholder='가게 주소' value={shopLocation} onChange={(e) => setShopLocation(e.target.value)}></input>
@@ -103,7 +102,7 @@ function Shopregister(){
                     <div style={{borderBottom:'2px solid #FF9494', textAlign:'center'}}>
                         영업시간을 선택해주세요
                     </div>
-                    <div style={{display:'flex', margin:'0.5rem'}}>
+                    <div style={{display:'flex', margin:'0.5rem', alignItems :'center', justifyContent:'center'}}>
                         <div style={{display:'flex', justifyContent:'center', alignItems:'center', backgroundColor:'#FF9494', color:'white', width:'3rem', height:'1.5rem', borderRadius:'8px', marginRight:'8px'}}>
                         시작
                         </div>
@@ -119,7 +118,7 @@ function Shopregister(){
                         ))}
                         </select>
                     </div>
-                    <div style={{display:'flex', margin:'8px'}}>
+                    <div style={{display:'flex', margin:'1rem', alignItems :'center', justifyContent:'center'}}>
                         <div style={{display:'flex', justifyContent:'center', alignItems:'center', backgroundColor:'#FF9494', color:'white', width:'3rem', height:'1.5rem', borderRadius:'8px', marginRight:'8px'}}>
                             종료
                         </div>
@@ -138,7 +137,7 @@ function Shopregister(){
                 </div>
             </div>
             <div className={styles.ButtonContainer}>
-                <div className={styles.Button} onClick={handleSubmission}>등록</div>
+                <button className={styles.Button} onClick={handleSubmission}>등록</button>
             </div>
         </div>
         

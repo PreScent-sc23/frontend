@@ -9,26 +9,12 @@ import DatePickerComponent from '../../components/datepicker/datepicker';
 function ProductDetail({ Component, pageProps }){
 
     const navigate = useNavigate();
-    // const params = useParams();
-    // const { fpKey } = useParams();
-    // const fpKey = params.fpKey;
     const location = useLocation();
-    // const fpKey = location.state.fpKey;
     const fpKey = location.state ? location.state.fpKey : null;
-    // const fpKey ='';
     const userKey=1;//추후 토큰으로 교체  
     const [pickupDate,setPickupDate] = useState('');
     const [pickupTime,setPickupTime] = useState('');
     const [amount, setAmount]=useState(1);
-    
-   
-    // const cart= {
-    //     'userKey' :userKey,
-    //     'fpKey' : fpKey,
-    //     'pickupDate' : pickupDate,
-    //     'pickupTime' : pickupTime,
-    //     'amount' : amount,
-    // }
 
     const [productDetails, setProductDetails]=useState({
         fpKey:'',
@@ -90,33 +76,6 @@ function ProductDetail({ Component, pageProps }){
         }
     };
 
-    // const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
-    // const toggleDatePicker = () => {
-    //     setIsDatePickerOpen(!isDatePickerOpen);
-    //   };
-
-    // const [isTimePickerOpen, setIsTimePickerOpen] = useState(false);
-    // const toggleTimePicker = () => {
-    //     setIsTimePickerOpen(!isTimePickerOpen);
-    //   };
-
-    // const toggleDatePicker = () => {
-    //     setIsDatePickerOpen(!isDatePickerOpen);
-    //   };
-    
-    // const toggleTimePicker = () => {
-    //     setIsTimePickerOpen(!isTimePickerOpen);
-    //   };
-    
-    // const handleDateChange=useCallback((date)=>{
-    //     console.log(date);
-    //     setPickupDate(date);
-    // },[]);
-
-    // const handleTimeChange=useCallback((time)=>{
-    //     console.log(time);
-    //     setPickupTime(time);
-    // },[]);
    
      const handleDateChange=(date)=>{
         setPickupDate(date);
@@ -130,7 +89,6 @@ function ProductDetail({ Component, pageProps }){
 
     return (
         <div>
-            <Statusbar/>
             <TopNav/>
             <div className={styles.ImageWrap}>
                 <img src={productDetails.fpImage}/>

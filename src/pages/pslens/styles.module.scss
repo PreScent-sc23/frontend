@@ -1,39 +1,23 @@
-// .Screen {
-//     margin-top :6rem;
-// }
+
 .NoticeWrap{
-    // position: fixed;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, 0);
-  /* Other existing styles */
     display: flex;
     flex-direction: column;
-    margin-top :6.8rem;
+    margin-top :1rem;
     text-align: center;
-    // padding : 0rem 0rem 0rem 1rem;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
     background-color: white;
-    // border-radius: 0.625rem;
-    // background: #F6F6F6;
-    // box-shadow: 1px 3px 2px 2px rgba(0, 0, 0, 0.1);
-
+    
 }
 
 .TitleWrap{
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
-    // padding :0.5rem 1.1rem;
     gap : 0.4rem;
     align-items: stretch;
     line-height: 0.7rem;
-    // align-content: center;
-    // justify-items: center;
-    // background-color:black;
-    
 }
 
 .Title{
@@ -45,7 +29,6 @@
     font-weight: 600;
     margin-top: 0.5rem;
     line-height : 0.5rem;
-    // line-height: 1.5rem; /* 150% */
     justify-content: center;
     align-items: center;
 }
@@ -60,10 +43,8 @@
     width: 17.5rem;
     border: 1px dashed #FF9494;
     border-radius: 0.5rem;
-    // border : 1px solid black;
     align-items: center;
     justify-content: center;
-    // box-shadow: 0px 2px 6px 2px#E2E2E2;
 }
 
 .Text{
@@ -73,7 +54,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.6rem;
-    // line-height: 1.5rem; /* 171.429% */
+    
 }
 
 .HighlightText{
@@ -82,7 +63,6 @@
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
-    // line-height: 1.6rem;
     text-align: center;
     margin-top : 1rem;
 
@@ -91,23 +71,18 @@
 .ImageWrap{ 
     display: flex;
     flex-direction: column;
-    // width: 21.4375rem;
-    // height: 6.5625rem;
     margin : 1rem 1.5rem;
     flex-shrink: 0;
-    background-color: #C4C4C4;
+    background-color: #e2e2e2;
 
 
 }
 
 .Button{
     display: flex;
-    // width: 20.1875rem;
     padding: 1rem 1.5rem;
-    // margin : 2rem;
     margin : 1rem 1.5rem;
     justify-content: center;
-
     border-radius: 0.5rem;
     background:  #E2E2E2;
     color : #757575;
@@ -121,23 +96,17 @@
 }
 
 .ProductPhoto{
-    // width:184px;
-    // height:195px;
-    // margin:8px auto;
+ 
     background-color: #eeeeee;
     padding: auto;
-    // border-radius: 5px;
 }
 
 .ResultWrap{
     display: flex;
     flex-direction: column;
-    // margin : 1rem 1rem;
-    padding : 1rem;
-    // flex-shrink: 0;
+    padding : 0rem 1rem 1rem 1rem;
     border-radius: 1.25rem;
     background: #FFF;
-    // box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
     justify-content: space-between;
 }
 .CropImage{
@@ -149,32 +118,23 @@
 .ResultBox{
     display: flex;
     flex-direction: row;
-    margin : 1rem 0.5rem;
-    // padding : 1rem;
-    // padding : 1rem;
+    margin : 0.5rem 0.5rem;
+    padding : 0rem 0.5rem ;
     align-items: center;
     gap : 0.7rem;
-    // text-align: center;
-    // justify-content: center;
-    // width: 19.6875rem;
     height: 7rem;
     flex-shrink: 0;
-    // border-radius: 0.1rem;
+    border-radius: 0.375em;
     background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    // align-items: center;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
+    
 
 }
 .FlowerBox{
     display: flex;
     align-items: center;
-    // max-width: 90%;
-    // max-height: auto;
     width: 6rem;
     height: 6rem;
-    // height: 5.3rem;
-    // flex-shrink: 0;
-    // background-color: #C4C4C4;
     }
 
 .ResultTextWrap{
@@ -184,29 +144,65 @@
 }
 
 .ResultText{
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
     font-family : 'Pretendard';
-    font-size: 1rem;
-    font-weight: 500;
 }
 
 .GPTResultBox{
     display: flex;
     flex-direction: column;
     margin : 1rem 0.5rem;
-    padding : 1rem;
+    padding : 1.2rem;
     align-items: center;
     gap : 0.5rem;
-    // text-align: center;
-    // justify-content: center;
-    // width: 19.6875rem;
-    // height: 6rem;
+    font-family : 'Pretendard';
     flex-shrink: 0;
     font-size: 1.1rem;
     border-radius: 0.375rem;
-    background: #fff2f9;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    background: white;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.1);
     line-height: 1.6;
     font-weight : 500;
 }
+
+
+
+.ModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .UploadModal {
+    background: #fff;
+    padding: 1.3rem;
+    border-radius: 0.8rem ;
+    text-align: center;
+  
+    p {
+      margin-bottom: 1.5rem;
+      font-family: 'Pretendard';
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+  
+    button {
+      padding: 0.6rem 1.2rem;
+      background: #FF7074;
+      font-family: 'Pretendard';
+      font-weight: 500;
+      color: #fff;
+      border: none;
+      border-radius: 0.375rem;
+      cursor: pointer;
+    }
+  }
+  

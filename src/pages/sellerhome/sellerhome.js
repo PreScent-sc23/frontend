@@ -27,7 +27,6 @@ function SellerHome(){
 
     return(
         <div>
-            <Statusbar/>
             <TopNav/>
             <div className={styles.profileContainer}>
                 <img src ='/assets/florist.png' style={{width : '6rem', height:'auto', marginBottom : '0.5rem'}}></img>

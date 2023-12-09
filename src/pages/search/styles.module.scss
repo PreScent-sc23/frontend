@@ -1,10 +1,6 @@
 .SearchWrap{
     display: flex;
-    //width : 100%;
-    // width: 23.4375rem;
-    //height : 2.5rem;
     padding: 0.5rem 1rem;
-    //margin-top: 2.94rem;
     flex-direction: column;
     align-items: flex-start;
     background-color: white;
@@ -16,11 +12,9 @@
     align-items: center;
     align-self: stretch;
     border-radius: 0.75rem;
-    //border: 1px solid #F6F6F6;
     background: #F6F6F6;
     gap : 0.5rem;
     margin-top: 3rem;
-
 }
 
 .SearchInput{
@@ -29,7 +23,7 @@
     align-items: center;
     align-self: stretch;
     color: #757575;
-    font-family: Inter;
+    font-family: 'Pretendard';
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
@@ -46,32 +40,22 @@
     display: grid;
     flex-direction: row;
     flex-wrap:wrap;
-    // width : 100%;
     grid-template-columns: repeat(2, 1fr);
-    // grid-template-rows: 5rem;
-    // border: 1px solid black;
     margin : 1rem;
-    // grid-auto-rows: minmax(200, auto);
     grid-auto-rows: minmax(200, auto);
-    
     grid-gap: 1rem;
-    
-    // padding : 0.5rem;
 }
 
 
 .ProductCard{ // 각각의 상품 카드 
     display: flex;
-    // max-width: 9.75rem;
-    padding: 0.9375rem 0.625rem;
+    padding: 0.8rem 0.625rem;
     flex-direction: column;
     align-items: flex-start;
-    // gap: 1rem;
-    // border: 1px solid black;
-    // background-color: #F6F6F6;
-    border-radius: 0.625rem;
-    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.05);
-    // box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 0.3rem;
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.1);
+    // box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.05);
+    
 }
 
 .ProductImageContainer{ 
@@ -81,8 +65,6 @@
     width: 9.5625rem;
     height: 12.1875rem;
     margin: auto;
-    // flex-shrink: 0;     
-    // margin-bottom: 0.5rem;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -93,14 +75,6 @@
         max-width: 100%;
         height : 100%;
         object-fit: cover;
-//     width: 5rem;
-    
-//     max-width: 100%;
-//     max-height: 100%;
-//     flex-direction: column;
-//     align-items: center;
-//     gap: 0.625rem;
-//     flex-shrink: 0;
 }
 
 .ProductDetailContainer{
@@ -109,7 +83,6 @@
     flex-direction: column;
     align-items: flex-start;
     margin-top: 1rem;
-    margin-left:0.8rem;
     gap: 0.3rem;
 }
 
@@ -117,6 +90,7 @@
 .ProductTitle{
     font-size: 1.2rem;
     font-style: normal;
+    font-family : 'Pretendard';
     font-weight: 500;
     line-height: normal;
     letter-spacing: 0.0125rem;
@@ -124,20 +98,18 @@
 
 .ProductPrice{
     color: #000;
-    font-family: Inter;
+    font-family : 'Pretendard';
     font-size: 1rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    // letter-spacing: 0.0125rem;
     text-align: right;
-    // position: relative;
-    // right : 0;
+    
 }
 
 .ProductTag{
     color: #000;
-    font-family: Inter;
+    font-family : 'Pretendard';
     font-size: 0.7rem;
     font-style: normal;
     font-weight: 400;
@@ -155,7 +127,7 @@
     align-items: center;
     justify-content: center;
     padding : 1rem;
-
+    font-family : 'Pretendard';
 }
 
 input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px #f6f6f6 inset ; -webkit-text-fill-color: #000; }
