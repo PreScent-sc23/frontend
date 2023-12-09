@@ -11,7 +11,6 @@ function TopNav(props){
     const [pageTitle, setPageTitle] = useState('');
     const {back=true}=props;
     const [icon, setIcon]=useState('');
-    const userKey = 1;
     const { fpKey } = useParams();
     
 
@@ -56,13 +55,13 @@ function TopNav(props){
           setIcon('/assets/emptyicon.svg');
           break;
 
-          case location.pathname === `/cart/${userKey}`:
+          case location.pathname === `/cart`:
         // case `/cart/${userKey}`:
           setPageTitle('장바구니');
           setIcon('/assets/emptyicon.svg');
           break;
 
-          case location.pathname === `/cart/payment/${userKey}`:
+          case location.pathname === `/cart/payment`:
         // case `/cart/payment/${userKey}`:
           setPageTitle('상품 결제');
           setIcon('/assets/emptyicon.svg');
@@ -102,7 +101,7 @@ function TopNav(props){
             
 
 
-        case location.pathname === `/myhistory/${userKey}`:
+        case location.pathname === `/myhistory`:
         // case '/myhistory':
           setPageTitle('주문 내역');
           setIcon('/assets/emptyicon.svg');

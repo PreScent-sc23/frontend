@@ -42,41 +42,7 @@ function Home(){
       navigate(`/search/${query}`, { state : {query}});
     }
   };
-  const userKey =1;
-
-//   const [userInfo, setUserInfo] = useState([]);
-//   const userKey = 909;
-
-//   useEffect(()=> {
-//     console.log('사용자 정보 불러오기');
-    
-//     const fetchInfo = async ()=> {
-//       try {
-//         const response = await axios.get(`http://3.36.175.224:8080/`, {
-//           params: { userKey }
-//         });
-
-//         console.log('Response:', response);
-//         if (response.status==200){
-//             setUserInfo(response.data);
-//         }
-
-//         } catch (error) {
-//             console.log('사용자 정보 불러오기 실패');
-//         }
-//     };
-
-//     fetchInfo();
-//     setUserInfo({location:null})
-// },[userKey]);
-
-// useEffect(() => {
-//   if (userInfo.location === null) {
-//       navigate('/locationset')
-//   }
-// }, [userInfo]);
-
-
+  
     return(
         <div>
             <div style={{marginTop : '3rem',display:'flex', padding : '0rem 1rem', gap:'1px', justifyContent : 'center',alignItems:'center', textAlign:'center'}}>
@@ -108,11 +74,11 @@ function Home(){
             <div className={styles.ButtonContatiner}>
               
               <div className={styles.ButtonRow}>
-                <div className= {styles.ButtonFat} onClick={()=>navigate(`/cart/${userKey}`)}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/cart`)}>
                   <img style={{width:'10rem'}} src='/assets/cartbutton.svg'></img>
                 </div>
                  
-                <div className= {styles.ButtonFat} onClick={()=>navigate(`/myhistory/${userKey}`)}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/myhistory`)}>
                   <img style={{width:'10rem'}} src='/assets/historybutton.svg'></img>
                 </div>
               </div>
