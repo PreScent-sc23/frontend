@@ -37,9 +37,7 @@ function CustomerHistory(){
         
             return (
             <div>
-                <Statusbar/>
                 <TopNav/>
-                
                 <div>
                     <div className={styles.TapBox}>
                         <div className={styles.Tap} style={{color: `${tap ? '#FF7074' : '#6C7072'}`}} onClick={()=>setTap(!tap)}>진행 중인 주문</div>
@@ -56,7 +54,6 @@ function CustomerHistory(){
                         <div className={styles.OrderStatus}>
                             <img src='/assets/shopping-bag.svg'></img>
                             <div className={styles.Status}>{`${order.fpOrderState} - ${order.flowerShopName}`}</div>
-                            {/* <span style={{fontSize:"0.8rem",fontWeight:"400",color : "#6B4EFF"}}>주문 상세 보기</span> */}
                         </div>
                         
                         <div className={styles.Line}></div>

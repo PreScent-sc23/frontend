@@ -3,10 +3,9 @@ import styles from './styles.module.scss';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Statusbar from '../../components/statusbar/statusbar';
-import TopNav from '../../components/topnavigation/topnav';
 import Kakao from '../../components/map/map';
 
-//꽃 팔러 오셨나요? 사러 오셨나요 -> 화면 띄우기 전에 선택지 넣으면 좋을듯!
+
 
 function Login(){
     const [idEmail, setIdEmail] = useState('');
@@ -46,8 +45,6 @@ function Login(){
 
     return (
         <div>
-            <Statusbar/>
-            {/* <TopNav/> */}
              <div className={styles.LogoContainer}>
              <img  src="/assets/svglogo.svg" style={{width : '8rem', height :'auto', justifyContent:'center'}} alt="로고이미지"/>   
              </div>
@@ -57,7 +54,7 @@ function Login(){
                     <input className={styles.inputBox} type='text' name = "email" size = '50' placeholder='Email Address' value={idEmail} onChange={(e) => setIdEmail(e.target.value)} ></input>
                     <input className={styles.inputBox} type='password' name = "pwd" size = '50'  placeholder='Password' value = {password} onChange={(e) => setPassword(e.target.value)}></input>
                  </form>
-                 {/* <a href="/main" className={styles.purpleLink}>비밀번호를 잊으셨나요?</a> */}
+                 {/* <a href="/main" className={styles.PinkLink}>비밀번호를 잊으셨나요?</a> */}
              </div>
 
             <div className={styles.ButtonContainer}>

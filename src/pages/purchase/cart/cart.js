@@ -43,7 +43,6 @@ console.log('카트아이템state에 잘 들어간?',cartItems);
 
 
 useEffect(() => {
-  // Calculate the total price and quantity when cartItems change
   const updatedTotalPrice = cartItems.reduce((acc, item) => acc + item.fpPrice * item.count, 0);
   const updatedTotalCount = cartItems.reduce((acc, item) => acc + item.count, 0);
 
@@ -66,37 +65,9 @@ const handleRemoveItem = async (cartItemKey) => {
   }
 };
 
-  // const handleRemoveItem = async (itemId) => {
-  //   try {
-  //     await axios.delete(`http://3.36.175.224:8080/customer/cart/delete-cart-item/${itemId}`, {
-  //       params: { userKey }
-  //     });
-
-  //     const updatedCart = cartItems.filter(item => item.id !== itemId);
-  //     setCartItems(updatedCart);
-
-  //     const updatedTotalPrice = updatedCart.reduce((acc, item) => acc + item.price, 0);
-  //     setTotalPrice(updatedTotalPrice);
-
-  //     const updatedTotalCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-  //     setTotalCount(updatedTotalCount)
-
-  //   } catch (error) {
-  //     console.log('장바구니 상품 삭제 요청 실패:', error);
-  //   }
-  // };
-
-  // const handleRemoveItem = (itemId) => {
-  //   const updatedCart = cartItems.filter(item => item.id !== itemId);
-  //   setCartItems(updatedCart);
-
-  //   const updatedTotalPrice = updatedCart.reduce((acc, item) => acc + item.price, 0);
-  //   setTotalPrice(updatedTotalPrice);
-  // };
-
   return (
     <div>
-      <Statusbar />
+
       <TopNav />
       
       <div>
@@ -137,7 +108,6 @@ const handleRemoveItem = async (cartItemKey) => {
                 <div className={styles.DateTime}>
                   <div className={styles.dtText}>픽업 일시 : </div>
                   <div className={styles.dtText}>{item.pickupDate}{item.pickupTime}</div>                  
-                  {/* <span>{item.pickupDate}{item.pickupTime}</span>                   */}
                 </div>
 
                 <div className={styles.Line}></div>

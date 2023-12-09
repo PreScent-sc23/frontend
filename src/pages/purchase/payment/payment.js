@@ -140,7 +140,7 @@ function Payment(props) {
                 </div>
                 <div className={styles.DateTime}>
                   <div className={styles.dtText}>픽업 일시 : </div>
-                  <div className={styles.dtText}>{item.pickupDate}{item.pickupDate}</div>
+                  <div className={styles.dtText}>{item.pickupDate}{item.pickupTime}</div>
                   {/* <span>{item.pickupDate}{item.pickupTime}</span> */}
                 </div>
 

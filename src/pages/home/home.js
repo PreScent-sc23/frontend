@@ -22,7 +22,7 @@ function ImageSlider() {
        }, [currentIndex]);
    
     return (
-      <div style={{position: 'relative', width: '100%', height: '100%', margin:'2px auto'}}>
+      <div style={{position: 'relative', width: '100%', height: '120%', margin:'2px auto'}}>
         <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       </div>
     );
@@ -79,9 +79,8 @@ function Home(){
 
     return(
         <div>
-            <Statusbar/>
             <div style={{marginTop : '3rem',display:'flex', padding : '0rem 1rem', gap:'1px', justifyContent : 'center',alignItems:'center', textAlign:'center'}}>
-              <img src='/imgs/logo.png' style={{width:'2.8rem', justifyContent : 'center',textAlign: 'center',}}></img>
+              <img src='/assets/svglogo.svg' style={{width:'2rem',height:'auto', justifyContent : 'center',textAlign: 'center',}}></img>
             </div>
 
 
@@ -101,52 +100,35 @@ function Home(){
                 </div>
             </div>
             </div>
-            {/* <Searchbar value={searchQuery}
-                       onChange={(e) => setSearchQuery(e.target.value)}
-                       onSearch={handleSearch}/> */}
-            <div style={{borderBottom:'solid #E2E2E2 1px', width:'100%', height:'200px', display:'flex', alignContent:'center'}}>
+
+            <div style={{borderBottom:'solid #E2E2E2 1px', width:'100%', height:'11rem', display:'flex', alignContent:'center'}}>
                 <div style={{width:'92%', height:'90%', margin:'4px auto',borderRadius:'12px', overflow:'hidden'}}><ImageSlider/></div>
             </div>
             
             <div className={styles.ButtonContatiner}>
+              
               <div className={styles.ButtonRow}>
                 <div className= {styles.ButtonFat} onClick={()=>navigate(`/cart/${userKey}`)}>
-                  <div className={styles.ButtonText} style={{margin: '12px',borderBottom:'solid #FF9494 2px'}}>
-                    장바구니
-                  </div>
-                  <div className={styles.ButtonEmoji} style={{marginLeft:'40px', marginBottom:'80px'}}>
-                  <img style={{width:'150px'}} src='/imgs/cart.png'></img>
-                  </div>
+                  <img style={{width:'10rem'}} src='/assets/cartbutton.svg'></img>
                 </div>
+                 
                 <div className= {styles.ButtonFat} onClick={()=>navigate(`/myhistory/${userKey}`)}>
-                  <div className={styles.ButtonText} style={{margin: '12px',borderBottom:'solid #FF9494 2px'}}>
-                    주문내역
-                  </div>
-                  <div className={styles.ButtonEmoji} style={{marginLeft:'40px', marginBottom:'80px'}}>
-                  <img style={{width:'150px'}} src='/imgs/search.png'></img>
-                  </div>
+                  <img style={{width:'1orem'}} src='/assets/historybutton.svg'></img>
                 </div>
               </div>
+
+
+
               <div className={styles.ButtonRow}>
-                <div className={styles.ButtonSlim} onClick={()=>navigate('/pslens')}>
-                  <div className={styles.ButtonText} style={{borderBottom:'solid #FF9494 2px', margin: '12px', marginBottom:'120px'}}>
-                    PS:Lens
-                  </div>
-                  <div className={styles.SlimButtonEmoji} style={{marginLeft:'230px',marginBottom:'100px'}}>
-                  <img style={{width:'150px'}} src='/imgs/pslens.png'></img>
-                  </div>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/pslens`)}>
+                  <img style={{width:'10rem'}} src='/assets/pslensbutton.svg'></img>
+                </div>
+                 
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/dictionary`)}>
+                  <img style={{width:'10rem'}} src='/assets/dictionbuttion.svg'></img>
                 </div>
               </div>
-              <div className={styles.ButtonRow}>
-                <div className={styles.ButtonSlim} onClick={()=>navigate('/dictionary')}>
-                <div className={styles.ButtonText} style={{borderBottom:'solid #FF9494 2px', margin: '12px', marginBottom:'120px'}}>
-                    PS:사전
-                  </div>
-                  <div className={styles.SlimButtonEmoji} style={{marginLeft:'230px',marginBottom:'100px'}}>
-                  <img style={{width:'150px'}} src='/imgs/dictionary.png'></img>
-                  </div>
-                </div>
-              </div>
+
             </div>    
             <CustomerBottomTap/>
            
