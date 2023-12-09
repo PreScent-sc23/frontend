@@ -14,7 +14,8 @@ import Mypage from './pages/mypage/mypage';
 import Search from './pages/search/search';
 import SellerHome from './pages/sellerhome/sellerhome';
 import Shopregister from './pages/shopregister/shopregister';
-import LocationSet from './pages/locationset/locationset';
+import CustomerLocationSet from './pages/customerlocationset/locationset';
+import SellerLocationSet from './pages/sellerlocationset/locationset';
 import Login from './pages/login/login';
 import StartScreen from './pages/main/main';
 import ManageProduct from './pages/manageproduct/manageproduct';
@@ -49,7 +50,8 @@ function App() {
               <Route path="/" element={<StartScreen/>}/>
               <Route path="/main" element={<StartScreen/>}/>
               <Route path="/login" element={<Login/>}/>
-              <Route path="/locationset" element={<LocationSet/>}/>
+              <Route path="/sellerlocationset" element={<SellerLocationSet/>}/>
+              <Route path="/customerlocationset" element={<CustomerLocationSet/>}/>
               <Route path="/home" element={<Home/>}/>
               <Route path="/dictionary" element={<Dictionary/>}/>
               <Route path="/pslens" element={<PSLens/>}/>

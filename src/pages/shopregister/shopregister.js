@@ -9,7 +9,6 @@ function Shopregister(){
     const navigate = useNavigate();
     const [shopName, setShopName] = useState('');
     const [shopPhoneNum, setShopNumber] = useState('');
-    const [shopLocation, setShopLocation] = useState('');
     const [description, setDescription] = useState('');
     const [flowers, setFlowers] = useState('');
     const checkBoxList=['월', '화', '수', '목', '금','토','일']
@@ -25,7 +24,6 @@ function Shopregister(){
     const flowerShopDto = {
         'shopName' : shopName,
         'shopPhoneNum' : shopPhoneNum,
-        'shopLocation' : shopLocation,
         'description' : description,
         'flowerListGetFromFE' : flowers,
         'workday' : checkedList,
@@ -45,10 +43,11 @@ function Shopregister(){
             ,{headers: {'Content-Type': 'application/json', 'Authorization' : `Bearer ${token}`}});
             console.log("됨2?");
             console.log(response.data);
-            navigate('/sellerhome');
+            navigate('/sellerlocationset');
 
         } catch (error) {
             console.error('정보등록 오류:', error);
+            alert('유효하지 않은 가게 등록입니다.')
         }
     }
 
@@ -75,7 +74,7 @@ function Shopregister(){
             <div style={{overflow:'auto', display:'flex', flexDirection: 'column',width: '100%', height:'500px', marginTop:'1rem'}}>
                 <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={shopName} onChange={(e) => setShopName(e.target.value)}></input>
                 <input className={styles.inputBox} type='number' name = "shopnum" size = '50' placeholder='가게 연락처' value={shopPhoneNum} onChange={(e) => setShopNumber(e.target.value)}></input>
-                <input className={styles.inputBox} type='text' name = "shopaddress" size = '50' placeholder='가게 주소' value={shopLocation} onChange={(e) => setShopLocation(e.target.value)}></input>
+                
                 <input className={styles.inputBox} type='text' name = "description" size = '200' placeholder='우리 가게를 소개해주세요 (선택 항목)' value={description} onChange={(e) => setDescription(e.target.value)}></input>
                 <input className={styles.inputBox} type='text' name = "flowers" size = '200' placeholder='가게에 있는 꽃의 종류를 적어주세요' value={flowers} onChange={(e) => setFlowers(e.target.value)}></input>
                 <div style={{margin:'4px auto',width:'80%', border:'solid #E3E5E5 1px', borderRadius:'5px', padding:'10px'}}>

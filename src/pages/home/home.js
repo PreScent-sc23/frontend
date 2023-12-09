@@ -42,7 +42,38 @@ function Home(){
       navigate(`/search/${query}`, { state : {query}});
     }
   };
-  
+ 
+  const [userInfo, setUserInfo] = useState('');
+
+  useEffect(()=> {
+    console.log('사용자 정보 불러오기');
+    
+    const fetchInfo = async ()=> {
+      try {
+        const token = localStorage.getItem('token');
+        const headers = { 'Authorization': `Bearer ${token}`}
+        const response = await axios.get(`http://3.36.175.224:8080/customer-my-info`, {
+          headers
+        });
+
+        console.log('Response:', response);
+        if (response.status==200){
+            setUserInfo(response.data);
+            if(userInfo.latitude === null){
+              alert('초기 위치 정보 설정을 마치고, PreScent의 서비스를 이용하세요!');
+              navigate('/locationset');
+            };
+        }
+
+        } catch (error) {
+            console.log('사용자 정보 불러오기 실패');
+        }
+    };
+
+    fetchInfo();
+},[]);
+
+
     return(
         <div>
             <div style={{marginTop : '3rem',display:'flex', padding : '0rem 1rem', gap:'1px', justifyContent : 'center',alignItems:'center', textAlign:'center'}}>
