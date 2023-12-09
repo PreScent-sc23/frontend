@@ -75,3 +75,38 @@
     margin: 3rem 1rem;
         
 }
+
+
+.PopClose{
+    width: 23rem;
+    height: 4rem;
+    margin: 1rem auto;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #FF9494;
+    color: white;
+    border-radius: 0.5rem;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.20);
+
+}
+
+.Delete{
+    width: 23rem;
+    height: 4rem;
+    margin: 8px auto;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #000000;
+    color: white;
+    border-radius: 0.5rem;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.20);
+
+}
+
+.Line{
+    width: 100%;
+    height: 0px;
+    border: 1px solid #FF7074;
+    margin: 4rem auto;
+    margin-bottom: 12rem;
+}
