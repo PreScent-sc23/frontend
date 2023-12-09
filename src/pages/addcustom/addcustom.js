@@ -68,12 +68,11 @@ export function AddCustom(){
 
  return(
      <div>
-        <Statusbar/>
         <TopNav/>
-        <div style={{fontSize:'20px', color: surveyCount > 10 ? 'red' : 'black', backgroundColor: '#e2e2e2',width:'4em', height:'1.5em',textAlign:'center', borderRadius:'0.375rem', margin:'8px auto', marginTop:'20px' }}>{`${surveyCount} / 10`}</div>
-        <div style={{height : '36rem', margin:'4px auto',border:'solid #e2e2e2 2px', borderRadius:'8px',overflow:'auto'}}>
+        <div style={{fontSize:'1.2rem', fontFamily :'Pretendard',color: surveyCount > 10 ? 'red' : 'black', backgroundColor: '#e2e2e2',width:'4em', height:'1.5em',margin:'1rem auto',textAlign:'center', borderRadius:'0.375rem' }}>{`${surveyCount} / 10`}</div>
+        <div style={{height : '36rem', margin:'4px auto'}}>
          {surveys.map((survey, index) => (
-             <div style={{display:'flex', alignItems:'center'}} key={index}>
+             <div style={{display:'flex', alignItems:'center', justifyContent:'center', justifyItems:'center', margin: '1rem'}} key={index}>
                <input type='text' className={styles.TextField} value={survey} onChange={(e) => handleChange(e, index)} />
                <button className={styles.DeleteButton} onClick={() => deleteSurvey(index)}>
                 {index < 2 ? "기본" : "삭제"}

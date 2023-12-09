@@ -6,7 +6,7 @@ import Statusbar from '../../components/statusbar/statusbar';
 import Searchbar from '../../components/search/searchbar';
 import BottomTap from '../../components/bottomtap/customerbottomtap';
 import CustomerBottomTap from '../../components/bottomtap/customerbottomtap';
-
+import Kakao from '../../components/map/map';
 
 function ImageSlider() {
     const [images, setImages] = useState(['/imgs/banner_1.jpeg', '/imgs/banner_2.jpeg', '/imgs/banner_3.jpeg', '/imgs/banner_4.jpeg']);
@@ -22,7 +22,7 @@ function ImageSlider() {
        }, [currentIndex]);
    
     return (
-      <div style={{position: 'relative', width: '100%', height: '100%', margin:'2px auto'}}>
+      <div style={{position: 'relative', width: '100%', height: '120%', margin:'2px auto'}}>
         <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       </div>
     );
@@ -31,60 +31,100 @@ function ImageSlider() {
 
 function Home(){
   const navigate = useNavigate(); 
+  const [fpTag, setFpTag] = useState('');
+  const query = encodeURIComponent(fpTag); 
+
+  const handleEnter = (e) => {
+    if (e.key === 'Enter') {
+      console.log(fpTag);
+      console.log("인코딩 :" ,encodeURIComponent(fpTag));
+      console.log("쿼리 :" ,query);
+      navigate(`/search/${query}`, { state : {query}});
+    }
+  };
+ 
+  const [userInfo, setUserInfo] = useState('');
+
+  useEffect(()=> {
+    console.log('사용자 정보 불러오기');
+    
+    const fetchInfo = async ()=> {
+      try {
+        const token = localStorage.getItem('token');
+        const headers = { 'Authorization': `Bearer ${token}`}
+        const response = await axios.get(`http://3.36.175.224:8080/customer-my-info`, {
+          headers
+        });
+
+        console.log('Response:', response);
+        if (response.status===200){
+            setUserInfo(response.data);
+            if(response.data.address === null || response.data.latitude === null || response.data.longitude === null){
+              alert('초기 위치 정보 설정을 마치고, PreScent의 서비스를 이용하세요!');
+              navigate('/customerlocationset');
+            };
+        }
+
+        } catch (error) {
+            console.log('사용자 정보 불러오기 실패');
+        }
+    };
+    fetchInfo();
+},[]);
+
 
     return(
         <div>
-            <Statusbar/>
-            <div style={{display:'flex', padding : '0rem 1rem', gap:'1px', justifyContent : 'center',alignItems:'center', textAlign:'center'}}>
-              <img src='/imgs/logo.png' style={{width:'2.8rem', justifyContent : 'center',textAlign: 'center',}}></img>
-              {/* <div style={{fontFamily:'inter', fontSize:'1.6rem', fontWeight:'bold',}}>
-                PreScent
-              </div> */}
+            <div style={{marginTop : '3rem',display:'flex', padding : '0rem 1rem', gap:'1px', justifyContent : 'center',alignItems:'center', textAlign:'center'}}>
+              <img src='/assets/svglogo.svg' style={{width:'2rem',height:'auto', justifyContent : 'center',textAlign: 'center',}}></img>
             </div>
-            <Searchbar/>
-            <div style={{borderBottom:'solid #E2E2E2 1px', width:'100%', height:'200px', display:'flex', alignContent:'center'}}>
+
+
+            <div className = {styles.SearchWrap}>
+            <div className={styles.SearchBar}>
+                <img src='/assets/search.svg' alt='돋보기 아이콘' className={styles.image}/>  
+                <div className={styles.SeachInput}>
+                <input
+              type="text"
+              name="search"
+              placeholder="검색어를 입력하세요. ex) #졸업식 #프로포즈"
+              style={{ fontSize: '1rem', outline: 'none', background: 'transparent', lineHeight:'1.6rem', width:'18rem' }}
+              value={fpTag}
+              onChange={(e) => setFpTag(e.target.value)}
+              onKeyDown={handleEnter}
+            />
+                </div>
+            </div>
+            </div>
+
+            <div style={{borderBottom:'solid #E2E2E2 1px', width:'100%', height:'11rem', display:'flex', alignContent:'center'}}>
                 <div style={{width:'92%', height:'90%', margin:'4px auto',borderRadius:'12px', overflow:'hidden'}}><ImageSlider/></div>
             </div>
             
             <div className={styles.ButtonContatiner}>
+              
               <div className={styles.ButtonRow}>
-                <div className= {styles.ButtonFat} onClick={()=>navigate('/cart')}>
-                  <div className={styles.ButtonText} style={{margin: '12px',borderBottom:'solid #FF9494 2px'}}>
-                    장바구니
-                  </div>
-                  <div className={styles.ButtonEmoji} style={{marginLeft:'40px', marginBottom:'80px'}}>
-                  <img style={{width:'150px'}} src='/imgs/cart.png'></img>
-                  </div>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/cart`)}>
+                  <img style={{width:'10rem'}} src='/assets/cartbutton.svg'></img>
                 </div>
-                <div className= {styles.ButtonFat} onClick={()=>navigate('/search')}>
-                  <div className={styles.ButtonText} style={{margin: '12px',borderBottom:'solid #FF9494 2px'}}>
-                    검색
-                  </div>
-                  <div className={styles.ButtonEmoji} style={{marginLeft:'40px', marginBottom:'80px'}}>
-                  <img style={{width:'150px'}} src='/imgs/search.png'></img>
-                  </div>
+                 
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/myhistory`)}>
+                  <img style={{width:'10rem'}} src='/assets/historybutton.svg'></img>
                 </div>
               </div>
+
+
+
               <div className={styles.ButtonRow}>
-                <div className={styles.ButtonSlim} onClick={()=>navigate('/pslens')}>
-                  <div className={styles.ButtonText} style={{borderBottom:'solid #FF9494 2px', margin: '12px', marginBottom:'120px'}}>
-                    PS:Lens
-                  </div>
-                  <div className={styles.SlimButtonEmoji} style={{marginLeft:'230px',marginBottom:'100px'}}>
-                  <img style={{width:'150px'}} src='/imgs/pslens.png'></img>
-                  </div>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/pslens`)}>
+                  <img style={{width:'10rem'}} src='/assets/pslensbutton.svg'></img>
+                </div>
+                 
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/dictionary`)}>
+                  <img style={{width:'10rem'}} src='/assets/dictionbuttion.svg'></img>
                 </div>
               </div>
-              <div className={styles.ButtonRow}>
-                <div className={styles.ButtonSlim} onClick={()=>navigate('/dictionary')}>
-                <div className={styles.ButtonText} style={{borderBottom:'solid #FF9494 2px', margin: '12px', marginBottom:'120px'}}>
-                    PS:사전
-                  </div>
-                  <div className={styles.SlimButtonEmoji} style={{marginLeft:'230px',marginBottom:'100px'}}>
-                  <img style={{width:'150px'}} src='/imgs/dictionary.png'></img>
-                  </div>
-                </div>
-              </div>
+
             </div>    
             <CustomerBottomTap/>
            

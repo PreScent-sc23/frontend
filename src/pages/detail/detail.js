@@ -9,24 +9,11 @@ import DatePickerComponent from '../../components/datepicker/datepicker';
 function ProductDetail({ Component, pageProps }){
 
     const navigate = useNavigate();
-    const params = useParams();
     const location = useLocation();
-    // const fpKey = location.state.fpKey;
-    const fpKey = location.state ? location.state.fpKey : null;
-    const userKey='';//추후 토큰으로 교체  
+    const fpKey = location.state ? location.state.fpKey : null;  
     const [pickupDate,setPickupDate] = useState('');
     const [pickupTime,setPickupTime] = useState('');
     const [amount, setAmount]=useState(1);
-
-    
-   
-    const cart= {
-        'userKey' : userKey,
-        'fpKey' : fpKey,
-        'pickupDate' : pickupDate,
-        'pickupTime' : pickupTime,
-        'amount' : amount,
-    }
 
     const [productDetails, setProductDetails]=useState({
         fpKey:'',
@@ -35,7 +22,7 @@ function ProductDetail({ Component, pageProps }){
         fpDetail: '',
         fpFlowerList: [],
         fpTags: '',
-        fpPrice: 0,
+        fpPrice: '',
     });
 
 
@@ -70,44 +57,33 @@ function ProductDetail({ Component, pageProps }){
 
     const addToCart = async()=>{
         try {
-            await axios.post('http://3.36.175.224:8080/customer/cart/add-to-cart',{
-                cart
-            },{headers: {'Content-Type': 'application/json'}});
-            navigate('/cart');
+            const token = localStorage.getItem('token');
+            console.log("토큰:" , token);
+            await axios.post(`http://3.36.175.224:8080/customer/cart/add-to-cart`,
+            {
+                fpKey: fpKey,
+                pickupDate: pickupDate,
+                pickupTime: pickupTime,
+                amount: amount,
+            },
+            {
+                headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+                },
+            }
+            );
+            console.log({addToCart});
+            navigate(`/home`)
+            // navigate(`/home`, { state: { userKey: userKey } })
+            // navigate(`/cart/${userKey}`, { state: { userKey: userKey } })
 
         }catch(error){
-            console.log(cart);
+            // console.log(cart);
             console.log('장바구니에 완제품 담기 오류');
         }
     };
 
-    // const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
-    // const toggleDatePicker = () => {
-    //     setIsDatePickerOpen(!isDatePickerOpen);
-    //   };
-
-    // const [isTimePickerOpen, setIsTimePickerOpen] = useState(false);
-    // const toggleTimePicker = () => {
-    //     setIsTimePickerOpen(!isTimePickerOpen);
-    //   };
-
-    // const toggleDatePicker = () => {
-    //     setIsDatePickerOpen(!isDatePickerOpen);
-    //   };
-    
-    // const toggleTimePicker = () => {
-    //     setIsTimePickerOpen(!isTimePickerOpen);
-    //   };
-    
-    // const handleDateChange=useCallback((date)=>{
-    //     console.log(date);
-    //     setPickupDate(date);
-    // },[]);
-
-    // const handleTimeChange=useCallback((time)=>{
-    //     console.log(time);
-    //     setPickupTime(time);
-    // },[]);
    
      const handleDateChange=(date)=>{
         setPickupDate(date);
@@ -121,7 +97,6 @@ function ProductDetail({ Component, pageProps }){
 
     return (
         <div>
-            <Statusbar/>
             <TopNav/>
             <div className={styles.ImageWrap}>
                 <img src={productDetails.fpImage}/>
@@ -191,17 +166,6 @@ function ProductDetail({ Component, pageProps }){
             
 
             <div className={styles.Line}/>
-
-             {/* <div className={styles.TextWrap}>
-                <div className={styles.Text}>요청 사항 (선택)</div>
-                {/* <img src='/assets/time_check.svg' className={styles.Icon}/> */}
-             {/* </div>  */} 
-            
-            {/* <div className={styles.TextWrap}>
-                <div className={styles.Text}>예약 일정</div>
-                <div className={styles.Text}>{pickupDate} {pickupTime}</div>}
-            </div> */}
-
 
       
             <div className={styles.PurchaseButton} onClick={addToCart}>

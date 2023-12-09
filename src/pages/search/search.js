@@ -7,34 +7,51 @@ import Searchbar from '../../components/search/searchbar';
 import CustomerBottomTap from '../../components/bottomtap/customerbottomtap';
 import Filter from '../../components/filter/filter';
 
-function Search(){
+function Search({props}){
     
-   
     const [fpTag, setFpTag] = useState('');
-    const query = encodeURIComponent(fpTag); 
+    // const query = encodeURIComponent(fpTag); 
     const [fpImage, setFpImage] =useState('');
     const [flowerquery,setFlowerQuery]=useState(''); 
     const [fpName,setFpName] =useState('');
     const [fpPrice, setFpPrice] = useState('');
+    const [fpFlowerList, setFpFlowerList] =useState([]);
     const [responseData,setResponseData] = useState([]);
 
+    useEffect(() => {
+        const query = window.location.pathname.split('/').pop();
+        console.log("서치페이지 쿼리 :", query);
+        setFpTag((prevFpTag) => {
+            const newFpTag = decodeURIComponent(query);
+            handleTagSearch(newFpTag);
+            return newFpTag;
+          });
+        }, []);
     
-
+    
     const navigate = useNavigate();
     const handleEnter = (e) => {
         if (e.key === "Enter") {
+            console.log("태그 :",fpTag);
             handleTagSearch(fpTag);
+            
         }
       };
-    
-    const handleTagSearch = async () => {
+
+
+    const handleTagSearch = async (fpTag) => {
         console.log("성공1?");
+        console.log("메인에서 전달한 태그", fpTag);
+        const query = (encodeURIComponent(fpTag));
+        const token = localStorage.getItem('token');
+        const headers = { 'Authorization': `Bearer ${token}` };
+        const params = {query};
+        console.log("토큰:", token);
         try {
             const response = await axios.get(`http://3.36.175.224:8080/search`,{
-                    params : {query},
-            },
-            {   headers: {'Content-Type': 'application/json' },}
-            );
+                    params, headers
+            });
+
             if (response.status === 200) {
                 setResponseData(response.data);    
             }
@@ -53,7 +70,7 @@ function Search(){
 
     return(
         <div>
-            <Statusbar/>
+            
             <div className = {styles.SearchWrap}>
             <div className={styles.SearchBar}>
                 <img src='/assets/search.svg' alt='돋보기 아이콘' className={styles.image}/>  
@@ -75,39 +92,16 @@ function Search(){
                 <div className={styles.ProudctTitle}>{item.fpName}</div>
                 <div className={styles.ProductPrice}>{item.fpPrice}</div>
                 <div className={styles.ProductTag}>{item.fpTag}</div>
+                {/* <div className={styles.ProductTag}>{item.fpFlowerList}</div> */}
+                {item.fpFlowerList.map((flower, index) => (
+                  <div key={index} className={styles.ProductTag}>{flower}</div>))}
               </div>
-            </div>
+          </div>
             
           ))}
         </div>
-      )}
-
-
-
-            {/* {responseData.length===0 ?(
-                <div className={styles.NoResult}>검색 결과가 없습니다</div>
-            ):(
-                <div>
-                    {responseData && responseData.map(responseData=>(
-                        <div className={styles.ProductContainer}>
-                            <div className={styles.ProductCard} key={responseData.key} onClick={()=>(navigate(`/detail/${responseData.fpKey}`))}>
-                                <div className={styles.ProductImageContainer}>
-                                    <img src='' className={styles.ProductImage}>{responseData.fpImage}</img>
-                                </div>
-
-                                <div className={styles.ProductDetailContainer} key={responseData.key}>
-                                    <div className={styles.ProudctTitle}>{responseData.fpName}</div>
-                                    <div className={styles.ProductPrice}>{responseData.fpPrice}</div>
-                                    <div className={styles.ProductTag}>{responseData.fpTag}</div>
-                                </div>
-                            </div>    
-                        </div>  
-                    ))}
-                </div>
-            )} */}
-
-            
-            <CustomerBottomTap/>
+      )}            
+        <CustomerBottomTap/>
         </div>
         
 

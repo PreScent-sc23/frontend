@@ -10,10 +10,34 @@ import TopNav from '../../components/topnavigation/topnav';
 function SellerHistory(){
 
     const [tap,setTap]=useState(true);
+    const [orderDatas, setOrderDatas] = useState([]);
+
+
+     useEffect(()=> {
+        console.log('주문 가져오기 시도');
+        const token = localStorage.getItem('token');
+        const headers = { 'Authorization': `Bearer ${token}` };
+        const fetchOrder = async ()=> {
+          try {
+            const response = await axios.get(`http://3.36.175.224:8080/seller/fp-order-list`, {
+                headers
+            });
     
+            console.log('Response:', response);
+            if (response.status==200){
+                setOrderDatas(response.data);
+            }
+    
+            } catch (error) {
+                console.log('주문 정보 불러오기 실패');
+            }
+        };
+
+        fetchOrder();
+    },[]);
+
             return (
             <div>
-                <Statusbar/>
                 <TopNav/>
                 
                 <div>
@@ -30,31 +54,31 @@ function SellerHistory(){
                     
                     
                     {tap?
-
+                        orderDatas.map((order)=> (
                     <div className={styles.ProductCard}>
                         <div className={styles.OrderStatus}>
                             <img src='/assets/shopping-bag.svg'></img>
-                            <div className={styles.Status}>주문 진행 중 - 12.07 (목) 13:00 픽업</div>
-                            {/* <span style={{fontSize:"0.8rem",fontWeight:"400",color : "#6B4EFF"}}>주문 상세 보기</span> */}
+                            <div className={styles.Status}>{`${order.fpOrderState} - ${order.pickupDate}  ${order.pickupTime} 픽업`}</div>
+                            <button className={styles.StateButton}>변경</button> 
                         </div>
                         
                         <div className={styles.Line}></div>
 
                         <div className={styles.ContentWrap}>
                             <div className={styles.ProductImage}>
-                                <img src='/assets/example2.png'></img>
+                                <img style={{width:'100%', height:'100%', textAlign:'center'}} src={order.fpImage} alt='제품 사진'></img>
                             </div>
 
                             <div className={styles.InfoWrap}>
-                                <div className={styles.ProductName}>러블리 꽃다발</div>
-                                <div className={styles.Description}>곰인형과 화이트로즈로 구성된 화이트데이 꽃다발</div>
+                                <div className={styles.ProductName}>{order.fpName}</div>
+                                <div className={styles.Description}>{order.fpDetail}</div>
                                 <div className={styles.TagWrap}>
-                                    <div className={styles.Tag}>#화이트데이</div>
+                                    <div className={styles.Tag}>{order.fpTag}</div>
                                 </div>
                                 <div className={styles.FlowerWrap}>
-                                    <div className={styles.Flower}>화이트로즈</div>
-                                    <div className={styles.Flower}>리시안셔스</div>
-                                    <div className={styles.Flower}>히아신스</div>
+                                    {order.fpFlowerList.map((flower, index) => (
+                                        <div className={styles.Flower}>{order.fpFlowerList}</div>
+                                    ))}
                                 </div>
                             </div>
                             
@@ -63,11 +87,12 @@ function SellerHistory(){
                         <div className={styles.Line}></div>
 
                         <div className={styles.PriceWrap}>
-                            <div className={styles.Price}>Total Price : </div>
-                            <div className={styles.Price}>49,000</div>
+                            <div className={styles.Price}>{`Total Price : ${order.totalPrice}`}</div>
+                            <div className={styles.Price}>{order.totalPrice} 원</div>
                         </div>
                         {/* <span style={{fontSize: "0.9rem", padding : "0.3rem 1rem 0.5rem 1rem" }}>(카드 결제 완료 : 2023.12.01 (수) 19:30)</span> */}
-                    </div>:
+                    </div>
+                        )):
 
                     <div className={styles.ProductCard} style={{padding : "1.5rem"}}>이전 주문 내역이 없습니다</div>
                 }

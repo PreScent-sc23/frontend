@@ -1,18 +1,31 @@
 *{
     border: none;
-    font-family: 'inter';
+    font-family: 'Pretendard';
 }
 
-.inputBox{
-    width:339px;
-    height:52px;
-    border: 2px solid #E2E2E2;
-    border-radius: 12px;
-    margin : 8px;
+
+.inputBox {
+    border: 0.5px solid #858585;
+    display: flex;
+    padding: 1rem;
+    margin: 1rem 6rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    font-family: 'Pretendard';
+    line-height: 1.5rem; /* 150% */
+    width : 85vw;
 }
+
 
 .inputBox::placeholder{
-    font-size: 16px;
+    font-size: 1rem;
+    color : #858585;
+    font-family: 'Pretendard';
 }
 
 .normalButton{
@@ -25,87 +38,74 @@
     font-weight: bold;
 }
 
-.purpleLink{
+.PinkLink{
     font-size: 16px;
     font-weight: 600;
-    color:#7E49FF;
+    color:#FF7074;
 
 }
 
-
-// .LogoContainer{
-//     display: flex;
-//     margin : 6rem 2rem 7rem 2rem;
-//     padding: 10rem 1.5rem;
-//     flex-direction: column;
-//     justify-content: space-between;
-//     align-items: center;
-//     text-align: center;
-//     gap: 1rem;
-//     //top : rem;
-//     // height : 18rem;
-//     // position: relative;
-//     background-color: #E2E2E2;
-//     border-radius: 0.375rem;
-// }
-
 .LogoContainer{
     display: flex;
-    padding: 10rem 1.5rem;
+    padding: 18rem 1.5rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     gap: 1rem;
-    height : 8rem;
+    // height : 8rem;
     position: relative;
     background-color: white;
     border-radius: 0.375rem;
 }
-.LoginContainer{
-     display: flex;
-    // width: 100;
-    padding: 1rem 1rem 1rem 1rem;
+
+
+.LoginContainer {
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end; /* Align to the bottom of the container */
     align-items: center;
     text-align: center;
     gap: 1rem;
-    //top : 38rem;
-    position: relative;
-    //width: 340px;
+    position: fixed; /* Fixed position to keep it at the bottom */
+    bottom: 8rem; /* Stick to the bottom of the screen */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    // width: 100%;
+    padding: 1rem;
+    background-color: #ffffff; /* Optional background color */
 }
 
-.ButtonContainer{
-    display: flex;
-    // width: 100;
-    padding: 1rem 1rem 1rem 1rem;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-    //top : 38rem;
-    position: relative;
-    //width: 340px;
-
-}
-
-.Button{
-    display: flex;
-    width : 18rem;
-    //height: 30%;
-    padding: 1rem 1.5rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    border-radius: 0.375rem;
-    background-color: #E2E2E2;
-    color: #757575;
-    font-family: Inter;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1.5rem; /* 150% */
-    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.20);
-}
+    .ButtonContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Align to the bottom of the container */
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        position: fixed; /* Fixed position to keep it at the bottom */
+        bottom: 4rem; /* Stick to the bottom of the screen */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Adjust for centering */
+        width: 100%;
+        padding: 1rem;
+        background-color: #ffffff; /* Optional background color */
+    }
+    
+    .Button {
+        display: flex;
+        padding: 1rem 8.9rem;
+        // margin: 1rem 0.5rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 0.375rem;
+        background-color: #FF7074;
+        color: white;
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 600;
+        font-family : 'Pretendard';
+        line-height: 1.5rem; /* 150% */
+    }
+    

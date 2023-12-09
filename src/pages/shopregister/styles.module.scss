@@ -10,7 +10,7 @@
 
 *{
     border: none;
-    font-family: 'inter';
+    font-family: 'Pretendard';
 }
 .TopNavWrap{
     display: flex;
@@ -28,7 +28,7 @@
 .TopNavTitle{
     color: #090A0A;
     text-align: center;
-    font-family: Inter;
+    font-family: 'Pretendard';
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
@@ -37,8 +37,8 @@
 }
 
 .inputBox::placeholder{
-    font-family:'inters';
-    font-size: 16px;
+    font-family:'Pretendard';
+    font-size: 1rem;
 }
 
 .normalButton{
@@ -60,34 +60,30 @@
 
 .ButtonContainer{
     display: flex;
-    // width: 100;
+    margin-top :8rem;
     padding: 1rem 1rem 1rem 1rem;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     gap: 1rem;
-    //top : 38rem;
-    position: relative;
-    //width: 340px;
 
 }
 
 .Button{
     display: flex;
-    width : 18rem;
+    width : 21rem;
     //height: 30%;
-    padding: 1rem 1.5rem;
+    padding: 1rem 6rem;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
     border-radius: 0.375rem;
-    background-color: #E2E2E2;
-    color: #757575;
-    font-family: Inter;
-    font-size: 1rem;
+    background-color: #FF7074;
+    color: white;
+    font-family: 'Pretendard';
+    font-size: 1.1rem;
     font-style: normal;
     font-weight: 600;
     line-height: 1.5rem; /* 150% */
-    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.20);
 }
