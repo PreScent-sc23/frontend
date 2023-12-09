@@ -13,8 +13,6 @@ function Customersignup(){
     const [phonenum, setPhonenum] = useState('');
     const navigate = useNavigate();
 
-    const userKey = 123;
-    const location = '아주대학교';
 
     const verifyEmailCode = async () => {
         try {
@@ -43,13 +41,11 @@ function Customersignup(){
         }
         try {
             const response = await axios.post('http://3.36.175.224:8080/customer/signup', {
-                userKey,
                 name,
                 idEmail,
                 password,
                 confirmPassword,
                 phonenum,
-                location,
             },{
                 headers: {
                     'Content-Type': 'application/json'
@@ -85,7 +81,7 @@ function Customersignup(){
             <div style={{width:'100%', height:'10em'}}></div>
             <div style={{width:'100%', textAlign:'center'}}>
             <div className={styles.ButtonContainer}>
-                <div className={styles.Button} onClick={handleSignUp}>일반 고객 회원 등록 하기</div>
+                <div className={styles.Button} onClick={handleSignUp}>회원가입 하기</div>
             </div>
             </div> 
         </div>
