@@ -73,7 +73,7 @@ const Sellersignup = ()=>{
             <Statusbar/>
             <TopNav/>
 
-            <div style={{width:'100%', textAlign:'center',marginTop:'8rem'}}>
+            <div style={{width:'100%', textAlign:'center', marginTop : '8rem'}}>
                 <form>            
                 <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={name} onChange={(e) => setName(e.target.value)}></input>
                 <input className={styles.inputBox} type='number' name = "pwd" size = '50'  placeholder='전화번호' value={phonenum} onChange={(e) => setPhonenum(e.target.value)}></input>
@@ -85,7 +85,7 @@ const Sellersignup = ()=>{
                 <input className={styles.inputBox} type='number' name = "regnum" size = '50'  placeholder='사업자 등록 번호' value={businessKey} onChange={(e) => setBusinessKey(e.target.value)}></input>
                 </form>
             </div>
-            <div style={{width:'100%', height:'10.0em'}}></div>
+            <div style={{width:'100%', height:'6rem'}}></div>
             <div style={{width:'100%', textAlign:'center'}}>
             <div className={styles.ButtonContainer}>
                 <div className={styles.Button} onClick={handleSignUp}>사업자 회원 등록 하기</div>

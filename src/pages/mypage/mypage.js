@@ -9,7 +9,7 @@ import CustomerBottomTap from '../../components/bottomtap/customerbottomtap';
 function Mypage(){
     
      const navigate = useNavigate(); 
-     const userKey=1;
+     const userKey =1;
 
     return(
         <div>

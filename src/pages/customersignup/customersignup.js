@@ -53,7 +53,7 @@ function Customersignup(){
                     <div className={styles.TopNavTitle}>일반 고객 회원 가입</div>
                     {/* <div className={styles.TopNavButtonContainer}> */}
             {/* </div> */} 
-            <div style={{width:'100%', textAlign:'center',marginTop:'1rem'}}>
+            <div style={{width:'100%', textAlign:'center',marginTop:'8rem'}}>
                 <form>            
                 <input className={styles.inputBox} type='text' name = "name" size = '50' placeholder='이름' value={name} onChange={(e) => setName(e.target.value)}></input>
                 <input className={styles.inputBox} type='number' name = "pwd" size = '50'  placeholder='전화번호' value={phonenum} onChange={(e) => setPhonenum(e.target.value)}></input>
@@ -64,7 +64,7 @@ function Customersignup(){
                 </form>
                 <div style={{width:'100%', height:'3rem'}}></div>
             </div>
-            <div style={{width:'100%', height:'10.0em'}}></div>
+            <div style={{width:'100%', height:'15em'}}></div>
             <div style={{width:'100%', textAlign:'center'}}>
             <div className={styles.ButtonContainer}>
                 <div className={styles.Button} onClick={handleSignUp}>일반 고객 회원 등록 하기</div>

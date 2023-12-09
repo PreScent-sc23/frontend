@@ -95,7 +95,7 @@
     // height: 6.5625rem;
     margin : 1rem 1.5rem;
     flex-shrink: 0;
-    background-color: #C4C4C4;
+    background-color: #e2e2e2;
 
 
 }
@@ -133,7 +133,7 @@
     display: flex;
     flex-direction: column;
     // margin : 1rem 1rem;
-    padding : 1rem;
+    padding : 0rem 1rem 1rem 1rem;
     // flex-shrink: 0;
     border-radius: 1.25rem;
     background: #FFF;
@@ -149,8 +149,8 @@
 .ResultBox{
     display: flex;
     flex-direction: row;
-    margin : 1rem 0.5rem;
-    // padding : 1rem;
+    margin : 0.5rem 0.5rem;
+    padding : 0rem 0.5rem ;
     // padding : 1rem;
     align-items: center;
     gap : 0.7rem;
@@ -159,9 +159,10 @@
     // width: 19.6875rem;
     height: 7rem;
     flex-shrink: 0;
-    // border-radius: 0.1rem;
+    border-radius: 0.375em;
+    // border : 1px dashed #FF7074;
     background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
     // align-items: center;
 
 }
@@ -184,20 +185,19 @@
 }
 
 .ResultText{
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
     font-family : 'Pretendard';
-    font-size: 1rem;
-    font-weight: 500;
 }
 
 .GPTResultBox{
     display: flex;
     flex-direction: column;
     margin : 1rem 0.5rem;
-    padding : 1rem;
+    padding : 1.2rem;
     align-items: center;
     gap : 0.5rem;
+    font-family : 'Pretendard';
     // text-align: center;
     // justify-content: center;
     // width: 19.6875rem;
@@ -205,8 +205,8 @@
     flex-shrink: 0;
     font-size: 1.1rem;
     border-radius: 0.375rem;
-    background: #fff2f9;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    background: white;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.1);
     line-height: 1.6;
     font-weight : 500;
 }

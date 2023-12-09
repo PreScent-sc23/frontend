@@ -89,11 +89,11 @@ function TopNav(props){
           setIcon('/assets/setting.svg');
           break;
           
-          case location.pathname === `/shopregister`:
-          // case '/shopregister':
-            setPageTitle('가게 등록');
-            setIcon('/assets/setting.svg');
-            break;
+        case location.pathname === `/shopregister`:
+        // case '/shopregister':
+          setPageTitle('가게 등록');
+          setIcon('/assets/setting.svg');
+          break;
             
 
 
@@ -103,13 +103,13 @@ function TopNav(props){
           setIcon('/assets/emptyicon.svg');
           break;
 
-        case location.pathname === `sellerhome/history`:
+        case location.pathname === `/sellerhome/history`:
         // case '/sellerhome/history':
           setPageTitle('예약 관리');
           setIcon('/assets/emptyicon.svg');
           break;
           
-        case location.pathname === `detail/${fpKey}`:
+        case location.pathname === `/detail/${fpKey}`:
         // case `/detail/${fpKey}`:
           setPageTitle('상품 상세 정보');
           setIcon('/assets/emptyicon.svg');
@@ -127,7 +127,8 @@ function TopNav(props){
           setIcon('/assets/emptyicon.svg');
           break;
 
-          case '/locationset':
+          case location.pathname === `/locationset`:
+          // case '/locationset':
           setPageTitle('위치 설정');
           setIcon('/assets/emptyicon.svg');
           break;
@@ -154,6 +155,12 @@ function TopNav(props){
           // case '/dictionary':
           setPageTitle('PS 사전');
           setIcon('/assets/emptyicon.svg');
+          break;
+          
+          case location.pathname === `/managestat`:
+          // case '/managefinished':
+          setPageTitle('매장 통계');
+          setIcon('/assets/setting.svg');
           break;
 
           // case '/dictionary/':
