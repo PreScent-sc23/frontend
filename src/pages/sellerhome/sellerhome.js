@@ -36,11 +36,11 @@ function SellerHome(){
             <div className={styles.ButtonContatiner}>
               
               <div className={styles.ButtonRow}>
-                <div className= {styles.ButtonFat} onClick={()=>navigate(`/`)}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/shopregister`)}>
                   <img style={{width:'10rem'}} src='/assets/shopmanagebutton.svg'></img>
                 </div>
                  
-                <div className= {styles.ButtonFat} onClick={()=>navigate(`/myhistory`)}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/manageproduct`)}>
                   <img style={{width:'10rem'}} src='/assets/productmanagebutton.svg'></img>
                 </div>
               </div>
@@ -48,11 +48,11 @@ function SellerHome(){
 
 
               <div className={styles.ButtonRow}>
-                <div className= {styles.ButtonFat} onClick={()=>navigate(`/pslens`)}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/sellerhome/history`)}>
                   <img style={{width:'10rem'}} src='/assets/manageorderbutton.svg'></img>
                 </div>
                  
-                <div className= {styles.ButtonFat} onClick={()=>navigate(`/dictionary`)}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/managestat`)}>
                   <img style={{width:'10rem'}} src='/assets/xhdrPbutton.svg'></img>
                 </div>
               </div>
