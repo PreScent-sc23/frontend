@@ -43,9 +43,8 @@ function LocationSet(){
 
         return(
             <div>
-                <Statusbar/>
                 <TopNav/>
-                <div style={{marginTop:'4rem',width:'100%', height:'90%',display:'flex', justifyContent:'center', alignContent:'center', flexDirection:'column'}}>
+                <div style={{width:'100%', height:'90%',display:'flex', justifyContent:'center', alignContent:'center', flexDirection:'column'}}>
                 <Kakao updateLocation={updateLocation}/>
                 <button className={styles.PopClose} onClick={handleSubmission}>위치 설정하기</button>
                 </div>
