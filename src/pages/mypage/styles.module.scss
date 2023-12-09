@@ -1,14 +1,18 @@
 .ProfileTitleWrap{
     display: flex;
-    padding: 0.5rem 0.25rem;
-    justify-content: center;
+    padding: 1rem 3rem 1rem 3rem ;
+    
+    justify-content: space-between;
     align-items: center;
-    gap: 13.125rem;
+    // gap: 13.125rem;
+    margin-top :6rem;
+    background-color: transparent;
+    // box-sohadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
 }
 
 .ProfileTitle{
     color: #000;
-    font-family: Inter;
+    font-family: 'Pretendard';
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
@@ -20,7 +24,7 @@
     flex-direction: column;
     margin : 0rem 2rem;
     // width: 19.9375rem;
-    height: 11.25rem;
+    // height: 11.25rem;
     flex-shrink: 0;
     border-radius: 1.25rem;
     background: #FFF;
@@ -28,7 +32,7 @@
 }
 
 .EditButton{
-    color: #6B4EFF;
+    color: #FF7074;
     font-family: Inter;
     font-size: 1rem;
     font-style: normal;
@@ -42,6 +46,8 @@
     padding: 1rem;
     // align-items: flex-start;
     gap: 1rem;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
+    
 
 }
 
@@ -49,12 +55,14 @@
 .Image{
     width: 5rem;
     height: 5rem;
-    // background-color: #000;
+    border : 1px solid #e2e2e2;
+    border-radius: 0.3rem;
+    // background-color: #E2E2E2;
 }
 
 .BoldText{
     color: #000;
-    font-family: Inter;
+    font-family: 'Pretendard';
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
@@ -63,14 +71,16 @@
 }
 
 .InfoWrap{
+    border-radius: 1.25rem;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
+    // box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
 }
 
 .InfoText{
     color: #000;
-    font-family: Inter;
+    font-family: 'Pretendard';
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
@@ -99,7 +109,9 @@
     padding: 1rem;
     justify-content: space-between;
     align-items: center;
+    border-radius: 1.25rem;
     // align-items: flex-start;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
 }
 
 .LocationText{
@@ -107,6 +119,7 @@
     width: 14.3125rem;
     height: 2.5rem;
     flex-direction: column;
+    font-family: 'Pretendard';
     // justify-content: center;
     align-items: flex-start;
     gap: 0.4rem;
@@ -123,14 +136,14 @@
     flex-shrink: 0;
     border-radius: 1.25rem;
     background: #FFF;
-    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.08);
     align-items: center;
     justify-content: space-between;
 }
 
 .MenuTitle{
     color: #000;
-    font-family: Inter;
+    font-family: 'Pretendard';
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;

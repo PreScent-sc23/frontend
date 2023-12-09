@@ -68,7 +68,8 @@ function Payment(props) {
         if (success === true) {
           console.log('결제 성공');
           await sendPaymentSuccessToBackend(imp_uid);
-          navigate('/myhistory');
+          navigate(`/myhistory/${userKey}`);
+          // navigate(`/myhistory/${userKey}`);
         } else {
           console.log('결제 실패');
         }

@@ -99,7 +99,7 @@ function Shopregister(){
                     </div>
                     
                 </div>
-                <div style={{margin:'0.5rem auto',width:'80%', border:'solid #E3E5E5 1px', borderRadius:'5px', padding:'10px'}}>
+                <div style={{alignItems:'center',justifyContent:'center',margin:'0.5rem auto',width:'80%', border:'solid #E3E5E5 1px', borderRadius:'5px', padding:'10px'}}>
                     <div style={{borderBottom:'2px solid #FF9494', textAlign:'center'}}>
                         영업시간을 선택해주세요
                     </div>
@@ -121,7 +121,7 @@ function Shopregister(){
                     </div>
                     <div style={{display:'flex', margin:'8px'}}>
                         <div style={{display:'flex', justifyContent:'center', alignItems:'center', backgroundColor:'#FF9494', color:'white', width:'3rem', height:'1.5rem', borderRadius:'8px', marginRight:'8px'}}>
-                            종료:
+                            종료
                         </div>
                         <select value={closeHour} onChange={(e) => setCloseHour(e.target.value)}>
                         {hourOptions.map((hour, idx) => (

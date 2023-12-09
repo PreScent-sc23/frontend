@@ -33,8 +33,6 @@ import Dictionary from './pages/dictionary/dictionary';
 
 function App() {
 
-
-
   // const [msg, setMsg] = useState([]);
   // useEffect(() => {
   //   fetch("/api/hello")
@@ -56,6 +54,7 @@ function App() {
               <Route path="/dictionary" element={<Dictionary/>}/>
               <Route path="/pslens" element={<PSLens/>}/>
               <Route path="/mypage" element={<Mypage/>}/>
+              <Route path="/search/:query" element={<Search/>}/>
               <Route path="/search" element={<Search/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/sellersignup" element={<Sellersignup/>}/>
@@ -70,10 +69,11 @@ function App() {
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
               <Route path="/detail/:fpkey" element={<ProductDetail/>}/>
-              {/* <Route path="pslens/results" element = {<PSLensResults/>}/> */}
+              <Route path="pslens/results" element = {<PSLensResults/>}/>
               <Route path="/cart/:userkey" element = {<Cart/>}/>
               <Route path="/cart/payment/:userkey" element = {<Payment/>}/>
-              <Route path="/myhistory" element = {<CustomerHistory/>}/>
+              {/* <Route path="/myhistory" element = {<CustomerHistory/>}/> */}
+              <Route path="/myhistory/:userkey" element = {<CustomerHistory/>}/>
               <Route path="/sellerhome/history" element = {<SellerHistory/>}/>
               
               

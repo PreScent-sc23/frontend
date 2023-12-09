@@ -10,14 +10,14 @@ import SellerBottomTap from '../../components/bottomtap/sellerbottomtap';
 export function ManageFinished(){
     const navigate = useNavigate(); 
     const [productDatas, setProductDatas] = useState([]);
-    const userKey=1;
+    const userKey=2;
 
 
      useEffect(()=> {
         console.log('상품 가져오기 시도');
         const fetchProduct = async ()=> {
           try {
-            const response = await axios.get(`http://3.36.175.224:8080/customer/fp-order-list`, {
+            const response = await axios.get(`http://3.36.175.224:8080/flower-shops/fplist`, {
               params: { userKey }
             });
     
@@ -54,16 +54,18 @@ export function ManageFinished(){
             
             <div className={styles.Container}>
                 {productDatas.map((product)=> (
-                <div className={styles.ProductContainer} key={product.fpProductKey}>
-                    <div className={styles.ProductPicture}></div>
-                    <div className={styles.ProductText}>{product.fpProductName}</div>
-                    <div className={styles.ProductTag}>{product.fpProductTag}</div>
+                <div className={styles.ProductContainer} key={product.fpKey}>
+                    <div className={styles.ProductPicture}>
+                        <img src={product.fpImage} className={styles.ProductPicture}/>
+                        </div>
+                    <div className={styles.ProductText}>{product.fpName}</div>
+                    <div className={styles.ProductTag}>{product.fpTag}</div>
                 </div>
                 ))}
             </div>
 
             <div>
-                <div className={styles.Button} onClick={()=>navigate('/addfinished')}>상품 추가하기</div>
+                <div className={styles.Button} onClick={()=>navigate(`/addfinished`)}>상품 추가하기</div>
             </div>
         </div>
     )

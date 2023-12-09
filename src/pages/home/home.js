@@ -31,49 +31,79 @@ function ImageSlider() {
 
 function Home(){
   const navigate = useNavigate(); 
+  const [fpTag, setFpTag] = useState('');
+  const query = encodeURIComponent(fpTag); 
 
-  const [userInfo, setUserInfo] = useState([]);
-  const userKey = 909;
+  const handleEnter = (e) => {
+    if (e.key === 'Enter') {
+      console.log(fpTag);
+      console.log("인코딩 :" ,encodeURIComponent(fpTag));
+      console.log("쿼리 :" ,query);
+      navigate(`/search/${query}`, { state : {query}});
+    }
+  };
+  const userKey =1;
 
-  useEffect(()=> {
-    console.log('사용자 정보 불러오기');
+//   const [userInfo, setUserInfo] = useState([]);
+//   const userKey = 909;
+
+//   useEffect(()=> {
+//     console.log('사용자 정보 불러오기');
     
-    const fetchInfo = async ()=> {
-      try {
-        const response = await axios.get(`http://3.36.175.224:8080/`, {
-          params: { userKey }
-        });
+//     const fetchInfo = async ()=> {
+//       try {
+//         const response = await axios.get(`http://3.36.175.224:8080/`, {
+//           params: { userKey }
+//         });
 
-        console.log('Response:', response);
-        if (response.status==200){
-            setUserInfo(response.data);
-        }
+//         console.log('Response:', response);
+//         if (response.status==200){
+//             setUserInfo(response.data);
+//         }
 
-        } catch (error) {
-            console.log('사용자 정보 불러오기 실패');
-        }
-    };
+//         } catch (error) {
+//             console.log('사용자 정보 불러오기 실패');
+//         }
+//     };
 
-    fetchInfo();
-    setUserInfo({location:null})
-},[userKey]);
+//     fetchInfo();
+//     setUserInfo({location:null})
+// },[userKey]);
 
-useEffect(() => {
-  if (userInfo.location === null) {
-      navigate('/locationset')
-  }
-}, [userInfo]);
+// useEffect(() => {
+//   if (userInfo.location === null) {
+//       navigate('/locationset')
+//   }
+// }, [userInfo]);
+
 
     return(
         <div>
             <Statusbar/>
-            <div style={{display:'flex', padding : '0rem 1rem', gap:'1px', justifyContent : 'center',alignItems:'center', textAlign:'center'}}>
+            <div style={{marginTop : '3rem',display:'flex', padding : '0rem 1rem', gap:'1px', justifyContent : 'center',alignItems:'center', textAlign:'center'}}>
               <img src='/imgs/logo.png' style={{width:'2.8rem', justifyContent : 'center',textAlign: 'center',}}></img>
-              {/* <div style={{fontFamily:'inter', fontSize:'1.6rem', fontWeight:'bold',}}>
-                PreScent
-              </div> */}
             </div>
-            <Searchbar/>
+
+
+            <div className = {styles.SearchWrap}>
+            <div className={styles.SearchBar}>
+                <img src='/assets/search.svg' alt='돋보기 아이콘' className={styles.image}/>  
+                <div className={styles.SeachInput}>
+                <input
+              type="text"
+              name="search"
+              placeholder="검색어를 입력하세요. ex) #졸업식 #프로포즈"
+              style={{ fontSize: '1rem', outline: 'none', background: 'transparent', lineHeight:'1.6rem', width:'18rem' }}
+              value={fpTag}
+              onChange={(e) => setFpTag(e.target.value)}
+              onKeyDown={handleEnter}
+            />
+                </div>
+            </div>
+            </div>
+            {/* <Searchbar value={searchQuery}
+                       onChange={(e) => setSearchQuery(e.target.value)}
+                       onSearch={handleSearch}/> */}
             <div style={{borderBottom:'solid #E2E2E2 1px', width:'100%', height:'200px', display:'flex', alignContent:'center'}}>
                 <div style={{width:'92%', height:'90%', margin:'4px auto',borderRadius:'12px', overflow:'hidden'}}><ImageSlider/></div>
             </div>
@@ -88,7 +118,7 @@ useEffect(() => {
                   <img style={{width:'150px'}} src='/imgs/cart.png'></img>
                   </div>
                 </div>
-                <div className= {styles.ButtonFat} onClick={()=>navigate('/myhistory')}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/myhistory/${userKey}`)}>
                   <div className={styles.ButtonText} style={{margin: '12px',borderBottom:'solid #FF9494 2px'}}>
                     주문내역
                   </div>

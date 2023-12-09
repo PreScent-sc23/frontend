@@ -1,6 +1,6 @@
 *{
     border: none;
-    font-family: 'inter';
+    font-family: 'Pretendard';
 }
 .TopNavWrap{
     display: flex;
@@ -18,7 +18,7 @@
 .TopNavTitle{
     color: #090A0A;
     text-align: center;
-    font-family: Inter;
+    font-family: 'Pretendard';
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
@@ -70,12 +70,12 @@
     border-radius: 0.375rem;
     background-color: #FF7074;
     color: white;
-    font-family: Inter;
+    font-family: 'Pretendard';
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 600;
     line-height: 1.5rem;
-    margin:  1rem 1rem;
+    margin:  8rem 1rem 1rem 1rem ;
         
 }
 
@@ -88,8 +88,8 @@
 }
 
 .inputBox::placeholder{
-    font-family:'inters';
-    font-size: 16px;
+    font-family: 'Pretendard';
+    font-size: 1.2rem;
 }
 
 .ProductPhoto img {

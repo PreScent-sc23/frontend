@@ -25,8 +25,12 @@ function Dictionary(){
         <div>
             <Statusbar/>
             <TopNav/>
-            <div className={styles.LogoContainer}>
-                <img src='/imgs/logo.png' style={{width:'60px'}}></img>
+            {/* <div className={styles.LogoContainer}>
+                <img src='/assets/svglogo.svg' style={{width:'2rem'}}></img>
+            </div> */}
+
+            <div className={styles.PageInfo}>
+                {pageinfo}
             </div>
             <div className={styles.ListContainer}>
                 {flowers.map((flower, index) => (
@@ -72,9 +76,9 @@ function Dictionary(){
                </div>
            )}
 
-            <div className={styles.PageInfo}>
+            {/* <div className={styles.PageInfo}>
                 {pageinfo}
-            </div>
+            </div> */}
             <CustomerBottomTap/>
         </div>
     )

@@ -10,18 +10,18 @@ function CustomerBottomTap(){
     return (
         <div className={styles.BottomTapWrap}>
             <div className={styles.Button} onClick={()=>navigate('/pslens')}>
-                <img src='/assets/camera.svg' style={{color : '##FF7074' ,width : '1.8rem', heigth : '1.8rem'}}></img>
+                <img src='/assets/camera_pink.svg' style={{width : '2rem', heigth : '2rem'}}></img>
                 {/* <div className={styles.ButtonText}>PS렌즈</div> */}
             </div>
 
             <div className={styles.Button} onClick={()=>navigate('/home')}>
-                <img src='/assets/home.svg' style={{width : '1.8rem', heigth : '1.8rem'}}></img>
+                <img src='/assets/home_pink.svg' style={{width : '1.8rem', heigth : '1.8rem'}}></img>
                 {/* <div className={styles.ButtonText}>홈</div> */}
                 
             </div>
 
             <div className={styles.Button} onClick={()=>navigate('/mypage')}>
-                <img src='/assets/user.svg'style={{width : '1.8rem', heigth : '1.8rem'}}></img>
+                <img src='/assets/user-02.svg'style={{width : '2rem', heigth : '2rem'}}></img>
                 {/* <div className={styles.ButtonText}>마이페이지</div> */}
             </div>
 

@@ -32,6 +32,7 @@ function Cart() {
         }
 
         } catch (error) {
+
             console.log('장바구니 정보 fetch error');
         }
     };
@@ -135,7 +136,7 @@ const handleRemoveItem = async (cartItemKey) => {
                 </div>
                 <div className={styles.DateTime}>
                   <div className={styles.dtText}>픽업 일시 : </div>
-                  <div className={styles.dtText}>{item.pickupDate}{item.pickupDate}</div>                  
+                  <div className={styles.dtText}>{item.pickupDate}{item.pickupTime}</div>                  
                   {/* <span>{item.pickupDate}{item.pickupTime}</span>                   */}
                 </div>
 
