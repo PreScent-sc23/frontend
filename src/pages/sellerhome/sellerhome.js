@@ -47,11 +47,12 @@ function SellerHome(){
 
 
               <div className={styles.ButtonRow}>
-                <div className= {styles.ButtonFat} onClick={()=>navigate(`/pslens`)}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/sellerhome/history`)}>
                   <img style={{width:'10rem'}} src='/assets/manageorderbutton.svg'></img>
                 </div>
                  
-                <div className= {styles.ButtonFat} onClick={()=>navigate(`/404`)}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/managestat`)}>
+            
                   <img style={{width:'10rem'}} src='/assets/xhdrPbutton.svg'></img>
                 </div>
               </div>
