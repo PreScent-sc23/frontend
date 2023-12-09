@@ -113,7 +113,7 @@ function Home(){
                 </div>
                  
                 <div className= {styles.ButtonFat} onClick={()=>navigate(`/myhistory/${userKey}`)}>
-                  <img style={{width:'1orem'}} src='/assets/historybutton.svg'></img>
+                  <img style={{width:'10rem'}} src='/assets/historybutton.svg'></img>
                 </div>
               </div>
 
