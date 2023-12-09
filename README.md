@@ -1,7 +1,7 @@
 # PreScent 🎁
-![썸네일 최종](https://github.com/PreScent-sc23/PreScent/assets/118275773/9dea5ed9-c31e-4053-8ee6-0a57b68c2c65)
+<img src="https://github.com/PreScent-sc23/frontend/assets/134992891/ff0083b6-5299-44db-ad8d-888b855a41bf" width="800" height="auto"/>
+
 > PreScent는 선물을 의미하는 Present와 꽃의 향기를 의미하는 Scent의 합성어입니다.  
-> 꽃의 구매, 판매를 좀 더 직관적으로 편하게 만들고자 프로젝트를 시작하게 되었습니다.
 
 ## 메인 로고 🎨
 <img src="https://github.com/PreScent-sc23/frontend/assets/134992891/3fd67d35-404d-4794-a435-84df6bd03c1e/svglogo.svg" width="60" height="60"/>
