@@ -39,6 +39,7 @@ function Login(){
                 //     navigate('/404')
             }
         } catch (error) {
+            alert('로그인 실패! 계정과 비밀번호를 확인하세요.')
             console.error('로그인 오류');
         }
     };
