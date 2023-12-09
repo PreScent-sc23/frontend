@@ -14,7 +14,7 @@ function CustomerHistory(){
 
      useEffect(()=> {
         console.log('주문 가져오기 시도');
-        const token = localStorage.getItem.apply('token');
+        const token = localStorage.getItem('token');
         const headers = { 'Authorization': `Bearer ${token}` };
         const fetchOrder = async ()=> {
           try {
