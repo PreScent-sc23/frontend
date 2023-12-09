@@ -138,7 +138,7 @@ function Shopregister(){
                 </div>
             </div>
             <div className={styles.ButtonContainer}>
-                <div className={styles.Button} onClick={handleSubmission}>등록</div>
+                <button className={styles.Button} onClick={handleSubmission}>등록</button>
             </div>
         </div>
         

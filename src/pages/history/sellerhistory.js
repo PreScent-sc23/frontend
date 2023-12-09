@@ -53,6 +53,7 @@ function SellerHistory(){
             }]);
     },[userKey]);
 
+    //주문 상태 버튼 클릭시 주문의 상태를 변경하는 컴포넌트 필요함
             return (
             <div>
                 <Statusbar/>
@@ -77,7 +78,7 @@ function SellerHistory(){
                         <div className={styles.OrderStatus}>
                             <img src='/assets/shopping-bag.svg'></img>
                             <div className={styles.Status}>{`${order.fpOrderState} - ${order.pickupDate}  ${order.pickupTime} 픽업`}</div>
-                            {/* <span style={{fontSize:"0.8rem",fontWeight:"400",color : "#6B4EFF"}}>주문 상세 보기</span> */}
+                            <button className={styles.StateButton}>변경</button> 
                         </div>
                         
                         <div className={styles.Line}></div>

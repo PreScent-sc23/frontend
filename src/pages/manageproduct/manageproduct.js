@@ -15,7 +15,7 @@ export function ManageProduct(){
         <div>
             <Statusbar/>
             <TopNav/>
-            <div style={{ padding  : '1rem',height:'700px',display:'flex', flexDirection:'column', justifyContent:'center', gap:'2rem', marginTop:'8rem'}}>
+            <div style={{ padding  : '1rem',height:'32rem',display:'flex', flexDirection:'column', justifyContent:'center', gap:'2rem', marginTop:'7rem'}}>
                 <div className={styles.selectBox} onClick={()=>navigate('/managefinished')}>
                     <div className={styles.textBox}>완제품 관리</div>
                 </div>
