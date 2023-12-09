@@ -142,19 +142,19 @@ function TopNav(props){
           case location.pathname === `/addcustom`:
           // case '/addcustom':
           setPageTitle('주문제작 양식 등록');
-          setIcon('/assets/setting.svg');
+          setIcon('/assets/emptyicon.svg');
           break;
 
           case location.pathname === `/manageproduct`:
         // case '/manageproduct':
           setPageTitle('내 제품 관리');
-          setIcon('/assets/setting.svg');
+          setIcon('/assets/emptyicon.svg');
           break;
 
           case location.pathname === `/managefinished`:
           // case '/managefinished':
           setPageTitle('완제품 관리');
-          setIcon('/assets/setting.svg');
+          setIcon('/assets/emptyicon.svg');
           break;
 
           case location.pathname === `/dictionary`:

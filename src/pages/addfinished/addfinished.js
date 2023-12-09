@@ -73,7 +73,6 @@ export function AddFinished(){
     }
     return(
         <div>
-            <Statusbar/>
             <TopNav/>
             <div className={styles.Container}>
                 <div className={styles.ProductPhoto}>{fileDataURL && <img src={fileDataURL} alt = "Product Image"/>}</div>
