@@ -126,9 +126,16 @@ function TopNav(props){
           break;
 
 
-          case location.pathname === `/locationset`:
+          case location.pathname === `/sellerlocationset`:
           // case '/locationset':
-          setPageTitle('위치 설정');
+          setPageTitle('가게 위치 설정');
+          setIcon('/assets/emptyicon.svg');
+          break;
+
+          
+          case location.pathname === `/customerlocationset`:
+          // case '/locationset':
+          setPageTitle('고객 위치 설정');
           setIcon('/assets/emptyicon.svg');
           break;
 

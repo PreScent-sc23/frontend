@@ -47,7 +47,7 @@ function SellerHome(){
 
 
               <div className={styles.ButtonRow}>
-                <div className= {styles.ButtonFat} onClick={()=>navigate(`/pslens`)}>
+                <div className= {styles.ButtonFat} onClick={()=>navigate(`/sellerhome/history`)}>
                   <img style={{width:'10rem'}} src='/assets/manageorderbutton.svg'></img>
                 </div>
                  
