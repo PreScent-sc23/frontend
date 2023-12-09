@@ -1,0 +1,188 @@
+.ImageWrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 0rem 0rem 1.5625rem 1.5625rem;
+    margin-top :1rem;
+    }
+
+    
+.ImageWrap img {
+    width: 70%;
+    height: auto;
+    display: block;
+}
+
+.DetailWrap{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background-color: white;
+    padding: 0.8rem 2.3rem;
+    flex-shrink: 0;
+}
+
+
+
+.FpName{
+    color: #090A0A;
+    font-family: 'Pretendard';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.125rem; /* 90% */
+    padding-left: 0.2rem;
+}
+
+.FpPrice{
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.125rem; /* 75% */
+    letter-spacing: 0.00625rem;
+    text-align: end;
+    color: #FF7074;
+    font-family: 'Pretendard';
+    }
+
+.FpTagWrap{
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.FpTag{
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    border-radius: 2rem;
+    background: #F2F4F5;
+    font-family: 'Pretendard';
+ 
+}
+
+
+
+.FpDescription{
+    color:  #090A0A;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem; /* 128.571% */
+    padding-left: 0.2rem;
+    font-family: 'Pretendard';
+
+
+}
+
+.FpFlowerWrap{
+
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.FpFlower{
+    display: flex;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    border-radius: 2rem;
+    background: #F2F4F5;
+    font-family: 'Pretendard';
+ 
+}
+
+.Line{
+    margin : 1rem 1.5rem;
+   
+    display: flex;
+    height: 0.2rem;
+    background: #EDEDED;
+    align-items: center;
+    text-align: center;
+}
+
+.TextWrap{
+    display: flex;
+    padding: 0rem 2.5rem;
+    align-items: center;
+    
+    justify-content: space-between;
+
+
+}
+.smallWrap
+{
+    display : flex;
+    flex-direction: row;
+    gap : 0.6rem;
+}
+
+.Text{
+    color: #090A0A;
+    text-align: center;
+    font-family: 'Pretendard';
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    margin-right : 2rem;
+    
+}
+
+
+
+
+.PurchaseButton{
+    display: flex;
+    padding: 1rem 1.5rem;
+    margin : 1rem 2rem;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    background: #FF7074;
+    color : white;
+    flex-direction: row;
+    align-items: flex-start;
+    font-family: 'Pretendard';
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5rem; /* 133.333% */
+}
+
+
+.AmountControls {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      
+          .AmountButton {
+            background-color: #ffffff;
+            color: #858585;
+            border: 0.5px solid #858585;
+            border-radius: 0.2rem;
+            padding: 0.1rem 0.6rem;
+            font-size: 1.2rem;
+            font-family: 'Pretendard';
+            cursor: pointer;
+            transition: background-color 0.3s;
+      
+            &:hover {
+              background-color: #E2E2E2;
+            }
+          }
+      
+          .Amount {
+            font-size: 1rem;
+            margin: 0 0.6rem;
+            font-weight: 600;
+            text-align: center;
+            font-family: 'Pretendard';
+        
+            
+          }
+        }
