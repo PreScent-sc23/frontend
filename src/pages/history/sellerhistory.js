@@ -53,10 +53,8 @@ function SellerHistory(){
             }]);
     },[userKey]);
 
-    //주문 상태 버튼 클릭시 주문의 상태를 변경하는 컴포넌트 필요함
             return (
             <div>
-                <Statusbar/>
                 <TopNav/>
                 
                 <div>

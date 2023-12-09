@@ -13,9 +13,8 @@ export function ManageProduct(){
 
     return(
         <div>
-            <Statusbar/>
             <TopNav/>
-            <div style={{ padding  : '1rem',height:'32rem',display:'flex', flexDirection:'column', justifyContent:'center', gap:'2rem', marginTop:'7rem'}}>
+            <div style={{ padding  : '1rem',display:'flex', flexDirection:'column', justifyContent:'center', gap:'2rem', marginTop:'1rem'}}>
                 <div className={styles.selectBox} onClick={()=>navigate('/managefinished')}>
                     <div className={styles.textBox}>완제품 관리</div>
                 </div>
@@ -23,6 +22,7 @@ export function ManageProduct(){
                     <div className={styles.textBox}>주문제작 관리</div>
                 </div>
             </div>
+            <SellerBottomTap/>
         </div>
     )
 } export default ManageProduct;

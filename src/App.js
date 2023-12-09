@@ -7,15 +7,15 @@ import axios from 'axios';
 
 
 import Home from './pages/home/home';
+import Sellersignup from './pages/signup/sellersignup/sellersignup';
+import Customersignup from './pages/signup/customersignup/customersignup';
 import PSLens from './pages/pslens/pslens';
 import Mypage from './pages/mypage/mypage';
 import Search from './pages/search/search';
-import SellerHome from './pages/sellermain/sellerhome';
+import SellerHome from './pages/sellerhome/sellerhome';
 import Shopregister from './pages/shopregister/shopregister';
 import LocationSet from './pages/locationset/locationset';
 import Login from './pages/login/login';
-import Sellersignup from './pages/sellersignup/sellersignup';
-import Customersignup from './pages/customersignup/customersignup';
 import StartScreen from './pages/main/main';
 import ManageProduct from './pages/manageproduct/manageproduct';
 import ManageFinished from './pages/managefinished/managefinished';

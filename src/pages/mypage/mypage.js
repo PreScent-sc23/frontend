@@ -13,7 +13,6 @@ function Mypage(){
 
     return(
         <div>
-            <Statusbar/>
             <TopNav/>
             <div>
                <div className={styles.ProfileTitleWrap}>
@@ -25,8 +24,6 @@ function Mypage(){
                     <div className={styles.Profile}>
                     
                          <img src='/assets/user_pink.svg' className={styles.Image}></img>
-                         {/* <div className={styles.Image}>프로필이미지</div> */}
-     
                          <div className={styles.InfoWrap}>
                               <div className={styles.BoldText} style={{fontSize:"1.2rem"}}>김구매자</div>
                               <div className={styles.Line}></div>

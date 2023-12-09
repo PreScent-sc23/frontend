@@ -16,6 +16,7 @@ function Search({props}){
     const [flowerquery,setFlowerQuery]=useState(''); 
     const [fpName,setFpName] =useState('');
     const [fpPrice, setFpPrice] = useState('');
+    const [fpFlowerList, setFpFlowerList] =useState('');
     const [responseData,setResponseData] = useState([]);
 
     useEffect(() => {
@@ -27,9 +28,6 @@ function Search({props}){
             return newFpTag;
           });
         }, []);
-    //     setFpTag(decodeURIComponent(query));
-    //     handleTagSearch(fpTag);
-    //   }, []); // Empty dependency array ensures it only runs once on mount
     
     
     const navigate = useNavigate();
@@ -44,7 +42,7 @@ function Search({props}){
 
     const handleTagSearch = async (fpTag) => {
         console.log("성공1?");
-        console.log("서치페이지 넘어온 태그", fpTag);
+        console.log("메인에서 전달한 태그", fpTag);
         const query = (encodeURIComponent(fpTag));
         try {
             const response = await axios.get(`http://3.36.175.224:8080/search`,{
@@ -70,7 +68,7 @@ function Search({props}){
 
     return(
         <div>
-            <Statusbar/>
+            
             <div className = {styles.SearchWrap}>
             <div className={styles.SearchBar}>
                 <img src='/assets/search.svg' alt='돋보기 아이콘' className={styles.image}/>  
@@ -92,39 +90,14 @@ function Search({props}){
                 <div className={styles.ProudctTitle}>{item.fpName}</div>
                 <div className={styles.ProductPrice}>{item.fpPrice}</div>
                 <div className={styles.ProductTag}>{item.fpTag}</div>
+                <div className={styles.ProductTag}>{item.fpFlowerList}</div>
               </div>
             </div>
             
           ))}
         </div>
-      )}
-
-
-
-            {/* {responseData.length===0 ?(
-                <div className={styles.NoResult}>검색 결과가 없습니다</div>
-            ):(
-                <div>
-                    {responseData && responseData.map(responseData=>(
-                        <div className={styles.ProductContainer}>
-                            <div className={styles.ProductCard} key={responseData.key} onClick={()=>(navigate(`/detail/${responseData.fpKey}`))}>
-                                <div className={styles.ProductImageContainer}>
-                                    <img src='' className={styles.ProductImage}>{responseData.fpImage}</img>
-                                </div>
-
-                                <div className={styles.ProductDetailContainer} key={responseData.key}>
-                                    <div className={styles.ProudctTitle}>{responseData.fpName}</div>
-                                    <div className={styles.ProductPrice}>{responseData.fpPrice}</div>
-                                    <div className={styles.ProductTag}>{responseData.fpTag}</div>
-                                </div>
-                            </div>    
-                        </div>  
-                    ))}
-                </div>
-            )} */}
-
-            
-            <CustomerBottomTap/>
+      )}            
+        <CustomerBottomTap/>
         </div>
         
 
