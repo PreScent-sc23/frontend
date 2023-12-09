@@ -11,15 +11,16 @@ function SellerHistory(){
 
     const [tap,setTap]=useState(true);
     const [orderDatas, setOrderDatas] = useState([]);
-    const userKey=1;
 
 
      useEffect(()=> {
         console.log('주문 가져오기 시도');
+        const token = localStorage.getItem('token');
+        const headers = { 'Authorization': `Bearer ${token}` };
         const fetchOrder = async ()=> {
           try {
-            const response = await axios.get(`http://3.36.175.224:8080/customer/fp-order-list`, {
-              params: { userKey }
+            const response = await axios.get(`http://3.36.175.224:8080/seller/fp-order-list`, {
+                headers
             });
     
             console.log('Response:', response);
@@ -33,25 +34,7 @@ function SellerHistory(){
         };
 
         fetchOrder();
-        setOrderDatas([
-            {
-              "fpOrderKey": 0,
-              "fpOrderState": "string",
-              "pickupDate": "string",
-              "pickupTime": "string",
-              "purchaseInfo": "string",
-              "fpKey": 0,
-              "fpName": "string",
-              "fpTag": "string",
-              "fpImage": "string",
-              "fpFlowerList": [
-                "string"
-              ],
-              "fpDetail": "string",
-              "count": 0,
-              "totalPrice": 0
-            }]);
-    },[userKey]);
+    },[]);
 
             return (
             <div>

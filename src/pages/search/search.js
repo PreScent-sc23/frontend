@@ -44,19 +44,13 @@ function Search({props}){
         console.log("메인에서 전달한 태그", fpTag);
         const query = (encodeURIComponent(fpTag));
         const token = localStorage.getItem('token');
+        const headers = { 'Authorization': `Bearer ${token}` };
+        const params = {query};
         console.log("토큰:", token);
         try {
             const response = await axios.get(`http://3.36.175.224:8080/search`,{
-                    params : {query},
-            },
-            {   
-              headers: 
-              {
-                  'Content-Type': 'application/json',
-                  'Authorization': `Bearer ${token}`,
-              }
-            }
-          );
+                    params, headers
+            });
 
             if (response.status === 200) {
                 setResponseData(response.data);    

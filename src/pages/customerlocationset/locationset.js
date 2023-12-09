@@ -37,7 +37,7 @@ function CustomerLocationSet(){
     });
             console.log("제출 성공");
             alert('위치설정 완료! 서비스를 이용해보세요.');
-            navigate('/main');
+            navigate('/home');
         } catch (error) {
             console.error('오류');
         }
