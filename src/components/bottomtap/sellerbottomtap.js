@@ -10,7 +10,7 @@ function SellerBottomTap(){
     return (
         <div className={styles.SellerBottomTapWrap}>
             
-            <div className={styles.Button} onClick={()=>navigate('/managereserve')}>
+            <div className={styles.Button} onClick={()=>navigate('/sellerhome/history')}>
                 <img src='/assets/calendar_pink.svg' style={{width : '1.8rem', heigth : 'auto'}}></img>
                 {/* <div className={styles.ButtonText}>예약</div> */}
             </div>
