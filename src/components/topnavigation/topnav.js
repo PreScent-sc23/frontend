@@ -163,6 +163,16 @@ function TopNav(props){
           break;
 
         
+          case location.pathname === `/locationset`:
+            // case '/dictionary':
+            setPageTitle('위치 설정');
+            setIcon('/assets/emptyicon.svg');
+            break;
+
+          // case '/dictionary/':
+          // setPageTitle('PS 사전');
+          // setIcon('');
+          // break;
       }
 
     },[location,fpKey]);
