@@ -10,8 +10,7 @@ function ProductDetail({ Component, pageProps }){
 
     const navigate = useNavigate();
     const location = useLocation();
-    const fpKey = location.state ? location.state.fpKey : null;
-    const userKey=1;//추후 토큰으로 교체  
+    const fpKey = location.state ? location.state.fpKey : null;  
     const [pickupDate,setPickupDate] = useState('');
     const [pickupTime,setPickupTime] = useState('');
     const [amount, setAmount]=useState(1);
@@ -58,16 +57,25 @@ function ProductDetail({ Component, pageProps }){
 
     const addToCart = async()=>{
         try {
-            await axios.post(`http://3.36.175.224:8080/customer/cart/add-to-cart`,{
-                userKey: userKey,
+            const token = localStorage.getItem('token');
+            console.log("토큰:" , token);
+            await axios.post(`http://3.36.175.224:8080/customer/cart/add-to-cart`,
+            {
                 fpKey: fpKey,
                 pickupDate: pickupDate,
                 pickupTime: pickupTime,
                 amount: amount,
-            },{headers: {'Content-Type': 'application/json'}}
+            },
+            {
+                headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+                },
+            }
             );
-            console.log(userKey);
-            navigate(`/home`, { state: { userKey: userKey } })
+            console.log({addToCart});
+            navigate(`/home`)
+            // navigate(`/home`, { state: { userKey: userKey } })
             // navigate(`/cart/${userKey}`, { state: { userKey: userKey } })
 
         }catch(error){
@@ -158,17 +166,6 @@ function ProductDetail({ Component, pageProps }){
             
 
             <div className={styles.Line}/>
-
-             {/* <div className={styles.TextWrap}>
-                <div className={styles.Text}>요청 사항 (선택)</div>
-                {/* <img src='/assets/time_check.svg' className={styles.Icon}/> */}
-             {/* </div>  */} 
-            
-            {/* <div className={styles.TextWrap}>
-                <div className={styles.Text}>예약 일정</div>
-                <div className={styles.Text}>{pickupDate} {pickupTime}</div>}
-            </div> */}
-
 
       
             <div className={styles.PurchaseButton} onClick={addToCart}>

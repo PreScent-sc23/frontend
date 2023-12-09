@@ -42,6 +42,7 @@ function Home(){
       navigate(`/search/${query}`, { state : {query}});
     }
   };
+ 
   const [userInfo, setUserInfo] = useState('');
 
   useEffect(()=> {
@@ -71,7 +72,6 @@ function Home(){
 
     fetchInfo();
 },[]);
-
 
 
     return(
