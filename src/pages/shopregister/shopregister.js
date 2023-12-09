@@ -22,7 +22,7 @@ function Shopregister(){
     const minuteOptions = Array.from({length: 6}, (_, i) => i * 10)
 
 
-    const data = {
+    const flowerShopDto = {
         'shopName' : shopName,
         'shopPhoneNum' : shopPhoneNum,
         'shopLocation' : shopLocation,
@@ -40,9 +40,9 @@ function Shopregister(){
         try {
             const token = localStorage.getItem('token');
             console.log(token);
-            const response = await axios.post('http://3.36.175.224:8080/flower-shops/add', {
-                data
-            },{headers: {'Content-Type': 'application/json', 'Authorization' : `Bearer ${token}`}});
+            const response = await axios.post('http://3.36.175.224:8080/flower-shops/add', 
+                flowerShopDto
+            ,{headers: {'Content-Type': 'application/json', 'Authorization' : `Bearer ${token}`}});
             console.log("됨2?");
             console.log(response.data);
             navigate('/sellerhome');
