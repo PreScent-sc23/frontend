@@ -8,8 +8,6 @@ import TopNav from '../../components/topnavigation/topnav';
 export function AddFinished(){
     
     const navigate = useNavigate(); 
-    const shopKey=1;
-    const userKey =2;
     const [fpName, setProductName] = useState('');
     const [fpPrice, setProductPrice] = useState('');
     const [fpTag, setProductTag] = useState('');
@@ -35,6 +33,8 @@ export function AddFinished(){
     }
 
     const handleSubmission = async () => {
+
+        const token = localStorage.getItem('token');
         const formData = new FormData();
         if (selectedFile) {
             formData.append("fpImage", selectedFile);
@@ -44,8 +44,7 @@ export function AddFinished(){
             console.log("formdata비었대");
         }
 
-        const data ={
-            shopKey : shopKey,
+        const data = {
             fpName : fpName,
             fpTag : fpTag,
             fpPrice : fpPrice,
@@ -62,7 +61,7 @@ export function AddFinished(){
 
         try {
                     const response = await axios.post('http://3.36.175.224:8080/finished-product/add', formData,{
-                        headers: {'Content-Type' : 'multipart/form-data'
+                        headers: {'Content-Type' : 'multipart/form-data', 'Authorization' : `Bearer ${token}`
                 },
             });
                     console.log("전송 완료");
@@ -74,7 +73,6 @@ export function AddFinished(){
     }
     return(
         <div>
-            <Statusbar/>
             <TopNav/>
             <div className={styles.Container}>
                 <div className={styles.ProductPhoto}>{fileDataURL && <img src={fileDataURL} alt = "Product Image"/>}</div>

@@ -41,15 +41,10 @@
 }
 
 .Container{
-    overflow: auto;
-    // margin-top: 6rem;
-    width:100%;
     height:39rem;
-    padding: 0rem 5rem ;
-
+    padding: 0rem 3rem ;
     display:grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 8rem;
     align-items: center;
     justify-content: center;
     justify-items: center;
@@ -107,6 +102,6 @@
     width: 100%;
     height: 0px;
     border: 1px solid #FF7074;
-    margin: 4rem auto;
+    margin: 1rem auto;
     margin-bottom: 12rem;
 }
