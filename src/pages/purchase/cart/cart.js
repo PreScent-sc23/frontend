@@ -7,22 +7,22 @@ import TopNav from '../../../components/topnavigation/topnav';
 import CustomerBottomTap from '../../../components/bottomtap/customerbottomtap';
 function Cart() {
   const navigate = useNavigate();
-  const userKey =1;
-  // const fpKey =3;
 
   const [cartItems,setCartItems]=useState([]);
   const [totalPrice, setTotalPrice] = useState('');
   const [totalCount, setTotalCount] =useState('');
-
-
+  
 
   useEffect(()=> {
-    console.log('userKey in useEffect:', userKey);
+    const token = localStorage.getItem('token');
+    console.log("토큰 :", token);
     console.log('Reqeust success?');
     const fetchCart = async ()=> {
       try {
         const response = await axios.get(`http://3.36.175.224:8080/customer/cart/view-in-cart`, {
-          params: { userKey }
+          headers: {
+            Authorization: `Bearer ${token}`
+        }
         });
 
         console.log('Response:', response);
@@ -38,7 +38,8 @@ function Cart() {
     };
 
 fetchCart();
-},[userKey]);
+},[]);
+
 console.log('카트아이템state에 잘 들어간?',cartItems);
 
 
@@ -52,9 +53,14 @@ useEffect(() => {
 
 
 const handleRemoveItem = async (cartItemKey) => {
+  const token = localStorage.getItem('token');
   try {
     await axios.delete(`http://3.36.175.224:8080/customer/cart/delete-cart-item/`, {
-      params: { cartItemKey}  
+      params: {cartItemKey},
+      headers: {
+        'Authorization': `Bearer ${token}`
+    }
+      
   });
     console.log(cartItemKey);
     const updatedCart = cartItems.filter(item => item.cartItemKey !== cartItemKey);
@@ -127,7 +133,7 @@ const handleRemoveItem = async (cartItemKey) => {
                   <div className={styles.Text} style={{ color: '#72777A', fontSize: '1rem' }}>결제 예정 금액 </div>
                   <div className={styles.Text}>{totalPrice}원</div>
                 </div>
-              <div className={styles.PurchaseButton} onClick={() => navigate(`/cart/payment/${userKey}`, { state: { userKey: userKey } })}>
+              <div className={styles.PurchaseButton} onClick={() => navigate(`/cart/payment`)}>
                 전체 상품 결제 하기
               </div>
           </div>
