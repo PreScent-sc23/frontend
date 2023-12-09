@@ -63,10 +63,8 @@ export function ManageFinished(){
     },[]);
 
     return(
-        <div style={{display:'flex', flexDirection:'column',justifyContent:'center', alignItems:'center'}}>
-            <Statusbar/>
+        <div>
             <TopNav/>
-            
             <div className={styles.Container}>
                 {productDatas.map((product)=> (
                 <div className={styles.ProductContainer} key={product.fpKey} onClick={() => handleProductClick(product)}>
