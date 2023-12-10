@@ -7,15 +7,16 @@ import axios from 'axios';
 
 
 import Home from './pages/home/home';
+import Sellersignup from './pages/signup/sellersignup/sellersignup';
+import Customersignup from './pages/signup/customersignup/customersignup';
 import PSLens from './pages/pslens/pslens';
 import Mypage from './pages/mypage/mypage';
 import Search from './pages/search/search';
-import SellerHome from './pages/sellermain/sellerhome';
+import SellerHome from './pages/sellerhome/sellerhome';
 import Shopregister from './pages/shopregister/shopregister';
-import LocationSet from './pages/locationset/locationset';
+import CustomerLocationSet from './pages/customerlocationset/locationset';
+import SellerLocationSet from './pages/sellerlocationset/locationset';
 import Login from './pages/login/login';
-import Sellersignup from './pages/sellersignup/sellersignup';
-import Customersignup from './pages/customersignup/customersignup';
 import StartScreen from './pages/main/main';
 import ManageProduct from './pages/manageproduct/manageproduct';
 import ManageFinished from './pages/managefinished/managefinished';
@@ -33,8 +34,6 @@ import Dictionary from './pages/dictionary/dictionary';
 
 function App() {
 
-
-
   // const [msg, setMsg] = useState([]);
   // useEffect(() => {
   //   fetch("/api/hello")
@@ -51,11 +50,13 @@ function App() {
               <Route path="/" element={<StartScreen/>}/>
               <Route path="/main" element={<StartScreen/>}/>
               <Route path="/login" element={<Login/>}/>
-              <Route path="/locationset" element={<LocationSet/>}/>
+              <Route path="/sellerlocationset" element={<SellerLocationSet/>}/>
+              <Route path="/customerlocationset" element={<CustomerLocationSet/>}/>
               <Route path="/home" element={<Home/>}/>
               <Route path="/dictionary" element={<Dictionary/>}/>
               <Route path="/pslens" element={<PSLens/>}/>
               <Route path="/mypage" element={<Mypage/>}/>
+              <Route path="/search/:query" element={<Search/>}/>
               <Route path="/search" element={<Search/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/sellersignup" element={<Sellersignup/>}/>
@@ -70,9 +71,9 @@ function App() {
               <Route path="/customersignup" element={<Customersignup/>}/>
               <Route path="/sellerhome" element={<SellerHome/>}/>
               <Route path="/detail/:fpkey" element={<ProductDetail/>}/>
-              {/* <Route path="pslens/results" element = {<PSLensResults/>}/> */}
-              <Route path="/cart/:userkey" element = {<Cart/>}/>
-              <Route path="/cart/payment/:userkey" element = {<Payment/>}/>
+              <Route path="pslens/results" element = {<PSLensResults/>}/>
+              <Route path="/cart" element = {<Cart/>}/>
+              <Route path="/cart/payment" element = {<Payment/>}/>
               <Route path="/myhistory" element = {<CustomerHistory/>}/>
               <Route path="/sellerhome/history" element = {<SellerHistory/>}/>
               

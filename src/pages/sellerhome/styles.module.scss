@@ -1,0 +1,90 @@
+.profileContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top : 1rem;
+    padding-bottom: 0.8rem;
+    border-radius: 0.375rem;
+    margin : 1rem 2rem 2rem 2rem ;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.1);
+   
+}
+
+.selectBox{
+    width: 21rem;
+    height: 7rem;
+    border-radius: 0.4rem;
+    background-color: #E7E7FF;
+    margin: 8px auto;
+    display: flex;
+    align-items: center;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.10);
+}
+
+.textBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px auto;
+    width: 7rem;
+    height: 2.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 8px;
+    color: white;
+}
+.ButtonContatiner{
+    margin:0.1rem auto;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.1);
+}
+
+.ButtonContatiner::-webkit-scrollbar {
+    display: none;
+ }
+
+
+.ButtonFat{
+    background-color: #fefefe;
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    // justify-content: center;
+    flex-direction: column;
+    width:44%;
+    height: 12rem;
+    border-radius: 0.8rem;
+    margin :0.4rem;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.ButtonSlim{
+    background-color: #fefefe;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 90%;
+    height: 11rem;
+    border-radius: 0.8rem;
+    margin : 0.6rem;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.ButtonText{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ButtonRow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin : 1rem ;
+}

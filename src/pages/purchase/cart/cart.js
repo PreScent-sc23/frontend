@@ -7,22 +7,22 @@ import TopNav from '../../../components/topnavigation/topnav';
 import CustomerBottomTap from '../../../components/bottomtap/customerbottomtap';
 function Cart() {
   const navigate = useNavigate();
-  const userKey =1;
-  // const fpKey =3;
 
   const [cartItems,setCartItems]=useState([]);
   const [totalPrice, setTotalPrice] = useState('');
   const [totalCount, setTotalCount] =useState('');
-
-
+  
 
   useEffect(()=> {
-    console.log('userKey in useEffect:', userKey);
+    const token = localStorage.getItem('token');
+    console.log("토큰 :", token);
     console.log('Reqeust success?');
     const fetchCart = async ()=> {
       try {
         const response = await axios.get(`http://3.36.175.224:8080/customer/cart/view-in-cart`, {
-          params: { userKey }
+          headers: {
+            Authorization: `Bearer ${token}`
+        }
         });
 
         console.log('Response:', response);
@@ -32,17 +32,18 @@ function Cart() {
         }
 
         } catch (error) {
+
             console.log('장바구니 정보 fetch error');
         }
     };
 
 fetchCart();
-},[userKey]);
+},[]);
+
 console.log('카트아이템state에 잘 들어간?',cartItems);
 
 
 useEffect(() => {
-  // Calculate the total price and quantity when cartItems change
   const updatedTotalPrice = cartItems.reduce((acc, item) => acc + item.fpPrice * item.count, 0);
   const updatedTotalCount = cartItems.reduce((acc, item) => acc + item.count, 0);
 
@@ -52,9 +53,14 @@ useEffect(() => {
 
 
 const handleRemoveItem = async (cartItemKey) => {
+  const token = localStorage.getItem('token');
   try {
     await axios.delete(`http://3.36.175.224:8080/customer/cart/delete-cart-item/`, {
-      params: { cartItemKey}  
+      params: {cartItemKey},
+      headers: {
+        'Authorization': `Bearer ${token}`
+    }
+      
   });
     console.log(cartItemKey);
     const updatedCart = cartItems.filter(item => item.cartItemKey !== cartItemKey);
@@ -65,37 +71,9 @@ const handleRemoveItem = async (cartItemKey) => {
   }
 };
 
-  // const handleRemoveItem = async (itemId) => {
-  //   try {
-  //     await axios.delete(`http://3.36.175.224:8080/customer/cart/delete-cart-item/${itemId}`, {
-  //       params: { userKey }
-  //     });
-
-  //     const updatedCart = cartItems.filter(item => item.id !== itemId);
-  //     setCartItems(updatedCart);
-
-  //     const updatedTotalPrice = updatedCart.reduce((acc, item) => acc + item.price, 0);
-  //     setTotalPrice(updatedTotalPrice);
-
-  //     const updatedTotalCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-  //     setTotalCount(updatedTotalCount)
-
-  //   } catch (error) {
-  //     console.log('장바구니 상품 삭제 요청 실패:', error);
-  //   }
-  // };
-
-  // const handleRemoveItem = (itemId) => {
-  //   const updatedCart = cartItems.filter(item => item.id !== itemId);
-  //   setCartItems(updatedCart);
-
-  //   const updatedTotalPrice = updatedCart.reduce((acc, item) => acc + item.price, 0);
-  //   setTotalPrice(updatedTotalPrice);
-  // };
-
   return (
     <div>
-      <Statusbar />
+
       <TopNav />
       
       <div>
@@ -135,8 +113,7 @@ const handleRemoveItem = async (cartItemKey) => {
                 </div>
                 <div className={styles.DateTime}>
                   <div className={styles.dtText}>픽업 일시 : </div>
-                  <div className={styles.dtText}>{item.pickupDate}{item.pickupDate}</div>                  
-                  {/* <span>{item.pickupDate}{item.pickupTime}</span>                   */}
+                  <div className={styles.dtText}>{item.pickupDate}{item.pickupTime}</div>                  
                 </div>
 
                 <div className={styles.Line}></div>
@@ -156,7 +133,7 @@ const handleRemoveItem = async (cartItemKey) => {
                   <div className={styles.Text} style={{ color: '#72777A', fontSize: '1rem' }}>결제 예정 금액 </div>
                   <div className={styles.Text}>{totalPrice}원</div>
                 </div>
-              <div className={styles.PurchaseButton} onClick={() => navigate(`/cart/payment/${userKey}`, { state: { userKey: userKey } })}>
+              <div className={styles.PurchaseButton} onClick={() => navigate(`/cart/payment`)}>
                 전체 상품 결제 하기
               </div>
           </div>

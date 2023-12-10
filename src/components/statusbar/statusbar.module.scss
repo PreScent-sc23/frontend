@@ -1,11 +1,11 @@
 .iosStatusBar {
     display: flex;
     //width: 23.4375rem;
-    padding: 0.8125rem 1rem 0.8125rem 2rem;
+    padding: 0.8125rem 2rem 0.8125rem 2rem;
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 88vw;
+    width: 86vw;
     height : auto;
     background-color: white;
     position: fixed;
@@ -18,10 +18,10 @@
   .iosStatusBarTime {
     color: #000;
     text-align: center;
-    font-family: SF Pro Text;
+    font-family: 'Pretendard';
     font-size: 1rem;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.375rem; /* 129.412% */
     position: relative;
     padding-top : 0.1rem;
