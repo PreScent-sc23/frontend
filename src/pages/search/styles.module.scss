@@ -121,6 +121,29 @@
     background: #F2F4F5;
 }
 
+
+.FpFlowerWrap{
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.FlowerTag{
+    color: #000;
+    font-family : 'Pretendard';
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: inline-flex;
+    padding: 0.5rem 0.8rem;
+    align-items: center;
+    border-radius: 0.8rem;
+    background: #F2F4F5;
+}
+
+
 .NoResult{
     display : flex;
     text-align: center;

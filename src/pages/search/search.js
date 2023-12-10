@@ -92,9 +92,10 @@ function Search({props}){
                 <div className={styles.ProudctTitle}>{item.fpName}</div>
                 <div className={styles.ProductPrice}>{item.fpPrice}</div>
                 <div className={styles.ProductTag}>{item.fpTag}</div>
-                {/* <div className={styles.ProductTag}>{item.fpFlowerList}</div> */}
+                <div className={styles.FpFlowerWra}>
                 {item.fpFlowerList.map((flower, index) => (
-                  <div key={index} className={styles.ProductTag}>{flower}</div>))}
+                  <div key={index} className={styles.FlowerTag}>{flower}</div>))}
+                </div>
               </div>
           </div>
             
