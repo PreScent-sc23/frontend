@@ -15,7 +15,7 @@ function Search({props}){
     const [flowerquery,setFlowerQuery]=useState(''); 
     const [fpName,setFpName] =useState('');
     const [fpPrice, setFpPrice] = useState('');
-    const [fpFlowerList, setFpFlowerList] =useState('');
+    const [fpFlowerList, setFpFlowerList] =useState([]);
     const [responseData,setResponseData] = useState([]);
 
     useEffect(() => {
@@ -92,9 +92,11 @@ function Search({props}){
                 <div className={styles.ProudctTitle}>{item.fpName}</div>
                 <div className={styles.ProductPrice}>{item.fpPrice}</div>
                 <div className={styles.ProductTag}>{item.fpTag}</div>
-                <div className={styles.ProductTag}>{item.fpFlowerList}</div>
+                {/* <div className={styles.ProductTag}>{item.fpFlowerList}</div> */}
+                {item.fpFlowerList.map((flower, index) => (
+                  <div key={index} className={styles.ProductTag}>{flower}</div>))}
               </div>
-            </div>
+          </div>
             
           ))}
         </div>

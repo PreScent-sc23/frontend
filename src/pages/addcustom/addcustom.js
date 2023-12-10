@@ -19,14 +19,17 @@ export function AddCustom(){
  };
 
  const handleSubmit = async() => {
+    const token = localStorage.getItem('token');
+    console.log(token);
     console.log("전송");
     if(surveys.length < 11) {
         try {
-            const response = await axios.post('http://3.36.175.224:8080/customize-product-form/add', {
+            const response = await axios.post('http://3.36.175.224:8080/customize-product/add', {
                 surveys,
             },{
                 headers: {
-                    'Content-Type': 'formdata'
+                    'Content-Type': 'application/json',
+                    'Authorization' : `Bearer ${token}`,
         },
     });
             console.log("전송 완료");
