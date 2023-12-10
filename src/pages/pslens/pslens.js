@@ -73,9 +73,9 @@ const handleResult = async () => {
         <div className={styles.NoticeWrap}>
           <div className={styles.TextWrap}>
             <div className={styles.Text}>
-              <span style={{ color: '#FF7074', fontWeight: '500' }}>AI 꽃 이미지 분석</span>을 통해
+              <span style={{ color: '#FF7074', fontWeight: '500', fontFamily:'Pretendard' }}>AI 꽃 이미지 분석</span>을 통해
             </div>
-            <div className={styles.Text}>사진 속 꽃의 이름과 꽃말을 알려드려요.</div>
+            <div className={styles.Text} style = {{fontFamily:'Pretendard'}}>사진 속 꽃의 이름과 꽃말을 알려드려요.</div>
           </div>
         </div>
 
