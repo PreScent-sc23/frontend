@@ -206,7 +206,7 @@ const Sellersignup = ()=>{
                  
                 
                 <input className={styles.inputBox} type='password' name = "pwd" size = '50'  placeholder='비밀번호'value={password} onChange={(e) => setPassword(e.target.value)} ></input>
-                <input className={styles.inputBox} type='number' name = "validnum" size = '50'  placeholder='비밀번호 확인'value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} ></input>
+                <input className={styles.inputBox} type='password' name = "validnum" size = '50'  placeholder='비밀번호 확인'value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} ></input>
                 <input className={styles.inputBox} type='number' name = "regnum" size = '50'  placeholder='사업자 등록 번호' value={businessKey} onChange={(e) => setBusinessKey(e.target.value)}></input>
                 </form>
             </div>
