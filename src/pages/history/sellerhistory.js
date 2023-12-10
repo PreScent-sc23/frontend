@@ -13,10 +13,10 @@ function SellerHistory(){
     const [orderDatas, setOrderDatas] = useState([]);
     const [finishDatas, setFinishDatas] = useState([]);
     
-    const handlePickup = async (orderKey) => {
+    const handlePickup = async (fpOrderKey) => {
         const token = localStorage.getItem('token');
         const headers = { 'Authorization': `Bearer ${token}` };
-        const params = {orderKey};
+        const params = {fpOrderKey};
         try {
           await axios.put('http://3.36.175.224:8080/seller/fp-order-list/set-complete', params, { headers });
         } catch (error) {
@@ -102,8 +102,8 @@ function SellerHistory(){
                                     <div className={styles.Tag}>{order.fpTag}</div>
                                 </div>
                                 <div className={styles.FlowerWrap}>
-                                    {order.fpFlowerList.map((flower, index) => (
-                                        <div className={styles.Flower}>{order.fpFlowerList}</div>
+                                {order.fpFlowerList.map((flower, index) => (
+                                        <div key = {index} className={styles.Flower}>{flower}</div>
                                     ))}
                                 </div>
                             </div>

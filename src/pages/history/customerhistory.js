@@ -71,8 +71,8 @@ function CustomerHistory(){
                                     <div className={styles.Tag}>{order.fpTag}</div>
                                 </div>
                                 <div className={styles.FlowerWrap}>
-                                    {order.fpFlowerList.map((flower, index) => (
-                                        <div className={styles.Flower}>{order.fpFlowerList}</div>
+                                {order.fpFlowerList.map((flower, index) => (
+                                        <div key = {index} className={styles.Flower}>{flower}</div>
                                     ))}
                                 </div>
                             </div>
