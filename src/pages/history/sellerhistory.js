@@ -18,7 +18,7 @@ function SellerHistory(){
         const headers = { 'Authorization': `Bearer ${token}` };
         const params = {fpOrderKey};
         try {
-          await axios.put('http://3.36.175.224:8080/seller/fp-order-list/set-complete', params, { headers });
+          await axios.put('http://3.36.175.224:8080/seller/fp-order-list/set-complete', { params, headers });
         } catch (error) {
           console.log('Failed to update order state:', error);
         }
