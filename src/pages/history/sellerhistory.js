@@ -13,10 +13,10 @@ function SellerHistory(){
     const [orderDatas, setOrderDatas] = useState([]);
     const [finishDatas, setFinishDatas] = useState([]);
     
-    const handlePickup = async (orderKey) => {
+    const handlePickup = async (fpOrderKey) => {
         const token = localStorage.getItem('token');
         const headers = { 'Authorization': `Bearer ${token}` };
-        const params = {orderKey};
+        const params = {fpOrderKey};
         try {
           await axios.put('http://3.36.175.224:8080/seller/fp-order-list/set-complete', params, { headers });
         } catch (error) {
